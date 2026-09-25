@@ -222,6 +222,22 @@ def test_modis_granule_intersects_county():
     assert modis.granule_intersects({"boxes": []}, polys) is True
 
 
+def test_modis_parse_grid_extent():
+    # exact substring from a real MOD13A1 h21v08 granule (tile 30-40E, 0-10N)
+    struct = (
+        'GROUP=GridStructure GROUP=GRID_1 GridName="MODIS_Grid_16DAY_500m_VI" '
+        "UpperLeftPointMtrs=(3335851.559000,1111950.519667) "
+        "LowerRightMtrs=(4447802.078667,0.000000) "
+        "ProjParams=(6371007.181000,0,0,0,0,0,0,0,0,0,0,0,0) END_GROUP=GRID_1"
+    )
+    ulx, uly, lrx, lry, radius = modis.parse_grid_extent(struct)
+    assert (ulx, uly) == (3335851.559, 1111950.519667)
+    assert (lrx, lry) == (4447802.078667, 0.0)
+    assert radius == 6371007.181
+    with pytest.raises(ExternalDataError):
+        modis.parse_grid_extent("no grid here")
+
+
 def test_modis_requires_credentials(monkeypatch, tmp_path):
     import requests
 
@@ -230,4 +246,22 @@ def test_modis_requires_credentials(monkeypatch, tmp_path):
 
     with pytest.raises(ExternalDataError, match="Earthdata"):
         modis.earthdata_session(Settings(earthdata_username=None,
-                                         earthdata_password=None))
+                                         earthdata_password=None,
+                                         earthdata_token=None))
+
+
+def test_modis_token_auth_mode():
+    from agrik.settings import Settings
+
+    # A token (with or without username) -> Bearer-header auth handler that
+    # re-applies itself after redirects. Other fields pinned to None so a
+    # developer's real .env cannot leak into the assertions.
+    sess = modis.earthdata_session(
+        Settings(earthdata_username="u", earthdata_password=None,
+                 earthdata_token="tok")
+    )
+    assert isinstance(sess.auth, modis.TokenAuth)
+    import requests
+
+    req = requests.Request("GET", "https://example/x").prepare()
+    assert sess.auth(req).headers["Authorization"] == "Bearer tok"

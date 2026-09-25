@@ -35,9 +35,14 @@ class Settings(BaseSettings):
     config_dir: Path = Path("config")
 
     # --- External feeds (M1) ------------------------------------------------
-    # NASA Earthdata Login (free) is required to download MODIS granules.
-    # Set via AGRIK_EARTHDATA_USERNAME / AGRIK_EARTHDATA_PASSWORD or .env;
-    # they are never logged or committed. CHIRPS needs no credentials.
+    # NASA Earthdata Login is required to download MODIS granules. Two auth
+    # options (never logged or committed):
+    #  * AGRIK_EARTHDATA_TOKEN - an application token (urs.earthdata.nasa.gov
+    #    -> Applications -> "Generate Token"); recommended, works with MFA/SSO.
+    #  * AGRIK_EARTHDATA_USERNAME / AGRIK_EARTHDATA_PASSWORD - Basic auth
+    #    fallback (fails if MFA is enabled or the account is IdP-only).
+    # CHIRPS needs no credentials.
+    earthdata_token: str | None = None
     earthdata_username: str | None = None
     earthdata_password: str | None = None
     http_timeout_s: int = Field(default=180, description="Timeout for HTTP downloads")

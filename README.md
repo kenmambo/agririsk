@@ -14,12 +14,11 @@
 
 ## ⚠️ Data status — read this first
 
-**Partially real (M1 in progress).** The `climate` dataset can be built from
-**real CHIRPS v2.0 satellite-rainfall observations** (see
-[Real data feeds](#real-data-feeds-m1)); all other datasets (`vegetation`,
-`agriculture`, `market`, `socioeconomic`, `outcome`) are still **clearly-labelled
-synthetic sample data** unless you enable the MODIS connector with your free
-NASA Earthdata credentials.
+**Partially real (M1 in progress).** The `climate` dataset is built from
+**real CHIRPS v2.0 satellite-rainfall observations** and `vegetation` from
+**real MODIS NDVI/EVI** (see [Real data feeds](#real-data-feeds-m1)); the
+remaining datasets (`agriculture`, `market`, `socioeconomic`, `outcome`) are
+still **clearly-labelled synthetic sample data**.
 
 - Every observation carries provenance: a `data_source` column per raw dataset
   and per-dataset `{dataset}_source` columns in the merged panel
@@ -37,17 +36,24 @@ NASA Earthdata credentials.
 
 | Feed | Dataset | Auth | Enable |
 |---|---|---|---|
-| **CHIRPS v2.0** monthly rainfall (0.05°, Africa) | `climate.precipitation_mm` | none | `python -m agrik --force-raw --source climate=chirps` |
-| **MODIS MOD13A1 v6.1** NDVI/EVI (16-day, 500 m) | `vegetation.ndvi/evi` | free [NASA Earthdata Login](https://urs.earthdata.nasa.gov) | set `AGRIK_EARTHDATA_USERNAME/PASSWORD` (or `~/.netrc`), then `--source vegetation=modis` |
+| **CHIRPS v2.0** monthly rainfall (0.05°, Africa) ✅ live | `climate.precipitation_mm` | none | `python -m agrik --force-raw --source climate=chirps` |
+| **MODIS MOD13A1 v6.1** NDVI/EVI (16-day, 500 m) ✅ live | `vegetation.ndvi/evi` | free [NASA Earthdata Login](https://urs.earthdata.nasa.gov) | set `AGRIK_EARTHDATA_TOKEN` (Profile → Applications → *Generate Token*; user/pass Basic auth also supported), then `--source vegetation=modis` |
 
 Details:
 
 ```bash
 # optional remote-sensing dependencies (also in requirements-m1.txt):
-pip install -e ".[rs]"          # rasterio, shapely, pyproj, requests
+pip install -e ".[rs]"          # rasterio, shapely, pyproj, requests, pyhdf
 
 # live CHIRPS rainfall (downloads ~4 MB/month, cached under data/raw/external/):
 python -m agrik --force-raw --source climate=chirps
+
+# live MODIS vegetation (needs Earthdata token; granule volume guard in
+# config/pipeline.yaml caps downloads per run, coverage stays honest):
+python -m agrik --force-raw --source climate=chirps --source vegetation=modis
+
+# verify your Earthdata credentials before a run (prints no secrets):
+python scripts/check_earthdata.py
 ```
 
 - Counties are approximated by **50 km disks around registry centroids** until real
@@ -317,7 +323,7 @@ coefficients, and a provenance-aware data table — all guarded by a prominent
 ### 3 · Run tests & sanity checks
 
 ```bash
-pytest -q                       # 41 unit + integration tests (offline, no network)
+pytest -q                       # 43 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 
@@ -341,7 +347,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 
 | Milestone | Work |
 |---|---|
-| **M1 · Real data (climate & veg)** | 🚧 In progress: **CHIRPS rainfall connector done & live**; MODIS NDVI/EVI connector implemented (enable with Earthdata creds); ERA5/Open-Meteo temperature; county boundary GeoPackage (`[geo]` extra) replaces centroid disks |
+| **M1 · Real data (climate & veg)** | 🚧 In progress: **CHIRPS rainfall connector done & live**; **MODIS NDVI/EVI connector done & live** (Earthdata token, volume-guarded granule sampling); ERA5/Open-Meteo temperature; county boundary GeoPackage (`[geo]` extra) replaces centroid disks |
 | **M2 · Markets & stats** | FEWSNET/KMD maize prices; KNBS production & socioeconomic; backfill full 001–047 registry |
 | **M3 · Modelling** | Gradient-boosting baseline, calibration, uncertainty, forecasting horizon; compare against Ridge via the shared interface |
 | **M4 · Serving** | FastAPI service (`[api]`) exposing the risk panel + model card; scheduled pipeline runs |

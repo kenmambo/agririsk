@@ -4,3 +4,4 @@ rasterio>=1.3
 shapely>=2.0
 pyproj>=3.6
 requests>=2.32
+pyhdf>=0.11.6  # MOD13A1 is HDF4; rasterio wheels lack the GDAL HDF4 driver

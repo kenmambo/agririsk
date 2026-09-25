@@ -31,7 +31,7 @@ dependencies = [
 geo = ["geopandas>=0.14", "shapely>=2.0"]
 api = ["fastapi>=0.110", "uvicorn>=0.27"]
 # M1 remote-sensing feeds (CHIRPS/MODIS connectors): pip install -e ".[rs]"
-rs = ["rasterio>=1.3", "shapely>=2.0", "pyproj>=3.6", "requests>=2.32"]
+rs = ["rasterio>=1.3", "shapely>=2.0", "pyproj>=3.6", "requests>=2.32", "pyhdf>=0.11.6"]
 
 [project.scripts]
 agrik-build-data = "agrik.pipeline:main"
