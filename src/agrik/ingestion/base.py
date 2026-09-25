@@ -16,6 +16,15 @@ from .. import schemas
 from ..settings import get_settings
 
 
+class ExternalDataError(RuntimeError):
+    """A real external feed could not be fetched or decoded.
+
+    Raised by provider connectors (CHIRPS, MODIS, ...) so the orchestration
+    layer can decide between failing loudly and falling back to clearly
+    labelled synthetic data. Never raised silently with a fake result.
+    """
+
+
 def raw_path(filename: str) -> Path:
     """Absolute-ish path to a raw dataset file under ``data/raw``."""
     return get_settings().raw_dir / filename

@@ -68,37 +68,52 @@ def merge_datasets(
     """Merge per-dataset frames into one master panel on the shared grain.
 
     All datasets must already be cleaned with :func:`clean_dataset`. Context
-    columns (``county_name``, ``date``, ``data_source``) are carried once from
-    the first frame that provides them; every other dataset contributes only
-    its *value* columns, merged on the grain keys. Uses an outer join so
-    partial coverage across sources is preserved (and visible).
+    columns (``county_name``, ``date``) are carried once from the first frame
+    that provides them. Each dataset contributes its *value* columns **and**
+    its provenance as a ``{dataset}_source`` column, so per-dataset real vs
+    synthetic status survives the merge. The overall ``data_source`` column is
+    the single source name, or ``"mixed"`` when datasets differ. Uses an outer
+    join so partial coverage across sources is preserved (and visible).
     """
     config = config or get_pipeline_config()
     keys = list(config.get("panel", {}).get("key_columns", schemas.KEY_COLUMNS))
     if not datasets:
         raise ValueError("merge_datasets received no datasets.")
 
-    context_cols = [
-        schemas.COUNTY_NAME_COLUMN,
-        config.get("panel", {}).get("date_column", schemas.DATE_COLUMN),
-        schemas.PROVENANCE_COLUMN,
-    ]
+    date_col = config.get("panel", {}).get("date_column", schemas.DATE_COLUMN)
+    context_cols = [schemas.COUNTY_NAME_COLUMN, date_col]
 
     frames = list(datasets.values())
     base_cols = keys + [c for c in context_cols if c in frames[0].columns]
     result = frames[0][base_cols].copy()
 
-    for d in datasets.values():
+    sources_seen: set[str] = set()
+    for name, d in datasets.items():
         value_cols = [
-            c for c in d.columns if c not in keys and c not in context_cols
+            c for c in d.columns
+            if c not in keys and c not in context_cols and c != schemas.PROVENANCE_COLUMN
         ]
-        if not value_cols:
+        merge_cols = keys + value_cols
+        if schemas.PROVENANCE_COLUMN in d.columns:
+            merge_cols = merge_cols + [schemas.PROVENANCE_COLUMN]
+        subset = d[merge_cols].rename(
+            columns={schemas.PROVENANCE_COLUMN: f"{name}_source"}
+        )
+        if schemas.PROVENANCE_COLUMN in d.columns:
+            sources_seen.update(d[schemas.PROVENANCE_COLUMN].astype(str).unique())
+        if len(value_cols) == 0 and f"{name}_source" not in subset.columns:
             continue
-        result = result.merge(d[keys + value_cols], on=keys, how="outer")
+        result = result.merge(subset, on=keys, how="outer")
 
+    result[schemas.PROVENANCE_COLUMN] = (
+        next(iter(sources_seen)) if len(sources_seen) == 1 else "mixed"
+    )
     if schemas.COUNTY_NAME_COLUMN not in result.columns:
         raise ValueError("Merged panel is missing county_name.")
-    LOGGER.info("Merged %d datasets -> master panel %s rows.", len(frames), len(result))
+    LOGGER.info(
+        "Merged %d datasets (sources: %s) -> master panel %s rows.",
+        len(frames), sorted(sources_seen) or ["n/a"], len(result),
+    )
     return result.sort_values(keys).reset_index(drop=True)
 
 

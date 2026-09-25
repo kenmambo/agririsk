@@ -29,7 +29,18 @@ st.set_page_config(page_title="AgriRisk Kenya", page_icon="🌾", layout="wide")
 
 
 def _synthetic_banner(df: pd.DataFrame) -> None:
-    if loaders.data_is_synthetic(df):
+    sources = loaders.dataset_sources(df)
+    real = {n: s for n, s in sources.items() if "synthetic" not in s}
+    synth = {n: s for n, s in sources.items() if "synthetic" in s}
+    if loaders.data_is_synthetic(df) and real:
+        st.warning(
+            "⚠️ **Partially real data.** Real feeds: "
+            + ", ".join(f"**{n}** ({s})" for n, s in sorted(real.items()))
+            + ". Still SYNTHETIC: "
+            + ", ".join(f"**{n}**" for n in sorted(synth))
+            + " - do not draw analytical conclusions from synthetic components."
+        )
+    elif loaders.data_is_synthetic(df):
         st.error(
             "⚠️ " + schemas.SYNTHETIC_NOTE.upper()
             + "  Values shown are **synthetic sample data**, not real Kenyan "
@@ -118,8 +129,10 @@ def main() -> None:
         st.subheader("Baseline model card")
         st.json(card)
         st.caption(
-            "Metrics describe how well the baseline reproduces the *synthetic* "
-            "target and carry no real-world meaning."
+            card.get(
+                "data_note",
+                "Metrics describe how well the baseline reproduces the target.",
+            )
         )
         model = loaders.load_baseline_model()
         if model is not None and hasattr(model, "coefficients"):

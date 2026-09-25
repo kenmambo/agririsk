@@ -21,31 +21,84 @@ import pandas as pd
 from . import counties, schemas
 from .config import get_pipeline_config
 from .features import build_features, make_xy
-from .ingestion import read_csv, write_csv, write_synthetic_raw
+from .ingestion import ingest_datasets, read_csv, write_csv
 from .logging import get_logger, setup_logging
 from .models import build_model, temporal_train_test_split
 from .processing import clean_dataset, impute_panel, merge_datasets, validate_panel
 from .settings import get_settings
 
 LOGGER = get_logger("pipeline")
-PIPELINE_VERSION = "0.1.0"
+PIPELINE_VERSION = "0.2.0"
 
 
 def _specs() -> dict:
     return schemas.dataset_specs(get_pipeline_config())
 
 
+def _apply_source_overrides(overrides: list[str]) -> None:
+    """Apply ``name=provider`` overrides onto the cached config (in-memory)."""
+    cfg = get_pipeline_config()
+    for item in overrides:
+        if "=" not in item:
+            raise ValueError(f"--source expects name=provider, got {item!r}")
+        name, provider = item.split("=", 1)
+        if name not in cfg["datasets"]:
+            raise ValueError(f"Unknown dataset {name!r} in --source override.")
+        cfg["datasets"][name]["source"] = provider
+        LOGGER.info("Config override: datasets.%s.source = %s", name, provider)
+
+
+def _dataset_provenance(frames: dict[str, pd.DataFrame]) -> dict[str, str]:
+    return {
+        name: str(df[schemas.PROVENANCE_COLUMN].astype(str).unique().tolist())
+        for name, df in frames.items()
+    }
+
+
+def _sources_note(prov: dict[str, str]) -> str:
+    """Honest, dynamic provenance note derived from actual dataset sources."""
+    synth = sorted(n for n, srcs in prov.items() if "synthetic" in srcs)
+    real = {n: s for n, s in prov.items() if "synthetic" not in s}
+    if not synth:
+        return "All datasets are real feeds."
+    note = (
+        f"Datasets {synth} are SYNTHETIC sample data - no real analytical "
+        "conclusions should be drawn from them."
+    )
+    if real:
+        note += (
+            f" Real feeds present: {real}. Note: modelling a synthetic target "
+            "from partly-real features makes model metrics descriptive of the "
+            "synthetic target only."
+        )
+    return note
+
+
 def step_ingest(force: bool, seed: int) -> dict[str, Path]:
-    """Generate synthetic raw data if missing (or forced)."""
+    """Build raw dataset files, routing each dataset to its configured source.
+
+    Synthetic datasets are generated; real providers (CHIRPS, MODIS, ...) are
+    used when configured, with clearly-labelled fallback on failure. Raw files
+    are only rewritten when missing or forced - external rasters are cached
+    separately under ``data/raw/external``.
+    """
     settings = get_settings()
     settings.ensure_dirs()
     specs = _specs()
     missing = any(not (settings.raw_dir / s.file).exists() for s in specs.values())
-    if force or missing:
-        LOGGER.warning("Writing SYNTHETIC raw data (force=%s, missing=%s).", force, missing)
-        return write_synthetic_raw(seed=seed)
-    LOGGER.info("Raw data already present; skipping synthetic generation.")
-    return {name: settings.raw_dir / spec.file for name, spec in specs.items()}
+    if not (force or missing):
+        LOGGER.info("Raw data already present; skipping ingestion.")
+        return {name: settings.raw_dir / spec.file for name, spec in specs.items()}
+
+    LOGGER.info("Ingesting datasets (force=%s, missing=%s)...", force, missing)
+    frames = ingest_datasets(seed=seed)
+    prov = _dataset_provenance(frames)
+    LOGGER.info("Dataset sources this run: %s", prov)
+    written: dict[str, Path] = {}
+    for name, df in frames.items():
+        path = settings.raw_dir / specs[name].file
+        written[name] = write_csv(df, path)
+    return written
 
 
 def step_process() -> pd.DataFrame:
@@ -76,17 +129,29 @@ def step_process() -> pd.DataFrame:
     return master
 
 
+def _master_provenance(df: pd.DataFrame) -> dict[str, str]:
+    """Per-dataset sources recovered from merged ``{name}_source`` columns."""
+    out: dict[str, str] = {}
+    for col in df.columns:
+        if col.endswith("_source") and col != schemas.PROVENANCE_COLUMN:
+            vals = sorted(df[col].dropna().astype(str).unique())
+            out[col[: -len("_source")]] = ",".join(vals)
+    return out
+
+
 def step_features(master: pd.DataFrame) -> pd.DataFrame:
     """Engineer features from the master panel and persist the feature store."""
     engineered = build_features(master)
     write_csv(engineered, get_settings().features_dir / "features_panel.csv")
+    prov = _master_provenance(engineered)
     manifest = {
         "pipeline_version": PIPELINE_VERSION,
         "feature_version": _feature_version(),
         "rows": int(len(engineered)),
         "n_features_engineered": len(engineered.columns),
         "data_source": str(engineered[schemas.PROVENANCE_COLUMN].unique().tolist()),
-        "note": schemas.SYNTHETIC_NOTE,
+        "dataset_sources": prov,
+        "note": _sources_note(prov) if prov else schemas.SYNTHETIC_NOTE,
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
     (get_settings().features_dir / "features_manifest.json").write_text(
@@ -119,15 +184,24 @@ def step_train(engineered: pd.DataFrame):
 
     model_path = model.save(get_settings().models_dir / "baseline_ridge.joblib")
     card = model.model_card(metrics)
+    prov = _master_provenance(engineered)
+    if prov:
+        card.data_note = _sources_note(prov)
     card_path = get_settings().models_dir / "model_card.json"
     card_path.write_text(json.dumps(card.to_dict(), indent=2), encoding="utf-8")
     LOGGER.info("Baseline model saved to %s; metrics=%s", model_path, metrics)
     return model, metrics, card
 
 
-def run_pipeline(force_raw: bool = False, seed: int = 42) -> dict:
+def run_pipeline(
+    force_raw: bool = False,
+    seed: int = 42,
+    source_overrides: list[str] | None = None,
+) -> dict:
     """Run the full pipeline and return a summary dict."""
     setup_logging()
+    if source_overrides:
+        _apply_source_overrides(source_overrides)
     settings = get_settings()
     settings.ensure_dirs()
     LOGGER.info("=== AgriRisk pipeline v%s starting (env=%s) ===",
@@ -142,6 +216,7 @@ def run_pipeline(force_raw: bool = False, seed: int = 42) -> dict:
         "datasets": sorted(raw),
         "master_rows": int(len(master)),
         "counties": int(master["county_code"].nunique()),
+        "dataset_sources": _master_provenance(engineered),
         "metrics": metrics,
     }
     LOGGER.info("=== Pipeline complete: %s ===", summary["metrics"])
@@ -151,10 +226,15 @@ def run_pipeline(force_raw: bool = False, seed: int = 42) -> dict:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build AgriRisk data + baseline model.")
     parser.add_argument("--force-raw", action="store_true",
-                        help="Regenerate synthetic raw data even if present.")
+                        help="Re-ingest raw datasets even if present.")
     parser.add_argument("--seed", type=int, default=42, help="Synthetic data RNG seed.")
+    parser.add_argument("--source", action="append", default=[],
+                        metavar="DATASET=PROVIDER",
+                        help="Override a dataset source for this run, e.g. "
+                             "--source climate=chirps (repeatable).")
     args = parser.parse_args(argv)
-    run_pipeline(force_raw=args.force_raw, seed=args.seed)
+    run_pipeline(force_raw=args.force_raw, seed=args.seed,
+                 source_overrides=args.source)
     return 0
 
 

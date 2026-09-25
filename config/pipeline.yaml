@@ -16,18 +16,20 @@ panel:
   date_column: date
 
 # Each logical dataset maps to one CSV under data/raw and data/processed.
-# `source: synthetic` marks data that is NOT yet a real feed. When a real
-# upstream (CHIRPS, MODIS, FEWSNET/KMD, county stats) is integrated, add a
-# loader in ingestion/ and flip source to the real provider name.
+# `source: synthetic` marks data that is NOT yet a real feed. Real providers
+# register themselves in src/agrik/ingestion/providers.py (chirps, modis).
+# Run live data without editing this file via:
+#     python -m agrik --force-raw --source climate=chirps
+# (the committed default stays synthetic so tests/fresh clones never hit the network)
 datasets:
   climate:
-    source: synthetic
+    source: synthetic          # real option: chirps (CHIRPS v2.0 monthly, no auth)
     file: climate_monthly.csv
-    description: "Rainfall and temperature (placeholder for CHIRPS / station data)."
+    description: "Rainfall and temperature (CHIRPS integrated; temperature feed pending)."
   vegetation:
-    source: synthetic
+    source: synthetic          # real option: modis (MOD13A1 v6.1, needs Earthdata Login)
     file: vegetation_monthly.csv
-    description: "NDVI / EVI (placeholder for MODIS / Sentinel-2 derived indices)."
+    description: "NDVI / EVI (MODIS connector ready; enable with credentials)."
   agriculture:
     source: synthetic
     file: agriculture_monthly.csv
@@ -54,7 +56,7 @@ validation:
     - month
     - date
   value_ranges:
-    precipitation_mm: { min: 0, max: 800 }
+    precipitation_mm: { min: 0, max: 1000 }   # CHIRPS monthly totals can exceed 800 mm
     temp_mean_c: { min: 5, max: 40 }
     ndvi: { min: -1, max: 1 }
     evi: { min: -1, max: 1 }
@@ -80,3 +82,26 @@ model:
   baseline:
     type: ridge
     alpha: 1.0
+
+# --- M1: real external feeds ---------------------------------------------------
+# Provider connectors live in src/agrik/ingestion/ (chirps.py, modis.py) and are
+# selected through datasets.*.source. Downloaded rasters/granules are cached
+# under data/raw/external/ (git-ignored) so re-runs are offline and cheap.
+external:
+  # Counties are approximated by disks around their registry centroids until
+  # real county polygons (KNBS / GADM) are integrated in roadmap M2.
+  county_buffer_km: 50
+  # If a real-feed fetch fails, fall back to the clearly-labelled synthetic
+  # slice for that dataset (provenance columns always show which is which).
+  allow_synthetic_fallback: true
+  chirps:
+    base_url: "https://data.chc.ucsb.edu/products/CHIRPS-2.0/africa_monthly/tifs/"
+    nodata: -9999
+  modis:
+    cmr_short_name: "MOD13A1"
+    version: "061"
+    # Kenya mainland bounding box [west, south, east, north] for granule search.
+    bbox: [33.9, -4.9, 41.9, 5.5]
+    # Volume guard: MODIS granules are ~50 MB each; cap per run. Raise this
+    # (or narrow the panel window) for denser coverage when disk allows.
+    max_granule_downloads: 16

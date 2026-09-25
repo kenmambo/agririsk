@@ -13,18 +13,49 @@
 
 ## ⚠️ Data status — read this first
 
-**This repository currently runs on clearly-labelled *synthetic sample data*.**
-No real analytical conclusions about any Kenyan county should be drawn from it.
+**Partially real (M1 in progress).** The `climate` dataset can be built from
+**real CHIRPS v2.0 satellite-rainfall observations** (see
+[Real data feeds](#real-data-feeds-m1)); all other datasets (`vegetation`,
+`agriculture`, `market`, `socioeconomic`, `outcome`) are still **clearly-labelled
+synthetic sample data** unless you enable the MODIS connector with your free
+NASA Earthdata credentials.
 
-- Every observation is stamped with a `data_source` provenance column (`synthetic`).
+- Every observation carries provenance: a `data_source` column per raw dataset
+  and per-dataset `{dataset}_source` columns in the merged panel
+  (`synthetic`, `chirps`, `modis`, …). The overall status is `mixed` when real
+  and synthetic feeds coexist.
 - The synthetic generator uses a *documented* causal chain (rainfall → vegetation →
   production → price → risk) so the pipeline and baseline model have genuine signal
   to learn from — **it is scaffolding, not evidence.**
+- ⚠️ While the risk *target* is synthetic, model metrics describe how well the
+  baseline reproduces **that synthetic target** — even when some features are real.
+  No per-county analytical conclusions are valid yet.
 - The model card, dashboard banner and code comments all repeat this warning.
 
-When a real feed is integrated, it is added as a new ingestion connector; **no
-downstream code changes**, because every layer depends on the *schema*, not on the
-generator.
+### Real data feeds (M1)
+
+| Feed | Dataset | Auth | Enable |
+|---|---|---|---|
+| **CHIRPS v2.0** monthly rainfall (0.05°, Africa) | `climate.precipitation_mm` | none | `python -m agrik --force-raw --source climate=chirps` |
+| **MODIS MOD13A1 v6.1** NDVI/EVI (16-day, 500 m) | `vegetation.ndvi/evi` | free [NASA Earthdata Login](https://urs.earthdata.nasa.gov) | set `AGRIK_EARTHDATA_USERNAME/PASSWORD` (or `~/.netrc`), then `--source vegetation=modis` |
+
+Details:
+
+```bash
+# optional remote-sensing dependencies (also in requirements-m1.txt):
+pip install -e ".[rs]"          # rasterio, shapely, pyproj, requests
+
+# live CHIRPS rainfall (downloads ~4 MB/month, cached under data/raw/external/):
+python -m agrik --force-raw --source climate=chirps
+```
+
+- Counties are approximated by **50 km disks around registry centroids** until real
+  boundaries land in M2 — an approximation that is logged everywhere it is used.
+- A feed that fails never silently blends in: the run **falls back to the labelled
+  synthetic slice with a loud ERROR log**, visible in the `{dataset}_source` column
+  (disable via `external.allow_synthetic_fallback: false`).
+- `temp_mean_c` is *omitted* (not faked) when the provider has no temperature —
+  feature engineering adapts to the columns that exist.
 
 ---
 
@@ -285,7 +316,7 @@ coefficients, and a provenance-aware data table — all guarded by a prominent
 ### 3 · Run tests & sanity checks
 
 ```bash
-pytest -q                       # 28 unit + integration tests
+pytest -q                       # 41 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 
@@ -309,7 +340,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 
 | Milestone | Work |
 |---|---|
-| **M1 · Real data (climate & veg)** | CHIRPS/ERA5 rainfall & temperature; MODIS/Sentinel NDVI/EVI via zonal stats; county boundary GeoPackage (`[geo]` extra) |
+| **M1 · Real data (climate & veg)** | 🚧 In progress: **CHIRPS rainfall connector done & live**; MODIS NDVI/EVI connector implemented (enable with Earthdata creds); ERA5/Open-Meteo temperature; county boundary GeoPackage (`[geo]` extra) replaces centroid disks |
 | **M2 · Markets & stats** | FEWSNET/KMD maize prices; KNBS production & socioeconomic; backfill full 001–047 registry |
 | **M3 · Modelling** | Gradient-boosting baseline, calibration, uncertainty, forecasting horizon; compare against Ridge via the shared interface |
 | **M4 · Serving** | FastAPI service (`[api]`) exposing the risk panel + model card; scheduled pipeline runs |
@@ -317,11 +348,12 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 
 ### How to add a real data source
 1. Write a connector in `src/agrik/ingestion/` that returns a DataFrame conforming to
-   [`schemas.py`](src/agrik/schemas.py).
-2. Register the dataset + change `source: synthetic → <provider>` in
-   `config/pipeline.yaml`.
+   [`schemas.py`](src/agrik/schemas.py) and raises `ExternalDataError` on failure.
+2. Register it in `providers._REGISTRY` (or `register_provider(...)`) and set
+   `source: <provider>` in `config/pipeline.yaml` — or pass `--source <dataset>=<provider>`
+   for a single run without touching the file.
 3. Nothing downstream changes — validation, features, model and UI already depend on
-   the schema.
+   the schema plus the `{dataset}_source` provenance columns.
 
 ---
 

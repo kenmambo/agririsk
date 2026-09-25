@@ -60,8 +60,27 @@ def pipeline_ready() -> bool:
     )
 
 
+def dataset_sources(df: pd.DataFrame) -> dict[str, str]:
+    """Per-dataset provenance recovered from merged ``{name}_source`` columns."""
+    out: dict[str, str] = {}
+    for col in df.columns:
+        if col.endswith("_source") and col != schemas.PROVENANCE_COLUMN:
+            vals = sorted(df[col].dropna().astype(str).unique())
+            if vals:
+                out[col[: -len("_source")]] = ",".join(vals)
+    return out
+
+
 def data_is_synthetic(df: pd.DataFrame) -> bool:
-    """Whether the loaded data is flagged as synthetic (provenance column)."""
+    """Whether the loaded data still contains synthetic components.
+
+    Prefers the per-dataset ``{name}_source`` columns (survive mixed runs);
+    falls back to the overall ``data_source`` column. Unknown -> assume
+    synthetic for safe labelling.
+    """
+    sources = dataset_sources(df)
+    if sources:
+        return any("synthetic" in s for s in sources.values())
     if schemas.PROVENANCE_COLUMN in df.columns:
         return bool((df[schemas.PROVENANCE_COLUMN].astype(str).str.lower() == "synthetic").any())
     return True  # unknown -> assume synthetic for safe labelling

@@ -34,10 +34,23 @@ class Settings(BaseSettings):
     models_dir: Path = Path("models")
     config_dir: Path = Path("config")
 
+    # --- External feeds (M1) ------------------------------------------------
+    # NASA Earthdata Login (free) is required to download MODIS granules.
+    # Set via AGRIK_EARTHDATA_USERNAME / AGRIK_EARTHDATA_PASSWORD or .env;
+    # they are never logged or committed. CHIRPS needs no credentials.
+    earthdata_username: str | None = None
+    earthdata_password: str | None = None
+    http_timeout_s: int = Field(default=180, description="Timeout for HTTP downloads")
+
     # --- Derived paths -----------------------------------------------------
     @property
     def raw_dir(self) -> Path:
         return self.data_root / "raw"
+
+    @property
+    def external_dir(self) -> Path:
+        """Cache for downloaded external rasters/granules (never committed)."""
+        return self.data_root / "raw" / "external"
 
     @property
     def processed_dir(self) -> Path:
@@ -63,6 +76,7 @@ class Settings(BaseSettings):
         """Create the directory skeleton if it does not yet exist."""
         for path in (
             self.raw_dir,
+            self.external_dir,
             self.processed_dir,
             self.features_dir,
             self.models_dir,
