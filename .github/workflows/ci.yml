@@ -1,0 +1,33 @@
+# CI: lint + offline test suite on every push/PR.
+# The tests never touch the network: external providers (CHIRPS/MODIS) are
+# exercised with mocks and tiny synthetic rasters only.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # requirements-dev.txt already includes requirements.txt;
+          # M1 extras are needed because the tests import rasterio/shapely/pyproj.
+          pip install -r requirements-dev.txt -r requirements-m1.txt
+
+      - name: Ruff
+        run: ruff check src tests scripts
+
+      - name: Pytest (offline suite)
+        run: pytest -q

@@ -5,6 +5,7 @@
 > **county × month** grain by fusing climate, vegetation, agricultural, market and
 > socioeconomic signals.
 
+[![CI](https://github.com/kenmambo/agririsk/actions/workflows/ci.yml/badge.svg)](https://github.com/kenmambo/agririsk/actions/workflows/ci.yml)
 [![python](https://img.shields.io/badge/python-3.10%2B-blue)]()
 [![tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
 [![license](https://img.shields.io/badge/license-MIT-green)]()
