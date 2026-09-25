@@ -1,0 +1,82 @@
+# ---------------------------------------------------------------------------
+# AgriRisk Kenya - declarative pipeline configuration
+# ---------------------------------------------------------------------------
+# This file separates *what* the pipeline processes (datasets, validation
+# rules, feature windows, model hyper-parameters) from *how* it does it (code
+# in src/agrik). Real-data integrations should add entries here rather than
+# hard-coding them in Python.
+# ---------------------------------------------------------------------------
+
+panel:
+  grain: county-monthly          # MVP supports county-level monthly data
+  frequency: M
+  start_year: 2019
+  end_year: 2022
+  key_columns: [county_code, year, month]
+  date_column: date
+
+# Each logical dataset maps to one CSV under data/raw and data/processed.
+# `source: synthetic` marks data that is NOT yet a real feed. When a real
+# upstream (CHIRPS, MODIS, FEWSNET/KMD, county stats) is integrated, add a
+# loader in ingestion/ and flip source to the real provider name.
+datasets:
+  climate:
+    source: synthetic
+    file: climate_monthly.csv
+    description: "Rainfall and temperature (placeholder for CHIRPS / station data)."
+  vegetation:
+    source: synthetic
+    file: vegetation_monthly.csv
+    description: "NDVI / EVI (placeholder for MODIS / Sentinel-2 derived indices)."
+  agriculture:
+    source: synthetic
+    file: agriculture_monthly.csv
+    description: "Production and area index (placeholder for county ag stats)."
+  market:
+    source: synthetic
+    file: market_monthly.csv
+    description: "Urban maize retail price (placeholder for FEWSNET / KMD)."
+  socioeconomic:
+    source: synthetic
+    file: socioeconomic_monthly.csv
+    description: "Rural population, poverty, coping capacity (placeholder for KNBS)."
+  outcome:
+    source: synthetic
+    file: outcome_monthly.csv
+    description: "Food-security risk index target (placeholder for IPC analysis)."
+
+# Column-level validation rules. Range checks are advisory (flagged, not fatal)
+# unless a column is also listed in required_columns.
+validation:
+  required_columns:
+    - county_code
+    - year
+    - month
+    - date
+  value_ranges:
+    precipitation_mm: { min: 0, max: 800 }
+    temp_mean_c: { min: 5, max: 40 }
+    ndvi: { min: -1, max: 1 }
+    evi: { min: -1, max: 1 }
+    prod_index: { min: 0, max: 300 }
+    maize_price_kes_kg: { min: 5, max: 300 }
+    poverty_rate: { min: 0, max: 1 }
+    coping_capacity_index: { min: 0, max: 1 }
+    food_security_risk_index: { min: 0, max: 100 }
+    ipc_crisis_households: { min: 0, max: 1 }
+  year_range: { min: 2000, max: 2030 }
+  month_range: { min: 1, max: 12 }
+
+feature_engineering:
+  # Standardised anomaly (SPI-like) window per county.
+  zscore_window: 24
+  rolling_windows: [3, 6]
+  lag_periods: [1, 3]
+
+model:
+  target: food_security_risk_index
+  test_size: 0.25
+  random_state: 42
+  baseline:
+    type: ridge
+    alpha: 1.0

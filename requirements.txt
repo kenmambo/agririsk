@@ -1,0 +1,10 @@
+# Runtime dependencies. Pinned to compatible minimums (see pyproject.toml).
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+joblib>=1.3
+pydantic>=2.4
+pydantic-settings>=2.1
+PyYAML>=6.0
+streamlit>=1.30
+plotly>=6.0
