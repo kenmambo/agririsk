@@ -1,0 +1,1009 @@
+county_code,year,month,county_name,date,precipitation_mm,temp_mean_c,climate_source,ndvi,evi,vegetation_source,prod_index,agriculture_source,maize_price_kes_kg,market_source,rural_pop,poverty_rate,socioeconomic_source,food_security_risk_index,outcome_source,data_source,agro_zone
+001,2019,1,Mombasa,2019-01-01,18.26,27.46,chirps+openmeteo,0.5258,0.3381,modis,107.28,wb_foodindex,41.67,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2019,2,Mombasa,2019-02-01,8.99,27.77,chirps+openmeteo,0.4486,0.2727,modis,107.28,wb_foodindex,46.67,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2019,3,Mombasa,2019-03-01,15.1,28.12,chirps+openmeteo,0.3937,0.2434,modis,107.28,wb_foodindex,47.92,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2019,4,Mombasa,2019-04-01,50.24,27.89,chirps+openmeteo,0.3888,0.2314,modis,107.28,wb_foodindex,55.42,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2019,5,Mombasa,2019-05-01,440.14,25.75,chirps+openmeteo,0.3875,0.2503,modis,107.28,wb_foodindex,56.33,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2019,6,Mombasa,2019-06-01,67.08,25.7,chirps+openmeteo,0.6457,0.436,modis,107.28,wb_foodindex,57.08,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2019,7,Mombasa,2019-07-01,90.97,25.0,chirps+openmeteo,0.5601,0.3535,modis,107.28,wb_foodindex,58.0,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2019,8,Mombasa,2019-08-01,65.33,24.84,chirps+openmeteo,0.5552,0.348,modis,107.28,wb_foodindex,56.25,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2019,9,Mombasa,2019-09-01,85.84,25.19,chirps+openmeteo,0.497,0.3099,modis,107.28,wb_foodindex,55.0,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2019,10,Mombasa,2019-10-01,422.22,25.59,chirps+openmeteo,0.5502,0.3839,modis,107.28,wb_foodindex,56.67,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2019,11,Mombasa,2019-11-01,182.26,26.66,chirps+openmeteo,0.6652,0.4596,modis,107.28,wb_foodindex,58.33,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2019,12,Mombasa,2019-12-01,154.11,27.25,chirps+openmeteo,0.6863,0.4967,modis,107.28,wb_foodindex,59.44,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2020,1,Mombasa,2020-01-01,51.19,27.72,chirps+openmeteo,0.6082,0.4379,modis,125.82,wb_foodindex,61.67,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2020,2,Mombasa,2020-02-01,13.15,27.97,chirps+openmeteo,0.579,0.4107,modis,125.82,wb_foodindex,61.7,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2020,3,Mombasa,2020-03-01,101.6,28.16,chirps+openmeteo,0.5959,0.3685,modis,125.82,wb_foodindex,66.43,fewsnet_prices,6485,0.1289,hdx_knbs,6.25,,mixed,Coastal
+001,2020,4,Mombasa,2020-04-01,510.54,26.93,chirps+openmeteo,0.5942,0.3863,modis,125.82,wb_foodindex,55.65,fewsnet_prices,6485,0.1289,hdx_knbs,12.5,,mixed,Coastal
+001,2020,5,Mombasa,2020-05-01,242.57,25.83,chirps+openmeteo,0.6865,0.4214,modis,125.82,wb_foodindex,55.0,fewsnet_prices,6485,0.1289,hdx_knbs,18.75,,mixed,Coastal
+001,2020,6,Mombasa,2020-06-01,137.27,25.3,chirps+openmeteo,0.6531,0.4278,modis,125.82,wb_foodindex,54.4,fewsnet_prices,6485,0.1289,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+001,2020,7,Mombasa,2020-07-01,115.67,24.69,chirps+openmeteo,0.562,0.3607,modis,125.82,wb_foodindex,54.0,fewsnet_prices,6485,0.1289,hdx_knbs,18.75,,mixed,Coastal
+001,2020,8,Mombasa,2020-08-01,50.08,24.38,chirps+openmeteo,0.493,0.3202,modis,125.82,wb_foodindex,53.8,fewsnet_prices,6485,0.1289,hdx_knbs,12.5,,mixed,Coastal
+001,2020,9,Mombasa,2020-09-01,63.53,24.96,chirps+openmeteo,0.4568,0.2796,modis,125.82,wb_foodindex,55.03,fewsnet_prices,6485,0.1289,hdx_knbs,6.25,,mixed,Coastal
+001,2020,10,Mombasa,2020-10-01,60.57,26.04,chirps+openmeteo,0.4567,0.2899,modis,125.82,wb_foodindex,57.0,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2020,11,Mombasa,2020-11-01,173.89,26.62,chirps+openmeteo,0.5778,0.3863,modis,125.82,wb_foodindex,53.5,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2020,12,Mombasa,2020-12-01,59.62,27.36,chirps+openmeteo,0.57,0.3769,modis,125.82,wb_foodindex,51.27,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,1,Mombasa,2021-01-01,29.14,26.96,chirps+openmeteo,0.4981,0.2975,modis,123.29,wb_foodindex,47.67,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,2,Mombasa,2021-02-01,15.28,27.34,chirps+openmeteo,0.4396,0.2753,modis,123.29,wb_foodindex,51.27,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2021,3,Mombasa,2021-03-01,19.98,27.84,chirps+openmeteo,0.3798,0.2373,modis,123.29,wb_foodindex,50.83,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,4,Mombasa,2021-04-01,90.1,26.59,chirps+openmeteo,0.3763,0.2245,modis,123.29,wb_foodindex,50.43,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,5,Mombasa,2021-05-01,179.22,25.98,chirps+openmeteo,0.4418,0.2807,modis,123.29,wb_foodindex,51.33,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,6,Mombasa,2021-06-01,64.57,24.74,chirps+openmeteo,0.4488,0.2791,modis,123.29,wb_foodindex,51.27,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2021,7,Mombasa,2021-07-01,97.4,24.25,chirps+openmeteo,0.4427,0.2893,modis,123.29,wb_foodindex,54.17,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,8,Mombasa,2021-08-01,61.39,24.21,chirps+openmeteo,0.4258,0.2603,modis,123.29,wb_foodindex,52.32,,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,9,Mombasa,2021-09-01,46.5,24.81,chirps+openmeteo,0.389,0.2348,modis,123.29,wb_foodindex,50.47,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,10,Mombasa,2021-10-01,59.58,25.78,chirps+openmeteo,0.3314,0.2129,modis,123.29,wb_foodindex,50.47,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2021,11,Mombasa,2021-11-01,47.76,26.89,chirps+openmeteo,0.315,0.1906,modis,123.29,wb_foodindex,53.33,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2021,12,Mombasa,2021-12-01,163.7,26.82,chirps+openmeteo,0.4657,0.2974,modis,123.29,wb_foodindex,55.0,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,1,Mombasa,2022-01-01,14.62,27.51,chirps+openmeteo,0.4727,0.3195,modis,112.38,wb_foodindex,53.5,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,2,Mombasa,2022-02-01,11.8,27.57,chirps+openmeteo,0.3801,0.245,modis,112.38,wb_foodindex,66.65,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2022,3,Mombasa,2022-03-01,22.37,27.68,chirps+openmeteo,0.3418,0.2079,modis,112.38,wb_foodindex,75.0,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,4,Mombasa,2022-04-01,138.62,27.19,chirps+openmeteo,0.3333,0.2085,modis,112.38,wb_foodindex,77.5,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,5,Mombasa,2022-05-01,186.92,26.45,chirps+openmeteo,0.4289,0.2797,modis,112.38,wb_foodindex,92.0,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,6,Mombasa,2022-06-01,90.09,25.12,chirps+openmeteo,0.4767,0.3211,modis,112.38,wb_foodindex,105.0,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2022,7,Mombasa,2022-07-01,187.7,23.81,chirps+openmeteo,0.502,0.3306,modis,112.38,wb_foodindex,110.0,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,8,Mombasa,2022-08-01,57.22,23.95,chirps+openmeteo,0.5213,0.3386,modis,112.38,wb_foodindex,107.5,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,9,Mombasa,2022-09-01,42.77,24.49,chirps+openmeteo,0.4187,0.2669,modis,112.38,wb_foodindex,105.65,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,10,Mombasa,2022-10-01,47.83,25.17,chirps+openmeteo,0.3207,0.2056,modis,112.38,wb_foodindex,103.35,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,fewsnet_ipc,mixed,Coastal
+001,2022,11,Mombasa,2022-11-01,111.07,26.19,chirps+openmeteo,0.3848,0.2399,modis,112.38,wb_foodindex,106.9,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+001,2022,12,Mombasa,2022-12-01,46.64,27.16,chirps+openmeteo,0.4282,0.2732,modis,112.38,wb_foodindex,107.5,fewsnet_prices,6485,0.1289,hdx_knbs,0.0,,mixed,Coastal
+002,2019,1,Kwale,2019-01-01,18.6,26.55,chirps+openmeteo,0.5444,0.3523,modis,107.28,wb_foodindex,40.5,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2019,2,Kwale,2019-02-01,11.37,27.03,chirps+openmeteo,0.4534,0.279,modis,107.28,wb_foodindex,39.62,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2019,3,Kwale,2019-03-01,17.45,27.51,chirps+openmeteo,0.4093,0.2467,modis,107.28,wb_foodindex,38.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2019,4,Kwale,2019-04-01,66.11,26.88,chirps+openmeteo,0.4012,0.2376,modis,107.28,wb_foodindex,37.75,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2019,5,Kwale,2019-05-01,467.6,24.31,chirps+openmeteo,0.396,0.2508,modis,107.28,wb_foodindex,46.5,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2019,6,Kwale,2019-06-01,61.51,24.0,chirps+openmeteo,0.6511,0.4351,modis,107.28,wb_foodindex,46.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2019,7,Kwale,2019-07-01,84.28,23.38,chirps+openmeteo,0.5638,0.3546,modis,107.28,wb_foodindex,48.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2019,8,Kwale,2019-08-01,68.07,23.31,chirps+openmeteo,0.559,0.3475,modis,107.28,wb_foodindex,51.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2019,9,Kwale,2019-09-01,92.54,23.76,chirps+openmeteo,0.4962,0.3049,modis,107.28,wb_foodindex,49.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2019,10,Kwale,2019-10-01,433.25,24.29,chirps+openmeteo,0.5637,0.3817,modis,107.28,wb_foodindex,47.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2019,11,Kwale,2019-11-01,170.08,25.39,chirps+openmeteo,0.6658,0.4597,modis,107.28,wb_foodindex,49.88,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2019,12,Kwale,2019-12-01,163.52,26.05,chirps+openmeteo,0.7007,0.4957,modis,107.28,wb_foodindex,46.5,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,1,Kwale,2020-01-01,60.19,26.69,chirps+openmeteo,0.6331,0.4406,modis,125.82,wb_foodindex,43.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,2,Kwale,2020-02-01,14.62,27.01,chirps+openmeteo,0.5964,0.4159,modis,125.82,wb_foodindex,45.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2020,3,Kwale,2020-03-01,112.19,26.96,chirps+openmeteo,0.6085,0.3871,modis,125.82,wb_foodindex,45.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,4,Kwale,2020-04-01,553.42,25.5,chirps+openmeteo,0.6142,0.3929,modis,125.82,wb_foodindex,42.25,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,5,Kwale,2020-05-01,219.65,24.28,chirps+openmeteo,0.6861,0.4127,modis,125.82,wb_foodindex,41.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,6,Kwale,2020-06-01,130.86,23.72,chirps+openmeteo,0.6513,0.4238,modis,125.82,wb_foodindex,47.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2020,7,Kwale,2020-07-01,113.23,23.05,chirps+openmeteo,0.55,0.3439,modis,125.82,wb_foodindex,43.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,8,Kwale,2020-08-01,49.47,22.89,chirps+openmeteo,0.473,0.3001,modis,125.82,wb_foodindex,40.5,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,9,Kwale,2020-09-01,74.79,23.7,chirps+openmeteo,0.4466,0.268,modis,125.82,wb_foodindex,47.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,10,Kwale,2020-10-01,59.35,25.1,chirps+openmeteo,0.4491,0.275,modis,125.82,wb_foodindex,45.5,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2020,11,Kwale,2020-11-01,183.63,25.41,chirps+openmeteo,0.596,0.3974,modis,125.82,wb_foodindex,41.5,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2020,12,Kwale,2020-12-01,67.48,26.41,chirps+openmeteo,0.6098,0.4068,modis,125.82,wb_foodindex,46.4,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,1,Kwale,2021-01-01,36.57,26.27,chirps+openmeteo,0.5283,0.3157,modis,123.29,wb_foodindex,46.95,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,2,Kwale,2021-02-01,16.99,26.76,chirps+openmeteo,0.4691,0.2994,modis,123.29,wb_foodindex,48.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2021,3,Kwale,2021-03-01,23.55,27.28,chirps+openmeteo,0.4087,0.2499,modis,123.29,wb_foodindex,46.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,4,Kwale,2021-04-01,117.16,25.48,chirps+openmeteo,0.4101,0.2428,modis,123.29,wb_foodindex,43.9,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,5,Kwale,2021-05-01,189.99,24.72,chirps+openmeteo,0.4991,0.3196,modis,123.29,wb_foodindex,43.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,6,Kwale,2021-06-01,65.88,23.44,chirps+openmeteo,0.4932,0.3084,modis,123.29,wb_foodindex,43.25,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2021,7,Kwale,2021-07-01,90.44,22.79,chirps+openmeteo,0.4538,0.2943,modis,123.29,wb_foodindex,44.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,8,Kwale,2021-08-01,54.35,23.05,chirps+openmeteo,0.4257,0.2592,modis,123.29,wb_foodindex,45.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,9,Kwale,2021-09-01,55.27,23.83,chirps+openmeteo,0.3966,0.2381,modis,123.29,wb_foodindex,44.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,10,Kwale,2021-10-01,58.98,25.25,chirps+openmeteo,0.3428,0.2213,modis,123.29,wb_foodindex,40.5,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2021,11,Kwale,2021-11-01,48.67,26.59,chirps+openmeteo,0.3295,0.196,modis,123.29,wb_foodindex,43.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2021,12,Kwale,2021-12-01,155.42,26.1,chirps+openmeteo,0.4626,0.2882,modis,123.29,wb_foodindex,46.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,1,Kwale,2022-01-01,19.28,26.99,chirps+openmeteo,0.4589,0.3007,modis,112.38,wb_foodindex,44.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,2,Kwale,2022-02-01,13.97,27.39,chirps+openmeteo,0.3822,0.2446,modis,112.38,wb_foodindex,47.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2022,3,Kwale,2022-03-01,27.15,27.35,chirps+openmeteo,0.3485,0.2118,modis,112.38,wb_foodindex,47.8,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,4,Kwale,2022-04-01,154.74,26.18,chirps+openmeteo,0.3592,0.2196,modis,112.38,wb_foodindex,50.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,5,Kwale,2022-05-01,166.65,25.2,chirps+openmeteo,0.4486,0.2928,modis,112.38,wb_foodindex,59.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,6,Kwale,2022-06-01,90.25,23.64,chirps+openmeteo,0.4829,0.319,modis,112.38,wb_foodindex,70.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2022,7,Kwale,2022-07-01,174.77,22.32,chirps+openmeteo,0.5076,0.3298,modis,112.38,wb_foodindex,88.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,8,Kwale,2022-08-01,50.85,22.61,chirps+openmeteo,0.5308,0.3441,modis,112.38,wb_foodindex,78.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,9,Kwale,2022-09-01,50.82,23.65,chirps+openmeteo,0.4247,0.2739,modis,112.38,wb_foodindex,70.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,10,Kwale,2022-10-01,46.23,24.56,chirps+openmeteo,0.3439,0.2184,modis,112.38,wb_foodindex,70.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+002,2022,11,Kwale,2022-11-01,119.94,25.53,chirps+openmeteo,0.3908,0.2395,modis,112.38,wb_foodindex,87.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+002,2022,12,Kwale,2022-12-01,48.79,26.65,chirps+openmeteo,0.4451,0.283,modis,112.38,wb_foodindex,75.0,fewsnet_prices,687435,0.4451,hdx_knbs,25.0,,mixed,Coastal
+003,2019,1,Kilifi,2019-01-01,24.14,27.68,chirps+openmeteo,0.468,0.2941,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2019,2,Kilifi,2019-02-01,5.58,28.02,chirps+openmeteo,0.4254,0.2783,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2019,3,Kilifi,2019-03-01,16.84,28.62,chirps+openmeteo,0.3888,0.2419,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2019,4,Kilifi,2019-04-01,52.9,28.42,chirps+openmeteo,0.3994,0.2393,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2019,5,Kilifi,2019-05-01,403.8,25.36,chirps+openmeteo,0.4235,0.2647,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2019,6,Kilifi,2019-06-01,80.62,25.28,chirps+openmeteo,0.6274,0.4189,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2019,7,Kilifi,2019-07-01,102.91,24.8,chirps+openmeteo,0.6108,0.3969,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2019,8,Kilifi,2019-08-01,51.54,24.79,chirps+openmeteo,0.5899,0.3829,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2019,9,Kilifi,2019-09-01,78.79,25.3,chirps+openmeteo,0.5325,0.3517,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2019,10,Kilifi,2019-10-01,368.08,25.18,chirps+openmeteo,0.5845,0.409,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2019,11,Kilifi,2019-11-01,229.43,26.13,chirps+openmeteo,0.6825,0.4932,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2019,12,Kilifi,2019-12-01,138.55,26.74,chirps+openmeteo,0.6701,0.4882,modis,107.28,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,1,Kilifi,2020-01-01,48.35,27.4,chirps+openmeteo,0.6114,0.4438,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,2,Kilifi,2020-02-01,10.34,27.89,chirps+openmeteo,0.5878,0.4084,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2020,3,Kilifi,2020-03-01,80.55,28.23,chirps+openmeteo,0.5768,0.3648,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,4,Kilifi,2020-04-01,392.71,26.78,chirps+openmeteo,0.5827,0.3985,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,5,Kilifi,2020-05-01,202.9,25.29,chirps+openmeteo,0.6937,0.4353,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,6,Kilifi,2020-06-01,149.02,24.75,chirps+openmeteo,0.6693,0.4409,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2020,7,Kilifi,2020-07-01,124.86,24.42,chirps+openmeteo,0.5942,0.4026,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,8,Kilifi,2020-08-01,38.8,24.43,chirps+openmeteo,0.589,0.3978,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,9,Kilifi,2020-09-01,53.87,25.06,chirps+openmeteo,0.5327,0.3365,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,10,Kilifi,2020-10-01,52.88,26.33,chirps+openmeteo,0.5204,0.3417,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2020,11,Kilifi,2020-11-01,179.34,26.57,chirps+openmeteo,0.5967,0.3941,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2020,12,Kilifi,2020-12-01,54.88,27.52,chirps+openmeteo,0.5697,0.3699,modis,125.82,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,1,Kilifi,2021-01-01,16.64,27.27,chirps+openmeteo,0.4826,0.2923,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,2,Kilifi,2021-02-01,14.07,27.65,chirps+openmeteo,0.424,0.2779,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2021,3,Kilifi,2021-03-01,15.19,28.19,chirps+openmeteo,0.3872,0.2395,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,4,Kilifi,2021-04-01,68.41,27.4,chirps+openmeteo,0.4193,0.2577,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,5,Kilifi,2021-05-01,143.42,26.38,chirps+openmeteo,0.5129,0.3225,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,6,Kilifi,2021-06-01,72.86,24.81,chirps+openmeteo,0.5111,0.3197,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2021,7,Kilifi,2021-07-01,103.41,24.34,chirps+openmeteo,0.548,0.3519,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,8,Kilifi,2021-08-01,67.52,24.66,chirps+openmeteo,0.468,0.2852,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,9,Kilifi,2021-09-01,37.1,25.31,chirps+openmeteo,0.421,0.2448,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,10,Kilifi,2021-10-01,50.41,26.47,chirps+openmeteo,0.3725,0.2213,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2021,11,Kilifi,2021-11-01,54.82,27.45,chirps+openmeteo,0.3465,0.205,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2021,12,Kilifi,2021-12-01,189.2,26.73,chirps+openmeteo,0.5065,0.3259,modis,123.29,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,1,Kilifi,2022-01-01,10.53,27.55,chirps+openmeteo,0.5396,0.363,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,2,Kilifi,2022-02-01,10.45,27.83,chirps+openmeteo,0.4318,0.2737,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2022,3,Kilifi,2022-03-01,23.2,28.15,chirps+openmeteo,0.3812,0.2293,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,4,Kilifi,2022-04-01,111.2,27.5,chirps+openmeteo,0.3655,0.2265,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,5,Kilifi,2022-05-01,201.4,26.53,chirps+openmeteo,0.4606,0.2996,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,6,Kilifi,2022-06-01,100.55,24.95,chirps+openmeteo,0.5357,0.3614,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2022,7,Kilifi,2022-07-01,160.99,23.76,chirps+openmeteo,0.6028,0.4023,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,8,Kilifi,2022-08-01,63.77,24.34,chirps+openmeteo,0.5412,0.3591,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,9,Kilifi,2022-09-01,34.13,25.17,chirps+openmeteo,0.4448,0.2826,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,10,Kilifi,2022-10-01,44.82,25.85,chirps+openmeteo,0.351,0.2253,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal
+003,2022,11,Kilifi,2022-11-01,119.62,26.61,chirps+openmeteo,0.4177,0.2649,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+003,2022,12,Kilifi,2022-12-01,36.6,27.46,chirps+openmeteo,0.4796,0.2984,modis,112.38,wb_foodindex,,,611023,0.4636,hdx_knbs,25.0,,mixed,Coastal
+004,2019,1,Tana River,2019-01-01,29.51,28.27,chirps+openmeteo,0.4505,0.301,modis,107.28,wb_foodindex,63.0,fewsnet_prices,439082,0.6729,hdx_knbs,25.0,,mixed,Riversine / ASAL
+004,2019,2,Tana River,2019-02-01,6.19,28.62,chirps+openmeteo,0.4145,0.285,modis,107.28,wb_foodindex,57.0,fewsnet_prices,439082,0.6729,hdx_knbs,25.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2019,3,Tana River,2019-03-01,12.62,29.41,chirps+openmeteo,0.3988,0.2513,modis,107.28,wb_foodindex,52.0,fewsnet_prices,439082,0.6729,hdx_knbs,31.25,,mixed,Riversine / ASAL
+004,2019,4,Tana River,2019-04-01,62.29,29.43,chirps+openmeteo,0.4438,0.2756,modis,107.28,wb_foodindex,50.5,fewsnet_prices,439082,0.6729,hdx_knbs,37.5,,mixed,Riversine / ASAL
+004,2019,5,Tana River,2019-05-01,177.83,26.37,chirps+openmeteo,0.4524,0.2801,modis,107.28,wb_foodindex,50.0,fewsnet_prices,439082,0.6729,hdx_knbs,43.75,,mixed,Riversine / ASAL
+004,2019,6,Tana River,2019-06-01,49.97,26.41,chirps+openmeteo,0.5512,0.3586,modis,107.28,wb_foodindex,54.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2019,7,Tana River,2019-07-01,66.6,25.95,chirps+openmeteo,0.5055,0.3056,modis,107.28,wb_foodindex,52.5,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2019,8,Tana River,2019-08-01,34.02,25.85,chirps+openmeteo,0.4733,0.28,modis,107.28,wb_foodindex,57.5,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2019,9,Tana River,2019-09-01,35.77,26.16,chirps+openmeteo,0.4159,0.2651,modis,107.28,wb_foodindex,51.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2019,10,Tana River,2019-10-01,230.62,26.15,chirps+openmeteo,0.5574,0.3753,modis,107.28,wb_foodindex,45.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2019,11,Tana River,2019-11-01,211.52,26.84,chirps+openmeteo,0.6685,0.4566,modis,107.28,wb_foodindex,54.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2019,12,Tana River,2019-12-01,144.25,27.49,chirps+openmeteo,0.687,0.4739,modis,107.28,wb_foodindex,66.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2020,1,Tana River,2020-01-01,55.77,28.21,chirps+openmeteo,0.6304,0.4218,modis,125.82,wb_foodindex,69.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2020,2,Tana River,2020-02-01,8.11,28.49,chirps+openmeteo,0.5248,0.3647,modis,125.82,wb_foodindex,53.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2020,3,Tana River,2020-03-01,87.48,29.2,chirps+openmeteo,0.5338,0.3537,modis,125.82,wb_foodindex,51.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2020,4,Tana River,2020-04-01,196.09,27.71,chirps+openmeteo,0.6303,0.4119,modis,125.82,wb_foodindex,49.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2020,5,Tana River,2020-05-01,106.98,26.17,chirps+openmeteo,0.6167,0.4063,modis,125.82,wb_foodindex,53.25,,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2020,6,Tana River,2020-06-01,58.23,25.92,chirps+openmeteo,0.5967,0.3741,modis,125.82,wb_foodindex,57.5,,439082,0.6729,hdx_knbs,50.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2020,7,Tana River,2020-07-01,73.91,25.84,chirps+openmeteo,0.5002,0.3163,modis,125.82,wb_foodindex,61.75,,439082,0.6729,hdx_knbs,43.75,,mixed,Riversine / ASAL
+004,2020,8,Tana River,2020-08-01,28.65,25.45,chirps+openmeteo,0.4652,0.3007,modis,125.82,wb_foodindex,66.0,fewsnet_prices,439082,0.6729,hdx_knbs,37.5,,mixed,Riversine / ASAL
+004,2020,9,Tana River,2020-09-01,29.57,26.07,chirps+openmeteo,0.4429,0.282,modis,125.82,wb_foodindex,56.0,fewsnet_prices,439082,0.6729,hdx_knbs,31.25,,mixed,Riversine / ASAL
+004,2020,10,Tana River,2020-10-01,18.89,27.44,chirps+openmeteo,0.4377,0.2749,modis,125.82,wb_foodindex,53.0,fewsnet_prices,439082,0.6729,hdx_knbs,25.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2020,11,Tana River,2020-11-01,120.99,27.35,chirps+openmeteo,0.5918,0.3905,modis,125.82,wb_foodindex,46.0,fewsnet_prices,439082,0.6729,hdx_knbs,31.25,,mixed,Riversine / ASAL
+004,2020,12,Tana River,2020-12-01,48.32,28.01,chirps+openmeteo,0.5421,0.3517,modis,125.82,wb_foodindex,45.0,fewsnet_prices,439082,0.6729,hdx_knbs,37.5,,mixed,Riversine / ASAL
+004,2021,1,Tana River,2021-01-01,9.53,28.03,chirps+openmeteo,0.4549,0.2859,modis,123.29,wb_foodindex,43.0,fewsnet_prices,439082,0.6729,hdx_knbs,43.75,,mixed,Riversine / ASAL
+004,2021,2,Tana River,2021-02-01,6.31,28.37,chirps+openmeteo,0.4454,0.2871,modis,123.29,wb_foodindex,41.5,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2021,3,Tana River,2021-03-01,13.97,28.78,chirps+openmeteo,0.3851,0.2664,modis,123.29,wb_foodindex,43.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2021,4,Tana River,2021-04-01,62.26,28.42,chirps+openmeteo,0.4895,0.303,modis,123.29,wb_foodindex,45.5,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2021,5,Tana River,2021-05-01,59.94,27.39,chirps+openmeteo,0.5011,0.3067,modis,123.29,wb_foodindex,42.5,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2021,6,Tana River,2021-06-01,63.76,25.8,chirps+openmeteo,0.4654,0.2791,modis,123.29,wb_foodindex,43.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2021,7,Tana River,2021-07-01,47.93,25.48,chirps+openmeteo,0.4166,0.2515,modis,123.29,wb_foodindex,44.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2021,8,Tana River,2021-08-01,26.41,25.53,chirps+openmeteo,0.3877,0.2283,modis,123.29,wb_foodindex,51.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2021,9,Tana River,2021-09-01,18.7,26.1,chirps+openmeteo,0.3799,0.2167,modis,123.29,wb_foodindex,51.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2021,10,Tana River,2021-10-01,13.55,27.15,chirps+openmeteo,0.3361,0.2066,modis,123.29,wb_foodindex,50.35,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2021,11,Tana River,2021-11-01,49.48,28.16,chirps+openmeteo,0.3519,0.2165,modis,123.29,wb_foodindex,50.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2021,12,Tana River,2021-12-01,215.52,26.95,chirps+openmeteo,0.5542,0.3509,modis,123.29,wb_foodindex,50.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2022,1,Tana River,2022-01-01,8.82,28.53,chirps+openmeteo,0.5997,0.4007,modis,112.38,wb_foodindex,61.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,,mixed,Riversine / ASAL
+004,2022,2,Tana River,2022-02-01,9.35,28.65,chirps+openmeteo,0.4889,0.3082,modis,112.38,wb_foodindex,61.0,fewsnet_prices,439082,0.6729,hdx_knbs,50.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2022,3,Tana River,2022-03-01,14.7,28.82,chirps+openmeteo,0.401,0.2466,modis,112.38,wb_foodindex,62.0,fewsnet_prices,439082,0.6729,hdx_knbs,56.25,,mixed,Riversine / ASAL
+004,2022,4,Tana River,2022-04-01,64.91,28.45,chirps+openmeteo,0.3953,0.2503,modis,112.38,wb_foodindex,64.0,fewsnet_prices,439082,0.6729,hdx_knbs,62.5,,mixed,Riversine / ASAL
+004,2022,5,Tana River,2022-05-01,140.55,27.38,chirps+openmeteo,0.4636,0.29,modis,112.38,wb_foodindex,72.0,fewsnet_prices,439082,0.6729,hdx_knbs,68.75,,mixed,Riversine / ASAL
+004,2022,6,Tana River,2022-06-01,58.38,26.02,chirps+openmeteo,0.5005,0.3081,modis,112.38,wb_foodindex,72.0,fewsnet_prices,439082,0.6729,hdx_knbs,75.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2022,7,Tana River,2022-07-01,57.09,24.81,chirps+openmeteo,0.4663,0.2809,modis,112.38,wb_foodindex,91.0,fewsnet_prices,439082,0.6729,hdx_knbs,75.0,,mixed,Riversine / ASAL
+004,2022,8,Tana River,2022-08-01,26.73,25.14,chirps+openmeteo,0.4281,0.2634,modis,112.38,wb_foodindex,88.0,fewsnet_prices,439082,0.6729,hdx_knbs,75.0,,mixed,Riversine / ASAL
+004,2022,9,Tana River,2022-09-01,15.7,25.77,chirps+openmeteo,0.3588,0.2305,modis,112.38,wb_foodindex,93.0,fewsnet_prices,439082,0.6729,hdx_knbs,75.0,,mixed,Riversine / ASAL
+004,2022,10,Tana River,2022-10-01,20.66,26.49,chirps+openmeteo,0.2857,0.1815,modis,112.38,wb_foodindex,96.0,fewsnet_prices,439082,0.6729,hdx_knbs,75.0,fewsnet_ipc,mixed,Riversine / ASAL
+004,2022,11,Tana River,2022-11-01,110.17,26.73,chirps+openmeteo,0.4676,0.3055,modis,112.38,wb_foodindex,88.0,fewsnet_prices,439082,0.6729,hdx_knbs,75.0,,mixed,Riversine / ASAL
+004,2022,12,Tana River,2022-12-01,26.79,27.86,chirps+openmeteo,0.5246,0.3387,modis,112.38,wb_foodindex,97.0,fewsnet_prices,439082,0.6729,hdx_knbs,75.0,,mixed,Riversine / ASAL
+005,2019,1,Lamu,2019-01-01,12.86,27.2,chirps+openmeteo,0.5231,0.3344,modis,107.28,wb_foodindex,51.5,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2019,2,Lamu,2019-02-01,2.94,27.49,chirps+openmeteo,0.5034,0.3114,modis,107.28,wb_foodindex,54.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2019,3,Lamu,2019-03-01,9.36,28.24,chirps+openmeteo,0.4766,0.279,modis,107.28,wb_foodindex,56.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2019,4,Lamu,2019-04-01,41.84,28.73,chirps+openmeteo,0.4973,0.2801,modis,107.28,wb_foodindex,56.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2019,5,Lamu,2019-05-01,323.0,26.55,chirps+openmeteo,0.5189,0.3091,modis,107.28,wb_foodindex,55.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2019,6,Lamu,2019-06-01,57.67,26.2,chirps+openmeteo,0.6668,0.4255,modis,107.28,wb_foodindex,47.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2019,7,Lamu,2019-07-01,85.86,25.49,chirps+openmeteo,0.6805,0.4426,modis,107.28,wb_foodindex,48.0,fewsnet_prices,160948,0.3026,hdx_knbs,31.25,,mixed,Coastal / Arid ASAL
+005,2019,8,Lamu,2019-08-01,30.25,25.31,chirps+openmeteo,0.6213,0.3989,modis,107.28,wb_foodindex,50.0,fewsnet_prices,160948,0.3026,hdx_knbs,37.5,,mixed,Coastal / Arid ASAL
+005,2019,9,Lamu,2019-09-01,38.64,25.65,chirps+openmeteo,0.5726,0.3664,modis,107.28,wb_foodindex,42.0,fewsnet_prices,160948,0.3026,hdx_knbs,43.75,,mixed,Coastal / Arid ASAL
+005,2019,10,Lamu,2019-10-01,118.37,26.1,chirps+openmeteo,0.6049,0.397,modis,107.28,wb_foodindex,53.25,fewsnet_prices,160948,0.3026,hdx_knbs,50.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2019,11,Lamu,2019-11-01,152.94,26.93,chirps+openmeteo,0.6919,0.4486,modis,107.28,wb_foodindex,53.0,fewsnet_prices,160948,0.3026,hdx_knbs,43.75,,mixed,Coastal / Arid ASAL
+005,2019,12,Lamu,2019-12-01,73.21,27.67,chirps+openmeteo,0.7213,0.4484,modis,107.28,wb_foodindex,73.0,fewsnet_prices,160948,0.3026,hdx_knbs,37.5,,mixed,Coastal / Arid ASAL
+005,2020,1,Lamu,2020-01-01,28.59,27.89,chirps+openmeteo,0.6909,0.4513,modis,125.82,wb_foodindex,69.7,fewsnet_prices,160948,0.3026,hdx_knbs,31.25,,mixed,Coastal / Arid ASAL
+005,2020,2,Lamu,2020-02-01,2.88,28.28,chirps+openmeteo,0.5804,0.3798,modis,125.82,wb_foodindex,65.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2020,3,Lamu,2020-03-01,48.38,28.99,chirps+openmeteo,0.5876,0.3741,modis,125.82,wb_foodindex,51.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2020,4,Lamu,2020-04-01,254.32,27.69,chirps+openmeteo,0.6493,0.397,modis,125.82,wb_foodindex,54.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2020,5,Lamu,2020-05-01,214.06,26.39,chirps+openmeteo,0.689,0.4733,modis,125.82,wb_foodindex,52.666666666666664,,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2020,6,Lamu,2020-06-01,96.61,25.84,chirps+openmeteo,0.6875,0.45,modis,125.82,wb_foodindex,51.333333333333336,,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2020,7,Lamu,2020-07-01,94.3,25.22,chirps+openmeteo,0.6586,0.4475,modis,125.82,wb_foodindex,50.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2020,8,Lamu,2020-08-01,34.28,24.91,chirps+openmeteo,0.6379,0.4134,modis,125.82,wb_foodindex,43.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2020,9,Lamu,2020-09-01,24.24,25.54,chirps+openmeteo,0.5836,0.3793,modis,125.82,wb_foodindex,35.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2020,10,Lamu,2020-10-01,24.95,26.66,chirps+openmeteo,0.5692,0.3596,modis,125.82,wb_foodindex,40.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2020,11,Lamu,2020-11-01,57.16,27.38,chirps+openmeteo,0.6083,0.3743,modis,125.82,wb_foodindex,40.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2020,12,Lamu,2020-12-01,19.64,27.9,chirps+openmeteo,0.5927,0.3822,modis,125.82,wb_foodindex,42.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,1,Lamu,2021-01-01,5.35,27.1,chirps+openmeteo,0.5404,0.3409,modis,123.29,wb_foodindex,44.55,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,2,Lamu,2021-02-01,3.04,27.09,chirps+openmeteo,0.4761,0.293,modis,123.29,wb_foodindex,45.5,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2021,3,Lamu,2021-03-01,13.14,27.65,chirps+openmeteo,0.4381,0.26,modis,123.29,wb_foodindex,45.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,4,Lamu,2021-04-01,42.07,27.35,chirps+openmeteo,0.5218,0.3134,modis,123.29,wb_foodindex,45.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,5,Lamu,2021-05-01,66.54,26.66,chirps+openmeteo,0.5227,0.3154,modis,123.29,wb_foodindex,44.5,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,6,Lamu,2021-06-01,91.59,25.46,chirps+openmeteo,0.5808,0.3417,modis,123.29,wb_foodindex,46.75,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2021,7,Lamu,2021-07-01,57.1,24.99,chirps+openmeteo,0.5667,0.3548,modis,123.29,wb_foodindex,50.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,8,Lamu,2021-08-01,21.4,25.09,chirps+openmeteo,0.5292,0.3144,modis,123.29,wb_foodindex,46.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,9,Lamu,2021-09-01,16.67,25.55,chirps+openmeteo,0.4727,0.2745,modis,123.29,wb_foodindex,54.35,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,10,Lamu,2021-10-01,14.93,26.61,chirps+openmeteo,0.4285,0.252,modis,123.29,wb_foodindex,53.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2021,11,Lamu,2021-11-01,27.65,27.7,chirps+openmeteo,0.4133,0.2375,modis,123.29,wb_foodindex,53.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2021,12,Lamu,2021-12-01,137.77,27.26,chirps+openmeteo,0.5712,0.3524,modis,123.29,wb_foodindex,52.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,1,Lamu,2022-01-01,5.17,27.3,chirps+openmeteo,0.6304,0.4026,modis,112.38,wb_foodindex,54.5,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,2,Lamu,2022-02-01,3.7,27.25,chirps+openmeteo,0.5473,0.3485,modis,112.38,wb_foodindex,53.5,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2022,3,Lamu,2022-03-01,7.83,27.79,chirps+openmeteo,0.4438,0.2673,modis,112.38,wb_foodindex,44.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,4,Lamu,2022-04-01,56.98,28.18,chirps+openmeteo,0.4598,0.2734,modis,112.38,wb_foodindex,51.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,5,Lamu,2022-05-01,242.4,26.72,chirps+openmeteo,0.546,0.3297,modis,112.38,wb_foodindex,49.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,6,Lamu,2022-06-01,87.29,25.57,chirps+openmeteo,0.673,0.4406,modis,112.38,wb_foodindex,56.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2022,7,Lamu,2022-07-01,70.71,24.58,chirps+openmeteo,0.6791,0.4497,modis,112.38,wb_foodindex,78.75,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,8,Lamu,2022-08-01,21.47,24.59,chirps+openmeteo,0.6563,0.4428,modis,112.38,wb_foodindex,79.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,9,Lamu,2022-09-01,10.58,25.21,chirps+openmeteo,0.5556,0.3757,modis,112.38,wb_foodindex,77.5,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,10,Lamu,2022-10-01,18.44,25.89,chirps+openmeteo,0.4302,0.2819,modis,112.38,wb_foodindex,80.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,fewsnet_ipc,mixed,Coastal / Arid ASAL
+005,2022,11,Lamu,2022-11-01,85.55,26.85,chirps+openmeteo,0.546,0.3418,modis,112.38,wb_foodindex,80.0,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+005,2022,12,Lamu,2022-12-01,14.93,27.62,chirps+openmeteo,0.6099,0.3904,modis,112.38,wb_foodindex,78.5,fewsnet_prices,160948,0.3026,hdx_knbs,25.0,,mixed,Coastal / Arid ASAL
+006,2019,1,Isiolo,2019-01-01,41.8,24.13,chirps+openmeteo,0.5842,0.3431,modis,107.28,wb_foodindex,39.33,fewsnet_prices,231269,0.3949,hdx_knbs,25.0,,mixed,Arid ASAL
+006,2019,2,Isiolo,2019-02-01,29.01,25.23,chirps+openmeteo,0.4935,0.298,modis,107.28,wb_foodindex,39.0,fewsnet_prices,231269,0.3949,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+006,2019,3,Isiolo,2019-03-01,24.55,26.14,chirps+openmeteo,0.4679,0.2724,modis,107.28,wb_foodindex,40.42,fewsnet_prices,231269,0.3949,hdx_knbs,31.25,,mixed,Arid ASAL
+006,2019,4,Isiolo,2019-04-01,135.34,25.41,chirps+openmeteo,0.4813,0.277,modis,107.28,wb_foodindex,42.33,fewsnet_prices,231269,0.3949,hdx_knbs,37.5,,mixed,Arid ASAL
+006,2019,5,Isiolo,2019-05-01,71.43,24.3,chirps+openmeteo,0.5497,0.3207,modis,107.28,wb_foodindex,52.5,fewsnet_prices,231269,0.3949,hdx_knbs,43.75,,mixed,Arid ASAL
+006,2019,6,Isiolo,2019-06-01,25.59,22.85,chirps+openmeteo,0.5412,0.3274,modis,107.28,wb_foodindex,53.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+006,2019,7,Isiolo,2019-07-01,10.21,22.93,chirps+openmeteo,0.4932,0.2921,modis,107.28,wb_foodindex,55.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2019,8,Isiolo,2019-08-01,12.05,23.2,chirps+openmeteo,0.4778,0.2524,modis,107.28,wb_foodindex,55.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2019,9,Isiolo,2019-09-01,14.99,23.91,chirps+openmeteo,0.4595,0.2525,modis,107.28,wb_foodindex,51.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2019,10,Isiolo,2019-10-01,327.48,22.73,chirps+openmeteo,0.4596,0.2722,modis,107.28,wb_foodindex,50.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+006,2019,11,Isiolo,2019-11-01,399.8,21.53,chirps+openmeteo,0.6441,0.3726,modis,107.28,wb_foodindex,50.0,fewsnet_prices,231269,0.3949,hdx_knbs,43.75,,mixed,Arid ASAL
+006,2019,12,Isiolo,2019-12-01,238.0,21.24,chirps+openmeteo,0.6859,0.4102,modis,107.28,wb_foodindex,50.5,fewsnet_prices,231269,0.3949,hdx_knbs,37.5,,mixed,Arid ASAL
+006,2020,1,Isiolo,2020-01-01,89.03,22.05,chirps+openmeteo,0.639,0.3816,modis,125.82,wb_foodindex,49.0,fewsnet_prices,231269,0.3949,hdx_knbs,31.25,,mixed,Arid ASAL
+006,2020,2,Isiolo,2020-02-01,65.58,23.22,chirps+openmeteo,0.6286,0.3649,modis,125.82,wb_foodindex,49.0,fewsnet_prices,231269,0.3949,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+006,2020,3,Isiolo,2020-03-01,145.46,24.19,chirps+openmeteo,0.6003,0.3338,modis,125.82,wb_foodindex,50.33,fewsnet_prices,231269,0.3949,hdx_knbs,25.0,,mixed,Arid ASAL
+006,2020,4,Isiolo,2020-04-01,433.99,23.07,chirps+openmeteo,0.6431,0.3939,modis,125.82,wb_foodindex,51.5,fewsnet_prices,231269,0.3949,hdx_knbs,25.0,,mixed,Arid ASAL
+006,2020,5,Isiolo,2020-05-01,86.42,23.38,chirps+openmeteo,0.6843,0.4333,modis,125.82,wb_foodindex,50.125,,231269,0.3949,hdx_knbs,25.0,,mixed,Arid ASAL
+006,2020,6,Isiolo,2020-06-01,21.72,23.32,chirps+openmeteo,0.6164,0.3618,modis,125.82,wb_foodindex,48.75,,231269,0.3949,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+006,2020,7,Isiolo,2020-07-01,15.27,22.46,chirps+openmeteo,0.5324,0.3177,modis,125.82,wb_foodindex,47.375,,231269,0.3949,hdx_knbs,25.0,,mixed,Arid ASAL
+006,2020,8,Isiolo,2020-08-01,26.31,22.5,chirps+openmeteo,0.5209,0.2679,modis,125.82,wb_foodindex,46.0,fewsnet_prices,231269,0.3949,hdx_knbs,25.0,,mixed,Arid ASAL
+006,2020,9,Isiolo,2020-09-01,16.07,23.46,chirps+openmeteo,0.4994,0.2884,modis,125.82,wb_foodindex,45.5,fewsnet_prices,231269,0.3949,hdx_knbs,25.0,,mixed,Arid ASAL
+006,2020,10,Isiolo,2020-10-01,94.94,24.38,chirps+openmeteo,0.4892,0.2781,modis,125.82,wb_foodindex,45.5,fewsnet_prices,231269,0.3949,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+006,2020,11,Isiolo,2020-11-01,164.71,22.41,chirps+openmeteo,0.5805,0.3256,modis,125.82,wb_foodindex,43.27,fewsnet_prices,231269,0.3949,hdx_knbs,31.25,,mixed,Arid ASAL
+006,2020,12,Isiolo,2020-12-01,71.09,23.35,chirps+openmeteo,0.597,0.3539,modis,125.82,wb_foodindex,44.0,fewsnet_prices,231269,0.3949,hdx_knbs,37.5,,mixed,Arid ASAL
+006,2021,1,Isiolo,2021-01-01,39.17,23.75,chirps+openmeteo,0.5628,0.33,modis,123.29,wb_foodindex,45.47,fewsnet_prices,231269,0.3949,hdx_knbs,43.75,,mixed,Arid ASAL
+006,2021,2,Isiolo,2021-02-01,30.65,24.62,chirps+openmeteo,0.5254,0.2823,modis,123.29,wb_foodindex,51.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+006,2021,3,Isiolo,2021-03-01,55.39,25.51,chirps+openmeteo,0.5077,0.2778,modis,123.29,wb_foodindex,48.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2021,4,Isiolo,2021-04-01,140.29,24.07,chirps+openmeteo,0.5279,0.2922,modis,123.29,wb_foodindex,50.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2021,5,Isiolo,2021-05-01,144.79,22.97,chirps+openmeteo,0.5623,0.3494,modis,123.29,wb_foodindex,51.77,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2021,6,Isiolo,2021-06-01,5.17,22.59,chirps+openmeteo,0.5496,0.3205,modis,123.29,wb_foodindex,51.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+006,2021,7,Isiolo,2021-07-01,11.64,22.21,chirps+openmeteo,0.4256,0.2521,modis,123.29,wb_foodindex,50.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2021,8,Isiolo,2021-08-01,8.2,23.26,chirps+openmeteo,0.4504,0.2566,modis,123.29,wb_foodindex,45.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2021,9,Isiolo,2021-09-01,7.06,23.85,chirps+openmeteo,0.4398,0.2598,modis,123.29,wb_foodindex,46.27,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2021,10,Isiolo,2021-10-01,67.24,24.94,chirps+openmeteo,0.4564,0.2465,modis,123.29,wb_foodindex,47.67,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+006,2021,11,Isiolo,2021-11-01,128.92,24.4,chirps+openmeteo,0.523,0.31,modis,123.29,wb_foodindex,51.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2021,12,Isiolo,2021-12-01,160.3,22.09,chirps+openmeteo,0.6107,0.3641,modis,123.29,wb_foodindex,53.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,1,Isiolo,2022-01-01,37.2,23.45,chirps+openmeteo,0.594,0.3522,modis,112.38,wb_foodindex,53.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,2,Isiolo,2022-02-01,21.26,25.87,chirps+openmeteo,0.5134,0.2835,modis,112.38,wb_foodindex,54.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+006,2022,3,Isiolo,2022-03-01,39.55,25.97,chirps+openmeteo,0.4696,0.2756,modis,112.38,wb_foodindex,54.55,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,4,Isiolo,2022-04-01,130.75,24.64,chirps+openmeteo,0.5086,0.2818,modis,112.38,wb_foodindex,59.8,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,5,Isiolo,2022-05-01,25.08,24.45,chirps+openmeteo,0.5267,0.3037,modis,112.38,wb_foodindex,64.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,6,Isiolo,2022-06-01,5.7,23.05,chirps+openmeteo,0.4904,0.2914,modis,112.38,wb_foodindex,82.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+006,2022,7,Isiolo,2022-07-01,12.93,21.92,chirps+openmeteo,0.4585,0.2607,modis,112.38,wb_foodindex,96.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,8,Isiolo,2022-08-01,20.93,22.1,chirps+openmeteo,0.4155,0.2157,modis,112.38,wb_foodindex,89.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,9,Isiolo,2022-09-01,9.63,23.22,chirps+openmeteo,0.4275,0.2344,modis,112.38,wb_foodindex,94.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,10,Isiolo,2022-10-01,38.19,24.38,chirps+openmeteo,0.4161,0.2405,modis,112.38,wb_foodindex,98.0,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+006,2022,11,Isiolo,2022-11-01,222.98,22.45,chirps+openmeteo,0.4842,0.2733,modis,112.38,wb_foodindex,92.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+006,2022,12,Isiolo,2022-12-01,93.82,23.04,chirps+openmeteo,0.6021,0.3576,modis,112.38,wb_foodindex,94.5,fewsnet_prices,231269,0.3949,hdx_knbs,50.0,,mixed,Arid ASAL
+007,2019,1,Meru,2019-01-01,47.23,20.03,chirps+openmeteo,0.6265,0.3751,modis,107.28,wb_foodindex,32.42,fewsnet_prices,273722,0.2917,hdx_knbs,0.0,,mixed,Highland / Mixed
+007,2019,2,Meru,2019-02-01,34.9,21.17,chirps+openmeteo,0.5137,0.3077,modis,107.28,wb_foodindex,28.96,fewsnet_prices,273722,0.2917,hdx_knbs,0.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2019,3,Meru,2019-03-01,26.08,22.21,chirps+openmeteo,0.4661,0.2671,modis,107.28,wb_foodindex,28.31,fewsnet_prices,273722,0.2917,hdx_knbs,6.25,,mixed,Highland / Mixed
+007,2019,4,Meru,2019-04-01,173.78,21.9,chirps+openmeteo,0.4653,0.258,modis,107.28,wb_foodindex,36.89,fewsnet_prices,273722,0.2917,hdx_knbs,12.5,,mixed,Highland / Mixed
+007,2019,5,Meru,2019-05-01,112.58,20.39,chirps+openmeteo,0.5826,0.3293,modis,107.28,wb_foodindex,39.78,fewsnet_prices,273722,0.2917,hdx_knbs,18.75,,mixed,Highland / Mixed
+007,2019,6,Meru,2019-06-01,28.94,19.5,chirps+openmeteo,0.5568,0.3309,modis,107.28,wb_foodindex,39.16,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2019,7,Meru,2019-07-01,15.42,19.59,chirps+openmeteo,0.497,0.29,modis,107.28,wb_foodindex,45.0,fewsnet_prices,273722,0.2917,hdx_knbs,31.25,,mixed,Highland / Mixed
+007,2019,8,Meru,2019-08-01,18.21,19.77,chirps+openmeteo,0.4581,0.2392,modis,107.28,wb_foodindex,44.0,fewsnet_prices,273722,0.2917,hdx_knbs,37.5,,mixed,Highland / Mixed
+007,2019,9,Meru,2019-09-01,24.6,20.5,chirps+openmeteo,0.4375,0.235,modis,107.28,wb_foodindex,46.41,fewsnet_prices,273722,0.2917,hdx_knbs,43.75,,mixed,Highland / Mixed
+007,2019,10,Meru,2019-10-01,448.32,19.66,chirps+openmeteo,0.4578,0.2639,modis,107.28,wb_foodindex,48.59,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2019,11,Meru,2019-11-01,489.65,19.47,chirps+openmeteo,0.6966,0.4114,modis,107.28,wb_foodindex,48.7,fewsnet_prices,273722,0.2917,hdx_knbs,37.5,,mixed,Highland / Mixed
+007,2019,12,Meru,2019-12-01,275.49,19.71,chirps+openmeteo,0.723,0.4516,modis,107.28,wb_foodindex,48.64,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2020,1,Meru,2020-01-01,111.45,20.23,chirps+openmeteo,0.6867,0.4287,modis,125.82,wb_foodindex,44.77,fewsnet_prices,273722,0.2917,hdx_knbs,12.5,,mixed,Highland / Mixed
+007,2020,2,Meru,2020-02-01,73.9,20.43,chirps+openmeteo,0.6753,0.4041,modis,125.82,wb_foodindex,34.4,fewsnet_prices,273722,0.2917,hdx_knbs,0.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2020,3,Meru,2020-03-01,153.77,21.0,chirps+openmeteo,0.6453,0.3628,modis,125.82,wb_foodindex,28.7,fewsnet_prices,273722,0.2917,hdx_knbs,0.0,,mixed,Highland / Mixed
+007,2020,4,Meru,2020-04-01,565.49,20.32,chirps+openmeteo,0.6633,0.4167,modis,125.82,wb_foodindex,30.0,fewsnet_prices,273722,0.2917,hdx_knbs,0.0,,mixed,Highland / Mixed
+007,2020,5,Meru,2020-05-01,133.59,20.31,chirps+openmeteo,0.7211,0.4571,modis,125.82,wb_foodindex,29.5,,273722,0.2917,hdx_knbs,0.0,,mixed,Highland / Mixed
+007,2020,6,Meru,2020-06-01,27.12,19.78,chirps+openmeteo,0.6448,0.3915,modis,125.82,wb_foodindex,29.0,,273722,0.2917,hdx_knbs,0.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2020,7,Meru,2020-07-01,24.3,19.4,chirps+openmeteo,0.5505,0.325,modis,125.82,wb_foodindex,28.5,,273722,0.2917,hdx_knbs,6.25,,mixed,Highland / Mixed
+007,2020,8,Meru,2020-08-01,34.7,19.29,chirps+openmeteo,0.5124,0.2756,modis,125.82,wb_foodindex,28.0,fewsnet_prices,273722,0.2917,hdx_knbs,12.5,,mixed,Highland / Mixed
+007,2020,9,Meru,2020-09-01,28.48,19.91,chirps+openmeteo,0.4884,0.282,modis,125.82,wb_foodindex,32.8,fewsnet_prices,273722,0.2917,hdx_knbs,18.75,,mixed,Highland / Mixed
+007,2020,10,Meru,2020-10-01,112.7,20.9,chirps+openmeteo,0.4808,0.2695,modis,125.82,wb_foodindex,34.45,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2020,11,Meru,2020-11-01,229.91,19.51,chirps+openmeteo,0.6287,0.3624,modis,125.82,wb_foodindex,35.05,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2020,12,Meru,2020-12-01,80.17,19.53,chirps+openmeteo,0.6635,0.4088,modis,125.82,wb_foodindex,34.3,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2021,1,Meru,2021-01-01,43.78,19.75,chirps+openmeteo,0.6305,0.3586,modis,123.29,wb_foodindex,36.58,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2021,2,Meru,2021-02-01,32.31,21.14,chirps+openmeteo,0.5569,0.3121,modis,123.29,wb_foodindex,34.85,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2021,3,Meru,2021-03-01,63.6,21.83,chirps+openmeteo,0.5226,0.2886,modis,123.29,wb_foodindex,31.62,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2021,4,Meru,2021-04-01,203.74,20.73,chirps+openmeteo,0.565,0.3212,modis,123.29,wb_foodindex,32.03,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2021,5,Meru,2021-05-01,207.83,19.73,chirps+openmeteo,0.6408,0.4081,modis,123.29,wb_foodindex,32.83,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2021,6,Meru,2021-06-01,7.58,19.21,chirps+openmeteo,0.5956,0.3577,modis,123.29,wb_foodindex,32.83,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2021,7,Meru,2021-07-01,19.57,19.05,chirps+openmeteo,0.4756,0.2762,modis,123.29,wb_foodindex,34.98,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2021,8,Meru,2021-08-01,13.78,19.97,chirps+openmeteo,0.452,0.2598,modis,123.29,wb_foodindex,35.1,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2021,9,Meru,2021-09-01,12.37,20.84,chirps+openmeteo,0.4335,0.2564,modis,123.29,wb_foodindex,37.5,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,,mixed,Highland / Mixed
+007,2021,10,Meru,2021-10-01,87.11,21.56,chirps+openmeteo,0.454,0.2451,modis,123.29,wb_foodindex,39.8,fewsnet_prices,273722,0.2917,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2021,11,Meru,2021-11-01,160.15,21.16,chirps+openmeteo,0.5421,0.3206,modis,123.29,wb_foodindex,40.43,fewsnet_prices,273722,0.2917,hdx_knbs,31.25,,mixed,Highland / Mixed
+007,2021,12,Meru,2021-12-01,217.52,19.14,chirps+openmeteo,0.6557,0.4047,modis,123.29,wb_foodindex,40.1,fewsnet_prices,273722,0.2917,hdx_knbs,37.5,,mixed,Highland / Mixed
+007,2022,1,Meru,2022-01-01,41.69,20.38,chirps+openmeteo,0.6688,0.4065,modis,112.38,wb_foodindex,44.0,fewsnet_prices,273722,0.2917,hdx_knbs,43.75,,mixed,Highland / Mixed
+007,2022,2,Meru,2022-02-01,25.67,21.82,chirps+openmeteo,0.5471,0.3071,modis,112.38,wb_foodindex,43.53,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2022,3,Meru,2022-03-01,42.96,22.19,chirps+openmeteo,0.4995,0.291,modis,112.38,wb_foodindex,41.17,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,,mixed,Highland / Mixed
+007,2022,4,Meru,2022-04-01,195.71,21.38,chirps+openmeteo,0.5467,0.3053,modis,112.38,wb_foodindex,48.07,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,,mixed,Highland / Mixed
+007,2022,5,Meru,2022-05-01,36.29,20.93,chirps+openmeteo,0.5971,0.3495,modis,112.38,wb_foodindex,57.4,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,,mixed,Highland / Mixed
+007,2022,6,Meru,2022-06-01,8.54,19.91,chirps+openmeteo,0.5421,0.3221,modis,112.38,wb_foodindex,88.13,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2022,7,Meru,2022-07-01,21.11,18.73,chirps+openmeteo,0.4791,0.2691,modis,112.38,wb_foodindex,84.27,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,,mixed,Highland / Mixed
+007,2022,8,Meru,2022-08-01,31.26,18.65,chirps+openmeteo,0.4193,0.2122,modis,112.38,wb_foodindex,76.67,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,,mixed,Highland / Mixed
+007,2022,9,Meru,2022-09-01,16.56,20.27,chirps+openmeteo,0.4211,0.2269,modis,112.38,wb_foodindex,82.23,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,,mixed,Highland / Mixed
+007,2022,10,Meru,2022-10-01,47.91,20.95,chirps+openmeteo,0.4127,0.238,modis,112.38,wb_foodindex,85.0,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,fewsnet_ipc,mixed,Highland / Mixed
+007,2022,11,Meru,2022-11-01,286.87,19.29,chirps+openmeteo,0.5198,0.2945,modis,112.38,wb_foodindex,83.97,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,,mixed,Highland / Mixed
+007,2022,12,Meru,2022-12-01,99.48,19.32,chirps+openmeteo,0.6728,0.428,modis,112.38,wb_foodindex,80.57,fewsnet_prices,273722,0.2917,hdx_knbs,50.0,,mixed,Highland / Mixed
+008,2019,1,Tharaka-Nithi,2019-01-01,46.2,18.95,chirps+openmeteo,0.7072,0.43,modis,107.28,wb_foodindex,29.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2019,2,Tharaka-Nithi,2019-02-01,29.15,19.85,chirps+openmeteo,0.6141,0.3736,modis,107.28,wb_foodindex,29.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2019,3,Tharaka-Nithi,2019-03-01,27.69,20.84,chirps+openmeteo,0.5642,0.3335,modis,107.28,wb_foodindex,30.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2019,4,Tharaka-Nithi,2019-04-01,201.08,20.2,chirps+openmeteo,0.5767,0.3283,modis,107.28,wb_foodindex,40.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2019,5,Tharaka-Nithi,2019-05-01,144.93,18.64,chirps+openmeteo,0.6564,0.3883,modis,107.28,wb_foodindex,46.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2019,6,Tharaka-Nithi,2019-06-01,36.11,17.54,chirps+openmeteo,0.6259,0.3914,modis,107.28,wb_foodindex,45.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2019,7,Tharaka-Nithi,2019-07-01,21.32,17.29,chirps+openmeteo,0.5786,0.3553,modis,107.28,wb_foodindex,48.0,fewsnet_prices,335299,0.2564,hdx_knbs,31.25,,mixed,Highland
+008,2019,8,Tharaka-Nithi,2019-08-01,26.66,17.46,chirps+openmeteo,0.5555,0.2924,modis,107.28,wb_foodindex,49.0,fewsnet_prices,335299,0.2564,hdx_knbs,37.5,,mixed,Highland
+008,2019,9,Tharaka-Nithi,2019-09-01,39.61,18.23,chirps+openmeteo,0.528,0.2906,modis,107.28,wb_foodindex,49.0,fewsnet_prices,335299,0.2564,hdx_knbs,43.75,,mixed,Highland
+008,2019,10,Tharaka-Nithi,2019-10-01,468.92,18.17,chirps+openmeteo,0.5382,0.3226,modis,107.28,wb_foodindex,49.81,fewsnet_prices,335299,0.2564,hdx_knbs,50.0,fewsnet_ipc,mixed,Highland
+008,2019,11,Tharaka-Nithi,2019-11-01,458.1,18.07,chirps+openmeteo,0.6957,0.4044,modis,107.28,wb_foodindex,55.13,fewsnet_prices,335299,0.2564,hdx_knbs,43.75,,mixed,Highland
+008,2019,12,Tharaka-Nithi,2019-12-01,273.01,18.15,chirps+openmeteo,0.7331,0.4447,modis,107.28,wb_foodindex,54.33,fewsnet_prices,335299,0.2564,hdx_knbs,37.5,,mixed,Highland
+008,2020,1,Tharaka-Nithi,2020-01-01,111.31,18.71,chirps+openmeteo,0.7135,0.435,modis,125.82,wb_foodindex,41.0,fewsnet_prices,335299,0.2564,hdx_knbs,31.25,,mixed,Highland
+008,2020,2,Tharaka-Nithi,2020-02-01,69.08,19.29,chirps+openmeteo,0.7233,0.4322,modis,125.82,wb_foodindex,40.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2020,3,Tharaka-Nithi,2020-03-01,156.77,19.58,chirps+openmeteo,0.7142,0.3995,modis,125.82,wb_foodindex,38.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2020,4,Tharaka-Nithi,2020-04-01,582.38,18.88,chirps+openmeteo,0.6902,0.4463,modis,125.82,wb_foodindex,41.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2020,5,Tharaka-Nithi,2020-05-01,184.18,18.75,chirps+openmeteo,0.753,0.4794,modis,125.82,wb_foodindex,39.75,,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2020,6,Tharaka-Nithi,2020-06-01,39.26,17.82,chirps+openmeteo,0.6846,0.4177,modis,125.82,wb_foodindex,38.5,,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2020,7,Tharaka-Nithi,2020-07-01,33.02,16.99,chirps+openmeteo,0.6104,0.3673,modis,125.82,wb_foodindex,37.25,,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2020,8,Tharaka-Nithi,2020-08-01,40.29,17.18,chirps+openmeteo,0.5768,0.3053,modis,125.82,wb_foodindex,36.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2020,9,Tharaka-Nithi,2020-09-01,42.1,17.85,chirps+openmeteo,0.5777,0.3341,modis,125.82,wb_foodindex,36.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2020,10,Tharaka-Nithi,2020-10-01,108.73,18.89,chirps+openmeteo,0.5553,0.3091,modis,125.82,wb_foodindex,35.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2020,11,Tharaka-Nithi,2020-11-01,236.47,18.14,chirps+openmeteo,0.6533,0.376,modis,125.82,wb_foodindex,34.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2020,12,Tharaka-Nithi,2020-12-01,74.01,18.53,chirps+openmeteo,0.7269,0.4487,modis,125.82,wb_foodindex,35.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,1,Tharaka-Nithi,2021-01-01,46.63,18.71,chirps+openmeteo,0.7123,0.4212,modis,123.29,wb_foodindex,42.3,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,2,Tharaka-Nithi,2021-02-01,37.43,19.73,chirps+openmeteo,0.6547,0.3653,modis,123.29,wb_foodindex,39.7,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2021,3,Tharaka-Nithi,2021-03-01,66.73,20.07,chirps+openmeteo,0.6213,0.3475,modis,123.29,wb_foodindex,39.2,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,4,Tharaka-Nithi,2021-04-01,237.79,19.01,chirps+openmeteo,0.6563,0.384,modis,123.29,wb_foodindex,44.35,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,5,Tharaka-Nithi,2021-05-01,224.49,18.03,chirps+openmeteo,0.6893,0.4547,modis,123.29,wb_foodindex,39.4,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,6,Tharaka-Nithi,2021-06-01,11.29,16.82,chirps+openmeteo,0.6404,0.3943,modis,123.29,wb_foodindex,43.3,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2021,7,Tharaka-Nithi,2021-07-01,30.68,16.29,chirps+openmeteo,0.5256,0.314,modis,123.29,wb_foodindex,44.95,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,8,Tharaka-Nithi,2021-08-01,20.67,17.09,chirps+openmeteo,0.5428,0.3097,modis,123.29,wb_foodindex,44.3,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,9,Tharaka-Nithi,2021-09-01,19.32,17.9,chirps+openmeteo,0.5195,0.3109,modis,123.29,wb_foodindex,46.05,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,10,Tharaka-Nithi,2021-10-01,94.3,19.11,chirps+openmeteo,0.5372,0.2907,modis,123.29,wb_foodindex,49.55,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2021,11,Tharaka-Nithi,2021-11-01,154.05,19.03,chirps+openmeteo,0.638,0.3923,modis,123.29,wb_foodindex,40.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2021,12,Tharaka-Nithi,2021-12-01,202.91,17.75,chirps+openmeteo,0.7215,0.4434,modis,123.29,wb_foodindex,42.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2022,1,Tharaka-Nithi,2022-01-01,37.89,18.84,chirps+openmeteo,0.7229,0.4367,modis,112.38,wb_foodindex,42.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,,mixed,Highland
+008,2022,2,Tharaka-Nithi,2022-02-01,25.34,19.91,chirps+openmeteo,0.6426,0.3617,modis,112.38,wb_foodindex,41.0,fewsnet_prices,335299,0.2564,hdx_knbs,25.0,fewsnet_ipc,mixed,Highland
+008,2022,3,Tharaka-Nithi,2022-03-01,45.56,20.37,chirps+openmeteo,0.5975,0.3544,modis,112.38,wb_foodindex,43.0,fewsnet_prices,335299,0.2564,hdx_knbs,31.25,,mixed,Highland
+008,2022,4,Tharaka-Nithi,2022-04-01,236.73,19.25,chirps+openmeteo,0.6473,0.3654,modis,112.38,wb_foodindex,49.0,fewsnet_prices,335299,0.2564,hdx_knbs,37.5,,mixed,Highland
+008,2022,5,Tharaka-Nithi,2022-05-01,46.7,18.76,chirps+openmeteo,0.6707,0.4073,modis,112.38,wb_foodindex,50.0,fewsnet_prices,335299,0.2564,hdx_knbs,43.75,,mixed,Highland
+008,2022,6,Tharaka-Nithi,2022-06-01,12.96,17.25,chirps+openmeteo,0.6204,0.376,modis,112.38,wb_foodindex,79.0,fewsnet_prices,335299,0.2564,hdx_knbs,50.0,fewsnet_ipc,mixed,Highland
+008,2022,7,Tharaka-Nithi,2022-07-01,30.12,15.98,chirps+openmeteo,0.5398,0.3154,modis,112.38,wb_foodindex,82.0,fewsnet_prices,335299,0.2564,hdx_knbs,50.0,,mixed,Highland
+008,2022,8,Tharaka-Nithi,2022-08-01,38.5,15.95,chirps+openmeteo,0.4693,0.2399,modis,112.38,wb_foodindex,79.0,fewsnet_prices,335299,0.2564,hdx_knbs,50.0,,mixed,Highland
+008,2022,9,Tharaka-Nithi,2022-09-01,24.94,17.27,chirps+openmeteo,0.4937,0.2687,modis,112.38,wb_foodindex,75.0,fewsnet_prices,335299,0.2564,hdx_knbs,50.0,,mixed,Highland
+008,2022,10,Tharaka-Nithi,2022-10-01,53.16,18.52,chirps+openmeteo,0.4916,0.2958,modis,112.38,wb_foodindex,76.0,fewsnet_prices,335299,0.2564,hdx_knbs,50.0,fewsnet_ipc,mixed,Highland
+008,2022,11,Tharaka-Nithi,2022-11-01,284.38,17.51,chirps+openmeteo,0.5758,0.3235,modis,112.38,wb_foodindex,76.0,fewsnet_prices,335299,0.2564,hdx_knbs,50.0,,mixed,Highland
+008,2022,12,Tharaka-Nithi,2022-12-01,78.12,17.97,chirps+openmeteo,0.7331,0.4548,modis,112.38,wb_foodindex,76.0,fewsnet_prices,335299,0.2564,hdx_knbs,50.0,,mixed,Highland
+009,2019,1,Embu,2019-01-01,42.76,20.73,chirps+openmeteo,0.6663,0.4088,modis,107.28,wb_foodindex,25.24,fewsnet_prices,187521,0.1873,hdx_knbs,0.0,,mixed,Medium Highland
+009,2019,2,Embu,2019-02-01,24.92,22.01,chirps+openmeteo,0.5702,0.3522,modis,107.28,wb_foodindex,24.58,fewsnet_prices,187521,0.1873,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+009,2019,3,Embu,2019-03-01,27.47,23.13,chirps+openmeteo,0.5156,0.3038,modis,107.28,wb_foodindex,23.84,fewsnet_prices,187521,0.1873,hdx_knbs,6.25,,mixed,Medium Highland
+009,2019,4,Embu,2019-04-01,207.39,21.93,chirps+openmeteo,0.5293,0.3008,modis,107.28,wb_foodindex,26.34,fewsnet_prices,187521,0.1873,hdx_knbs,12.5,,mixed,Medium Highland
+009,2019,5,Embu,2019-05-01,145.59,20.0,chirps+openmeteo,0.6122,0.3637,modis,107.28,wb_foodindex,38.0,fewsnet_prices,187521,0.1873,hdx_knbs,18.75,,mixed,Medium Highland
+009,2019,6,Embu,2019-06-01,36.01,18.97,chirps+openmeteo,0.6179,0.3669,modis,107.28,wb_foodindex,47.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2019,7,Embu,2019-07-01,23.89,18.8,chirps+openmeteo,0.5464,0.334,modis,107.28,wb_foodindex,47.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2019,8,Embu,2019-08-01,27.46,19.03,chirps+openmeteo,0.5152,0.2801,modis,107.28,wb_foodindex,48.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2019,9,Embu,2019-09-01,38.47,19.75,chirps+openmeteo,0.5048,0.2743,modis,107.28,wb_foodindex,50.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2019,10,Embu,2019-10-01,429.64,19.52,chirps+openmeteo,0.5142,0.3146,modis,107.28,wb_foodindex,47.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2019,11,Embu,2019-11-01,402.85,19.7,chirps+openmeteo,0.6664,0.4052,modis,107.28,wb_foodindex,49.0,fewsnet_prices,187521,0.1873,hdx_knbs,18.75,,mixed,Medium Highland
+009,2019,12,Embu,2019-12-01,250.96,19.64,chirps+openmeteo,0.7046,0.4455,modis,107.28,wb_foodindex,47.0,fewsnet_prices,187521,0.1873,hdx_knbs,12.5,,mixed,Medium Highland
+009,2020,1,Embu,2020-01-01,104.37,20.42,chirps+openmeteo,0.6773,0.4225,modis,125.82,wb_foodindex,47.33,fewsnet_prices,187521,0.1873,hdx_knbs,6.25,,mixed,Medium Highland
+009,2020,2,Embu,2020-02-01,64.38,21.26,chirps+openmeteo,0.6943,0.4421,modis,125.82,wb_foodindex,51.42,fewsnet_prices,187521,0.1873,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+009,2020,3,Embu,2020-03-01,160.91,21.26,chirps+openmeteo,0.6816,0.3965,modis,125.82,wb_foodindex,58.35,fewsnet_prices,187521,0.1873,hdx_knbs,0.0,,mixed,Medium Highland
+009,2020,4,Embu,2020-04-01,542.62,20.36,chirps+openmeteo,0.6689,0.4301,modis,125.82,wb_foodindex,41.0,fewsnet_prices,187521,0.1873,hdx_knbs,0.0,,mixed,Medium Highland
+009,2020,5,Embu,2020-05-01,194.79,20.11,chirps+openmeteo,0.7328,0.4608,modis,125.82,wb_foodindex,51.3,fewsnet_prices,187521,0.1873,hdx_knbs,0.0,,mixed,Medium Highland
+009,2020,6,Embu,2020-06-01,45.77,19.21,chirps+openmeteo,0.6649,0.4002,modis,125.82,wb_foodindex,36.48,fewsnet_prices,187521,0.1873,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+009,2020,7,Embu,2020-07-01,31.98,18.68,chirps+openmeteo,0.6157,0.3633,modis,125.82,wb_foodindex,33.739999999999995,,187521,0.1873,hdx_knbs,6.25,,mixed,Medium Highland
+009,2020,8,Embu,2020-08-01,37.1,18.96,chirps+openmeteo,0.4972,0.2843,modis,125.82,wb_foodindex,31.0,fewsnet_prices,187521,0.1873,hdx_knbs,12.5,,mixed,Medium Highland
+009,2020,9,Embu,2020-09-01,39.37,19.56,chirps+openmeteo,0.5412,0.3126,modis,125.82,wb_foodindex,36.0,fewsnet_prices,187521,0.1873,hdx_knbs,18.75,,mixed,Medium Highland
+009,2020,10,Embu,2020-10-01,98.38,20.47,chirps+openmeteo,0.5307,0.2952,modis,125.82,wb_foodindex,35.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2020,11,Embu,2020-11-01,209.1,19.74,chirps+openmeteo,0.6352,0.3815,modis,125.82,wb_foodindex,35.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2020,12,Embu,2020-12-01,66.38,20.06,chirps+openmeteo,0.7018,0.4428,modis,125.82,wb_foodindex,35.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,1,Embu,2021-01-01,51.53,20.6,chirps+openmeteo,0.6951,0.398,modis,123.29,wb_foodindex,33.23,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,2,Embu,2021-02-01,42.48,21.36,chirps+openmeteo,0.6331,0.3611,modis,123.29,wb_foodindex,35.97,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2021,3,Embu,2021-03-01,63.15,22.06,chirps+openmeteo,0.5804,0.3325,modis,123.29,wb_foodindex,35.7,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,4,Embu,2021-04-01,225.2,20.47,chirps+openmeteo,0.6059,0.3687,modis,123.29,wb_foodindex,36.4,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,5,Embu,2021-05-01,217.06,19.42,chirps+openmeteo,0.6255,0.4223,modis,123.29,wb_foodindex,36.7,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,6,Embu,2021-06-01,12.0,18.19,chirps+openmeteo,0.5482,0.3619,modis,123.29,wb_foodindex,36.07,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2021,7,Embu,2021-07-01,34.56,17.92,chirps+openmeteo,0.5384,0.3077,modis,123.29,wb_foodindex,36.17,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,8,Embu,2021-08-01,21.59,18.72,chirps+openmeteo,0.5066,0.2749,modis,123.29,wb_foodindex,39.0,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,9,Embu,2021-09-01,18.21,19.63,chirps+openmeteo,0.4948,0.2929,modis,123.29,wb_foodindex,41.57,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,10,Embu,2021-10-01,85.65,20.78,chirps+openmeteo,0.5097,0.2779,modis,123.29,wb_foodindex,41.17,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2021,11,Embu,2021-11-01,140.2,20.8,chirps+openmeteo,0.5757,0.3623,modis,123.29,wb_foodindex,40.55,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2021,12,Embu,2021-12-01,161.29,19.47,chirps+openmeteo,0.683,0.4169,modis,123.29,wb_foodindex,40.38,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,1,Embu,2022-01-01,34.35,20.67,chirps+openmeteo,0.6956,0.4133,modis,112.38,wb_foodindex,39.75,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,2,Embu,2022-02-01,24.32,22.06,chirps+openmeteo,0.5935,0.3403,modis,112.38,wb_foodindex,41.52,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2022,3,Embu,2022-03-01,46.52,22.75,chirps+openmeteo,0.5648,0.3202,modis,112.38,wb_foodindex,42.55,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,4,Embu,2022-04-01,233.1,21.01,chirps+openmeteo,0.6061,0.355,modis,112.38,wb_foodindex,43.38,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,5,Embu,2022-05-01,51.07,20.09,chirps+openmeteo,0.6547,0.3936,modis,112.38,wb_foodindex,47.65,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,6,Embu,2022-06-01,13.71,18.67,chirps+openmeteo,0.6086,0.3679,modis,112.38,wb_foodindex,65.45,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2022,7,Embu,2022-07-01,30.01,17.73,chirps+openmeteo,0.4946,0.2986,modis,112.38,wb_foodindex,95.8,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,8,Embu,2022-08-01,35.3,17.79,chirps+openmeteo,0.3922,0.2053,modis,112.38,wb_foodindex,89.33,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,9,Embu,2022-09-01,23.18,19.09,chirps+openmeteo,0.4175,0.2418,modis,112.38,wb_foodindex,83.53,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,10,Embu,2022-10-01,48.37,20.32,chirps+openmeteo,0.4614,0.2941,modis,112.38,wb_foodindex,89.95,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,fewsnet_ipc,mixed,Medium Highland
+009,2022,11,Embu,2022-11-01,269.27,19.15,chirps+openmeteo,0.5228,0.3135,modis,112.38,wb_foodindex,92.42,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+009,2022,12,Embu,2022-12-01,58.16,19.78,chirps+openmeteo,0.6972,0.4443,modis,112.38,wb_foodindex,93.28,fewsnet_prices,187521,0.1873,hdx_knbs,25.0,,mixed,Medium Highland
+010,2019,1,Kitui,2019-01-01,18.39,21.86,chirps+openmeteo,0.5865,0.3798,modis,107.28,wb_foodindex,27.0,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2019,2,Kitui,2019-02-01,18.62,22.7,chirps+openmeteo,0.4641,0.2922,modis,107.28,wb_foodindex,26.0,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+010,2019,3,Kitui,2019-03-01,12.13,23.82,chirps+openmeteo,0.38,0.2266,modis,107.28,wb_foodindex,27.4,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2019,4,Kitui,2019-04-01,123.35,22.84,chirps+openmeteo,0.3467,0.2118,modis,107.28,wb_foodindex,31.62,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2019,5,Kitui,2019-05-01,25.28,20.99,chirps+openmeteo,0.4968,0.2809,modis,107.28,wb_foodindex,41.0,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2019,6,Kitui,2019-06-01,4.7,20.54,chirps+openmeteo,0.4364,0.2574,modis,107.28,wb_foodindex,40.5,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+010,2019,7,Kitui,2019-07-01,12.16,20.32,chirps+openmeteo,0.3637,0.2112,modis,107.28,wb_foodindex,44.0,fewsnet_prices,383256,0.3708,hdx_knbs,31.25,,mixed,Semi-arid
+010,2019,8,Kitui,2019-08-01,7.65,20.27,chirps+openmeteo,0.3204,0.18,modis,107.28,wb_foodindex,45.0,fewsnet_prices,383256,0.3708,hdx_knbs,37.5,,mixed,Semi-arid
+010,2019,9,Kitui,2019-09-01,3.8,21.21,chirps+openmeteo,0.2972,0.162,modis,107.28,wb_foodindex,43.0,fewsnet_prices,383256,0.3708,hdx_knbs,43.75,,mixed,Semi-arid
+010,2019,10,Kitui,2019-10-01,223.73,20.82,chirps+openmeteo,0.3643,0.218,modis,107.28,wb_foodindex,42.5,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid
+010,2019,11,Kitui,2019-11-01,374.78,21.02,chirps+openmeteo,0.6389,0.408,modis,107.28,wb_foodindex,42.0,fewsnet_prices,383256,0.3708,hdx_knbs,37.5,,mixed,Semi-arid
+010,2019,12,Kitui,2019-12-01,279.74,21.42,chirps+openmeteo,0.7067,0.4866,modis,107.28,wb_foodindex,42.5,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2020,1,Kitui,2020-01-01,75.7,21.81,chirps+openmeteo,0.6877,0.4428,modis,125.82,wb_foodindex,39.0,fewsnet_prices,383256,0.3708,hdx_knbs,12.5,,mixed,Semi-arid
+010,2020,2,Kitui,2020-02-01,43.85,22.28,chirps+openmeteo,0.6773,0.4283,modis,125.82,wb_foodindex,33.5,fewsnet_prices,383256,0.3708,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+010,2020,3,Kitui,2020-03-01,185.17,22.51,chirps+openmeteo,0.6592,0.4156,modis,125.82,wb_foodindex,30.0,fewsnet_prices,383256,0.3708,hdx_knbs,0.0,,mixed,Semi-arid
+010,2020,4,Kitui,2020-04-01,243.03,21.57,chirps+openmeteo,0.6861,0.456,modis,125.82,wb_foodindex,31.0,fewsnet_prices,383256,0.3708,hdx_knbs,0.0,,mixed,Semi-arid
+010,2020,5,Kitui,2020-05-01,29.52,21.2,chirps+openmeteo,0.6859,0.4558,modis,125.82,wb_foodindex,34.5,fewsnet_prices,383256,0.3708,hdx_knbs,0.0,,mixed,Semi-arid
+010,2020,6,Kitui,2020-06-01,6.37,20.53,chirps+openmeteo,0.6125,0.3708,modis,125.82,wb_foodindex,34.0,fewsnet_prices,383256,0.3708,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+010,2020,7,Kitui,2020-07-01,9.88,20.05,chirps+openmeteo,0.5194,0.3042,modis,125.82,wb_foodindex,33.5,fewsnet_prices,383256,0.3708,hdx_knbs,6.25,,mixed,Semi-arid
+010,2020,8,Kitui,2020-08-01,6.66,20.13,chirps+openmeteo,0.4313,0.2348,modis,125.82,wb_foodindex,32.75,fewsnet_prices,383256,0.3708,hdx_knbs,12.5,,mixed,Semi-arid
+010,2020,9,Kitui,2020-09-01,3.93,20.73,chirps+openmeteo,0.3768,0.2158,modis,125.82,wb_foodindex,33.25,fewsnet_prices,383256,0.3708,hdx_knbs,18.75,,mixed,Semi-arid
+010,2020,10,Kitui,2020-10-01,28.76,22.3,chirps+openmeteo,0.3522,0.1987,modis,125.82,wb_foodindex,33.0,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+010,2020,11,Kitui,2020-11-01,214.83,21.24,chirps+openmeteo,0.5022,0.2995,modis,125.82,wb_foodindex,37.5,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2020,12,Kitui,2020-12-01,90.86,21.29,chirps+openmeteo,0.6506,0.4195,modis,125.82,wb_foodindex,33.0,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2021,1,Kitui,2021-01-01,15.78,21.64,chirps+openmeteo,0.611,0.3787,modis,123.29,wb_foodindex,34.5,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2021,2,Kitui,2021-02-01,22.54,22.49,chirps+openmeteo,0.5319,0.311,modis,123.29,wb_foodindex,33.9,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+010,2021,3,Kitui,2021-03-01,31.01,23.3,chirps+openmeteo,0.4264,0.2425,modis,123.29,wb_foodindex,34.0,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2021,4,Kitui,2021-04-01,136.35,22.04,chirps+openmeteo,0.4944,0.3069,modis,123.29,wb_foodindex,31.0,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2021,5,Kitui,2021-05-01,79.69,20.88,chirps+openmeteo,0.4848,0.3104,modis,123.29,wb_foodindex,31.5,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2021,6,Kitui,2021-06-01,2.71,19.68,chirps+openmeteo,0.4724,0.2844,modis,123.29,wb_foodindex,32.25,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+010,2021,7,Kitui,2021-07-01,11.49,19.54,chirps+openmeteo,0.3769,0.2126,modis,123.29,wb_foodindex,34.0,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2021,8,Kitui,2021-08-01,6.12,20.28,chirps+openmeteo,0.3244,0.1809,modis,123.29,wb_foodindex,34.5,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2021,9,Kitui,2021-09-01,2.88,21.09,chirps+openmeteo,0.3128,0.1707,modis,123.29,wb_foodindex,34.5,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,,mixed,Semi-arid
+010,2021,10,Kitui,2021-10-01,28.85,22.27,chirps+openmeteo,0.2994,0.1654,modis,123.29,wb_foodindex,35.5,fewsnet_prices,383256,0.3708,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+010,2021,11,Kitui,2021-11-01,149.61,22.48,chirps+openmeteo,0.304,0.1773,modis,123.29,wb_foodindex,36.0,fewsnet_prices,383256,0.3708,hdx_knbs,31.25,,mixed,Semi-arid
+010,2021,12,Kitui,2021-12-01,227.81,20.73,chirps+openmeteo,0.5811,0.3813,modis,123.29,wb_foodindex,36.5,fewsnet_prices,383256,0.3708,hdx_knbs,37.5,,mixed,Semi-arid
+010,2022,1,Kitui,2022-01-01,15.37,22.52,chirps+openmeteo,0.6869,0.4511,modis,112.38,wb_foodindex,40.8,fewsnet_prices,383256,0.3708,hdx_knbs,43.75,,mixed,Semi-arid
+010,2022,2,Kitui,2022-02-01,17.52,23.75,chirps+openmeteo,0.5007,0.307,modis,112.38,wb_foodindex,41.0,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid
+010,2022,3,Kitui,2022-03-01,23.42,23.97,chirps+openmeteo,0.4222,0.2474,modis,112.38,wb_foodindex,43.0,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,,mixed,Semi-arid
+010,2022,4,Kitui,2022-04-01,162.18,22.32,chirps+openmeteo,0.4225,0.2466,modis,112.38,wb_foodindex,46.15,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,,mixed,Semi-arid
+010,2022,5,Kitui,2022-05-01,15.78,21.61,chirps+openmeteo,0.5394,0.3374,modis,112.38,wb_foodindex,53.0,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,,mixed,Semi-arid
+010,2022,6,Kitui,2022-06-01,3.0,20.25,chirps+openmeteo,0.4403,0.2498,modis,112.38,wb_foodindex,60.0,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid
+010,2022,7,Kitui,2022-07-01,7.32,19.19,chirps+openmeteo,0.3609,0.1931,modis,112.38,wb_foodindex,74.0,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,,mixed,Semi-arid
+010,2022,8,Kitui,2022-08-01,6.56,19.24,chirps+openmeteo,0.3131,0.1638,modis,112.38,wb_foodindex,70.0,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,,mixed,Semi-arid
+010,2022,9,Kitui,2022-09-01,3.03,20.49,chirps+openmeteo,0.2919,0.1666,modis,112.38,wb_foodindex,69.0,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,,mixed,Semi-arid
+010,2022,10,Kitui,2022-10-01,20.27,21.49,chirps+openmeteo,0.2635,0.1592,modis,112.38,wb_foodindex,65.15,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid
+010,2022,11,Kitui,2022-11-01,192.41,20.69,chirps+openmeteo,0.398,0.2456,modis,112.38,wb_foodindex,66.5,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,,mixed,Semi-arid
+010,2022,12,Kitui,2022-12-01,64.04,21.52,chirps+openmeteo,0.6063,0.4123,modis,112.38,wb_foodindex,67.5,fewsnet_prices,383256,0.3708,hdx_knbs,50.0,,mixed,Semi-arid
+011,2019,1,Machakos,2019-01-01,15.77,18.7,chirps+openmeteo,0.558,0.3565,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2019,2,Machakos,2019-02-01,22.89,19.54,chirps+openmeteo,0.4286,0.2767,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2019,3,Machakos,2019-03-01,18.92,20.75,chirps+openmeteo,0.358,0.2166,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2019,4,Machakos,2019-04-01,135.89,19.69,chirps+openmeteo,0.3285,0.1991,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2019,5,Machakos,2019-05-01,36.86,18.08,chirps+openmeteo,0.4519,0.2702,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2019,6,Machakos,2019-06-01,18.7,17.17,chirps+openmeteo,0.4638,0.2846,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2019,7,Machakos,2019-07-01,14.56,17.04,chirps+openmeteo,0.4313,0.2547,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2019,8,Machakos,2019-08-01,10.7,17.14,chirps+openmeteo,0.3547,0.192,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2019,9,Machakos,2019-09-01,12.32,18.18,chirps+openmeteo,0.3105,0.1786,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2019,10,Machakos,2019-10-01,230.83,17.93,chirps+openmeteo,0.3475,0.204,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2019,11,Machakos,2019-11-01,305.02,18.14,chirps+openmeteo,0.6075,0.3679,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2019,12,Machakos,2019-12-01,271.17,18.21,chirps+openmeteo,0.6326,0.4158,modis,107.28,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,1,Machakos,2020-01-01,147.28,18.56,chirps+openmeteo,0.6634,0.4395,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,2,Machakos,2020-02-01,70.4,18.97,chirps+openmeteo,0.636,0.4301,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2020,3,Machakos,2020-03-01,190.68,19.24,chirps+openmeteo,0.6144,0.3832,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,4,Machakos,2020-04-01,280.83,18.58,chirps+openmeteo,0.6297,0.4169,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,5,Machakos,2020-05-01,48.33,17.84,chirps+openmeteo,0.6495,0.4358,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,6,Machakos,2020-06-01,18.1,17.0,chirps+openmeteo,0.562,0.3544,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2020,7,Machakos,2020-07-01,9.71,16.32,chirps+openmeteo,0.522,0.3193,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,8,Machakos,2020-08-01,5.69,16.93,chirps+openmeteo,0.4243,0.2386,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,9,Machakos,2020-09-01,10.27,17.66,chirps+openmeteo,0.3747,0.2218,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,10,Machakos,2020-10-01,33.57,19.31,chirps+openmeteo,0.352,0.1998,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2020,11,Machakos,2020-11-01,157.34,18.25,chirps+openmeteo,0.4678,0.2768,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2020,12,Machakos,2020-12-01,74.2,18.24,chirps+openmeteo,0.5301,0.3341,modis,125.82,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,1,Machakos,2021-01-01,33.38,18.3,chirps+openmeteo,0.5352,0.3188,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,2,Machakos,2021-02-01,55.6,19.06,chirps+openmeteo,0.5301,0.2991,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2021,3,Machakos,2021-03-01,56.6,19.68,chirps+openmeteo,0.4508,0.2728,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,4,Machakos,2021-04-01,130.88,18.86,chirps+openmeteo,0.504,0.309,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,5,Machakos,2021-05-01,142.96,17.7,chirps+openmeteo,0.5164,0.3414,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,6,Machakos,2021-06-01,4.96,16.23,chirps+openmeteo,0.5341,0.3535,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2021,7,Machakos,2021-07-01,13.8,15.76,chirps+openmeteo,0.4467,0.2691,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,8,Machakos,2021-08-01,7.94,16.85,chirps+openmeteo,0.3754,0.2162,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,9,Machakos,2021-09-01,3.79,17.85,chirps+openmeteo,0.3426,0.2099,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,10,Machakos,2021-10-01,33.65,19.31,chirps+openmeteo,0.3182,0.1803,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2021,11,Machakos,2021-11-01,159.07,19.29,chirps+openmeteo,0.3288,0.2025,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2021,12,Machakos,2021-12-01,135.08,17.78,chirps+openmeteo,0.5586,0.3324,modis,123.29,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,1,Machakos,2022-01-01,26.73,18.68,chirps+openmeteo,0.5954,0.3644,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,2,Machakos,2022-02-01,43.66,19.85,chirps+openmeteo,0.4597,0.2773,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2022,3,Machakos,2022-03-01,43.9,20.12,chirps+openmeteo,0.4192,0.2513,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,4,Machakos,2022-04-01,135.58,18.99,chirps+openmeteo,0.4673,0.2788,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,5,Machakos,2022-05-01,30.33,18.62,chirps+openmeteo,0.5366,0.3308,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,6,Machakos,2022-06-01,5.27,16.91,chirps+openmeteo,0.4421,0.264,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2022,7,Machakos,2022-07-01,5.14,15.81,chirps+openmeteo,0.3603,0.1996,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,8,Machakos,2022-08-01,4.84,15.91,chirps+openmeteo,0.2968,0.1592,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,9,Machakos,2022-09-01,5.4,17.36,chirps+openmeteo,0.2912,0.1731,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,10,Machakos,2022-10-01,24.72,18.98,chirps+openmeteo,0.2736,0.1729,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+011,2022,11,Machakos,2022-11-01,178.24,17.61,chirps+openmeteo,0.3354,0.2034,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+011,2022,12,Machakos,2022-12-01,41.85,17.94,chirps+openmeteo,0.4914,0.3019,modis,112.38,wb_foodindex,,,206891,0.1879,hdx_knbs,0.0,,mixed,Semi-arid
+012,2019,1,Makueni,2019-01-01,14.16,22.06,chirps+openmeteo,0.5578,0.3584,modis,107.28,wb_foodindex,29.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2019,2,Makueni,2019-02-01,18.71,23.29,chirps+openmeteo,0.4162,0.2507,modis,107.28,wb_foodindex,29.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+012,2019,3,Makueni,2019-03-01,14.89,24.78,chirps+openmeteo,0.3495,0.1982,modis,107.28,wb_foodindex,28.75,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2019,4,Makueni,2019-04-01,108.97,23.28,chirps+openmeteo,0.3194,0.1911,modis,107.28,wb_foodindex,42.5,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2019,5,Makueni,2019-05-01,23.11,21.04,chirps+openmeteo,0.4555,0.2662,modis,107.28,wb_foodindex,40.36,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2019,6,Makueni,2019-06-01,5.47,20.66,chirps+openmeteo,0.4241,0.2504,modis,107.28,wb_foodindex,40.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+012,2019,7,Makueni,2019-07-01,7.25,20.8,chirps+openmeteo,0.3683,0.2001,modis,107.28,wb_foodindex,45.0,fewsnet_prices,370672,0.2557,hdx_knbs,31.25,,mixed,Semi-arid
+012,2019,8,Makueni,2019-08-01,6.0,20.77,chirps+openmeteo,0.3204,0.1676,modis,107.28,wb_foodindex,45.0,fewsnet_prices,370672,0.2557,hdx_knbs,37.5,,mixed,Semi-arid
+012,2019,9,Makueni,2019-09-01,4.83,21.84,chirps+openmeteo,0.2872,0.1558,modis,107.28,wb_foodindex,45.0,fewsnet_prices,370672,0.2557,hdx_knbs,43.75,,mixed,Semi-arid
+012,2019,10,Makueni,2019-10-01,149.3,20.87,chirps+openmeteo,0.3318,0.1857,modis,107.28,wb_foodindex,44.66,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid
+012,2019,11,Makueni,2019-11-01,275.55,21.0,chirps+openmeteo,0.5546,0.3336,modis,107.28,wb_foodindex,45.0,fewsnet_prices,370672,0.2557,hdx_knbs,37.5,,mixed,Semi-arid
+012,2019,12,Makueni,2019-12-01,276.71,21.06,chirps+openmeteo,0.662,0.4483,modis,107.28,wb_foodindex,45.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2020,1,Makueni,2020-01-01,123.26,21.46,chirps+openmeteo,0.6704,0.4455,modis,125.82,wb_foodindex,43.5,fewsnet_prices,370672,0.2557,hdx_knbs,12.5,,mixed,Semi-arid
+012,2020,2,Makueni,2020-02-01,63.75,21.76,chirps+openmeteo,0.6641,0.4353,modis,125.82,wb_foodindex,45.0,fewsnet_prices,370672,0.2557,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+012,2020,3,Makueni,2020-03-01,162.58,22.1,chirps+openmeteo,0.6264,0.3822,modis,125.82,wb_foodindex,31.5,fewsnet_prices,370672,0.2557,hdx_knbs,0.0,,mixed,Semi-arid
+012,2020,4,Makueni,2020-04-01,210.8,21.37,chirps+openmeteo,0.6134,0.4058,modis,125.82,wb_foodindex,33.0,fewsnet_prices,370672,0.2557,hdx_knbs,0.0,,mixed,Semi-arid
+012,2020,5,Makueni,2020-05-01,23.46,20.82,chirps+openmeteo,0.6319,0.4082,modis,125.82,wb_foodindex,34.0,,370672,0.2557,hdx_knbs,0.0,,mixed,Semi-arid
+012,2020,6,Makueni,2020-06-01,6.65,20.18,chirps+openmeteo,0.563,0.3311,modis,125.82,wb_foodindex,35.0,fewsnet_prices,370672,0.2557,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+012,2020,7,Makueni,2020-07-01,5.82,19.7,chirps+openmeteo,0.4649,0.2667,modis,125.82,wb_foodindex,35.0,fewsnet_prices,370672,0.2557,hdx_knbs,6.25,,mixed,Semi-arid
+012,2020,8,Makueni,2020-08-01,3.32,20.35,chirps+openmeteo,0.3911,0.2136,modis,125.82,wb_foodindex,35.0,fewsnet_prices,370672,0.2557,hdx_knbs,12.5,,mixed,Semi-arid
+012,2020,9,Makueni,2020-09-01,4.09,21.02,chirps+openmeteo,0.3455,0.1995,modis,125.82,wb_foodindex,35.0,fewsnet_prices,370672,0.2557,hdx_knbs,18.75,,mixed,Semi-arid
+012,2020,10,Makueni,2020-10-01,19.77,22.63,chirps+openmeteo,0.3351,0.1828,modis,125.82,wb_foodindex,36.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+012,2020,11,Makueni,2020-11-01,176.62,21.19,chirps+openmeteo,0.4472,0.2711,modis,125.82,wb_foodindex,36.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2020,12,Makueni,2020-12-01,102.05,20.91,chirps+openmeteo,0.596,0.3801,modis,125.82,wb_foodindex,36.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2021,1,Makueni,2021-01-01,27.88,21.29,chirps+openmeteo,0.5669,0.3251,modis,123.29,wb_foodindex,35.5,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2021,2,Makueni,2021-02-01,39.38,22.15,chirps+openmeteo,0.5261,0.2859,modis,123.29,wb_foodindex,35.85,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+012,2021,3,Makueni,2021-03-01,44.45,23.45,chirps+openmeteo,0.4221,0.2414,modis,123.29,wb_foodindex,33.9,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2021,4,Makueni,2021-04-01,104.52,22.49,chirps+openmeteo,0.4876,0.3032,modis,123.29,wb_foodindex,34.65,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2021,5,Makueni,2021-05-01,82.76,21.18,chirps+openmeteo,0.4943,0.3131,modis,123.29,wb_foodindex,33.95,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2021,6,Makueni,2021-06-01,3.11,20.33,chirps+openmeteo,0.4822,0.2985,modis,123.29,wb_foodindex,35.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+012,2021,7,Makueni,2021-07-01,7.15,19.97,chirps+openmeteo,0.342,0.2043,modis,123.29,wb_foodindex,35.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2021,8,Makueni,2021-08-01,3.87,20.74,chirps+openmeteo,0.3245,0.1836,modis,123.29,wb_foodindex,35.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2021,9,Makueni,2021-09-01,2.56,21.56,chirps+openmeteo,0.3062,0.1744,modis,123.29,wb_foodindex,35.0,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,,mixed,Semi-arid
+012,2021,10,Makueni,2021-10-01,23.13,23.03,chirps+openmeteo,0.2896,0.1589,modis,123.29,wb_foodindex,35.3,fewsnet_prices,370672,0.2557,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+012,2021,11,Makueni,2021-11-01,158.93,23.11,chirps+openmeteo,0.2854,0.1667,modis,123.29,wb_foodindex,37.5,fewsnet_prices,370672,0.2557,hdx_knbs,31.25,,mixed,Semi-arid
+012,2021,12,Makueni,2021-12-01,154.93,20.99,chirps+openmeteo,0.5449,0.3259,modis,123.29,wb_foodindex,40.0,fewsnet_prices,370672,0.2557,hdx_knbs,37.5,,mixed,Semi-arid
+012,2022,1,Makueni,2022-01-01,20.65,22.66,chirps+openmeteo,0.5773,0.3606,modis,112.38,wb_foodindex,40.0,fewsnet_prices,370672,0.2557,hdx_knbs,43.75,,mixed,Semi-arid
+012,2022,2,Makueni,2022-02-01,41.41,24.01,chirps+openmeteo,0.4339,0.2512,modis,112.38,wb_foodindex,45.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid
+012,2022,3,Makueni,2022-03-01,28.57,24.34,chirps+openmeteo,0.3768,0.2207,modis,112.38,wb_foodindex,45.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,,mixed,Semi-arid
+012,2022,4,Makueni,2022-04-01,113.76,22.49,chirps+openmeteo,0.4108,0.2415,modis,112.38,wb_foodindex,50.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,,mixed,Semi-arid
+012,2022,5,Makueni,2022-05-01,17.45,22.12,chirps+openmeteo,0.4653,0.2887,modis,112.38,wb_foodindex,60.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,,mixed,Semi-arid
+012,2022,6,Makueni,2022-06-01,3.33,20.9,chirps+openmeteo,0.3962,0.225,modis,112.38,wb_foodindex,70.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid
+012,2022,7,Makueni,2022-07-01,3.07,19.76,chirps+openmeteo,0.328,0.1765,modis,112.38,wb_foodindex,80.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,,mixed,Semi-arid
+012,2022,8,Makueni,2022-08-01,3.03,19.9,chirps+openmeteo,0.2703,0.1393,modis,112.38,wb_foodindex,70.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,,mixed,Semi-arid
+012,2022,9,Makueni,2022-09-01,2.88,21.21,chirps+openmeteo,0.2725,0.1531,modis,112.38,wb_foodindex,70.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,,mixed,Semi-arid
+012,2022,10,Makueni,2022-10-01,20.88,22.37,chirps+openmeteo,0.2551,0.1487,modis,112.38,wb_foodindex,70.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid
+012,2022,11,Makueni,2022-11-01,139.64,20.9,chirps+openmeteo,0.3204,0.1939,modis,112.38,wb_foodindex,70.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,,mixed,Semi-arid
+012,2022,12,Makueni,2022-12-01,56.16,21.55,chirps+openmeteo,0.4943,0.3185,modis,112.38,wb_foodindex,75.0,fewsnet_prices,370672,0.2557,hdx_knbs,50.0,,mixed,Semi-arid
+013,2019,1,Wajir,2019-01-01,3.63,30.0,chirps+openmeteo,0.2238,0.1277,modis,107.28,wb_foodindex,50.0,fewsnet_prices,229108,0.7311,hdx_knbs,25.0,,mixed,Arid ASAL
+013,2019,2,Wajir,2019-02-01,3.7,30.59,chirps+openmeteo,0.2043,0.118,modis,107.28,wb_foodindex,51.0,fewsnet_prices,229108,0.7311,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+013,2019,3,Wajir,2019-03-01,13.57,31.1,chirps+openmeteo,0.2095,0.1235,modis,107.28,wb_foodindex,53.0,fewsnet_prices,229108,0.7311,hdx_knbs,31.25,,mixed,Arid ASAL
+013,2019,4,Wajir,2019-04-01,65.15,30.36,chirps+openmeteo,0.22,0.1338,modis,107.28,wb_foodindex,56.0,fewsnet_prices,229108,0.7311,hdx_knbs,37.5,,mixed,Arid ASAL
+013,2019,5,Wajir,2019-05-01,27.34,28.03,chirps+openmeteo,0.2221,0.1514,modis,107.28,wb_foodindex,53.0,fewsnet_prices,229108,0.7311,hdx_knbs,43.75,,mixed,Arid ASAL
+013,2019,6,Wajir,2019-06-01,0.93,28.3,chirps+openmeteo,0.215,0.1261,modis,107.28,wb_foodindex,56.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+013,2019,7,Wajir,2019-07-01,1.63,27.37,chirps+openmeteo,0.2007,0.1199,modis,107.28,wb_foodindex,57.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2019,8,Wajir,2019-08-01,1.29,27.76,chirps+openmeteo,0.1937,0.1128,modis,107.28,wb_foodindex,57.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2019,9,Wajir,2019-09-01,4.42,28.07,chirps+openmeteo,0.1933,0.1174,modis,107.28,wb_foodindex,55.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2019,10,Wajir,2019-10-01,128.69,26.56,chirps+openmeteo,0.2707,0.178,modis,107.28,wb_foodindex,53.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+013,2019,11,Wajir,2019-11-01,222.33,26.01,chirps+openmeteo,0.4844,0.3391,modis,107.28,wb_foodindex,51.0,fewsnet_prices,229108,0.7311,hdx_knbs,43.75,,mixed,Arid ASAL
+013,2019,12,Wajir,2019-12-01,35.11,27.22,chirps+openmeteo,0.5856,0.3762,modis,107.28,wb_foodindex,48.0,fewsnet_prices,229108,0.7311,hdx_knbs,37.5,,mixed,Arid ASAL
+013,2020,1,Wajir,2020-01-01,8.19,28.61,chirps+openmeteo,0.4131,0.2482,modis,125.82,wb_foodindex,75.5,fewsnet_prices,229108,0.7311,hdx_knbs,31.25,,mixed,Arid ASAL
+013,2020,2,Wajir,2020-02-01,4.42,30.73,chirps+openmeteo,0.2861,0.1698,modis,125.82,wb_foodindex,52.0,fewsnet_prices,229108,0.7311,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+013,2020,3,Wajir,2020-03-01,60.49,30.44,chirps+openmeteo,0.2534,0.1601,modis,125.82,wb_foodindex,77.5,fewsnet_prices,229108,0.7311,hdx_knbs,25.0,,mixed,Arid ASAL
+013,2020,4,Wajir,2020-04-01,279.13,28.02,chirps+openmeteo,0.3119,0.1914,modis,125.82,wb_foodindex,59.0,fewsnet_prices,229108,0.7311,hdx_knbs,25.0,,mixed,Arid ASAL
+013,2020,5,Wajir,2020-05-01,7.85,28.45,chirps+openmeteo,0.3597,0.2092,modis,125.82,wb_foodindex,63.375,,229108,0.7311,hdx_knbs,25.0,,mixed,Arid ASAL
+013,2020,6,Wajir,2020-06-01,0.98,28.24,chirps+openmeteo,0.2843,0.1657,modis,125.82,wb_foodindex,67.75,,229108,0.7311,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+013,2020,7,Wajir,2020-07-01,1.6,27.41,chirps+openmeteo,0.2478,0.1476,modis,125.82,wb_foodindex,72.125,,229108,0.7311,hdx_knbs,25.0,,mixed,Arid ASAL
+013,2020,8,Wajir,2020-08-01,1.3,27.4,chirps+openmeteo,0.2278,0.1363,modis,125.82,wb_foodindex,76.5,fewsnet_prices,229108,0.7311,hdx_knbs,25.0,,mixed,Arid ASAL
+013,2020,9,Wajir,2020-09-01,2.07,28.21,chirps+openmeteo,0.2191,0.136,modis,125.82,wb_foodindex,76.5,fewsnet_prices,229108,0.7311,hdx_knbs,25.0,,mixed,Arid ASAL
+013,2020,10,Wajir,2020-10-01,12.68,29.52,chirps+openmeteo,0.2172,0.1336,modis,125.82,wb_foodindex,78.0,fewsnet_prices,229108,0.7311,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+013,2020,11,Wajir,2020-11-01,42.3,27.04,chirps+openmeteo,0.3125,0.1932,modis,125.82,wb_foodindex,78.0,fewsnet_prices,229108,0.7311,hdx_knbs,31.25,,mixed,Arid ASAL
+013,2020,12,Wajir,2020-12-01,22.82,29.42,chirps+openmeteo,0.27,0.1613,modis,125.82,wb_foodindex,76.5,fewsnet_prices,229108,0.7311,hdx_knbs,37.5,,mixed,Arid ASAL
+013,2021,1,Wajir,2021-01-01,1.78,29.88,chirps+openmeteo,0.2269,0.1347,modis,123.29,wb_foodindex,56.0,fewsnet_prices,229108,0.7311,hdx_knbs,43.75,,mixed,Arid ASAL
+013,2021,2,Wajir,2021-02-01,3.09,30.71,chirps+openmeteo,0.2077,0.1224,modis,123.29,wb_foodindex,56.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+013,2021,3,Wajir,2021-03-01,9.91,30.75,chirps+openmeteo,0.2119,0.1239,modis,123.29,wb_foodindex,60.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2021,4,Wajir,2021-04-01,68.14,28.43,chirps+openmeteo,0.2272,0.1383,modis,123.29,wb_foodindex,63.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2021,5,Wajir,2021-05-01,18.65,28.7,chirps+openmeteo,0.315,0.1981,modis,123.29,wb_foodindex,63.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2021,6,Wajir,2021-06-01,1.12,27.27,chirps+openmeteo,0.2493,0.1604,modis,123.29,wb_foodindex,67.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+013,2021,7,Wajir,2021-07-01,1.54,26.88,chirps+openmeteo,0.2129,0.131,modis,123.29,wb_foodindex,70.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2021,8,Wajir,2021-08-01,1.27,27.49,chirps+openmeteo,0.1985,0.1176,modis,123.29,wb_foodindex,70.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2021,9,Wajir,2021-09-01,2.23,28.11,chirps+openmeteo,0.2068,0.1193,modis,123.29,wb_foodindex,70.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2021,10,Wajir,2021-10-01,6.68,29.28,chirps+openmeteo,0.1974,0.1173,modis,123.29,wb_foodindex,70.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+013,2021,11,Wajir,2021-11-01,39.06,29.21,chirps+openmeteo,0.2051,0.119,modis,123.29,wb_foodindex,65.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2021,12,Wajir,2021-12-01,96.81,27.77,chirps+openmeteo,0.2498,0.1529,modis,123.29,wb_foodindex,68.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,1,Wajir,2022-01-01,7.36,29.58,chirps+openmeteo,0.241,0.1429,modis,112.38,wb_foodindex,57.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,2,Wajir,2022-02-01,3.14,30.8,chirps+openmeteo,0.2018,0.118,modis,112.38,wb_foodindex,62.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+013,2022,3,Wajir,2022-03-01,11.08,30.94,chirps+openmeteo,0.201,0.1163,modis,112.38,wb_foodindex,67.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,4,Wajir,2022-04-01,62.67,29.73,chirps+openmeteo,0.1859,0.1198,modis,112.38,wb_foodindex,68.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,5,Wajir,2022-05-01,31.19,28.43,chirps+openmeteo,0.2828,0.1809,modis,112.38,wb_foodindex,67.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,6,Wajir,2022-06-01,0.94,27.53,chirps+openmeteo,0.2548,0.1623,modis,112.38,wb_foodindex,72.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+013,2022,7,Wajir,2022-07-01,2.12,26.38,chirps+openmeteo,0.2194,0.1333,modis,112.38,wb_foodindex,75.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,8,Wajir,2022-08-01,1.29,27.03,chirps+openmeteo,0.1879,0.1196,modis,112.38,wb_foodindex,75.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,9,Wajir,2022-09-01,2.04,27.93,chirps+openmeteo,0.1915,0.1192,modis,112.38,wb_foodindex,87.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,10,Wajir,2022-10-01,6.58,28.34,chirps+openmeteo,0.1635,0.1087,modis,112.38,wb_foodindex,100.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+013,2022,11,Wajir,2022-11-01,44.73,28.41,chirps+openmeteo,0.1689,0.1136,modis,112.38,wb_foodindex,100.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+013,2022,12,Wajir,2022-12-01,28.7,29.21,chirps+openmeteo,0.2168,0.1347,modis,112.38,wb_foodindex,96.0,fewsnet_prices,229108,0.7311,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2019,1,Mandera,2019-01-01,0.99,30.34,chirps+openmeteo,0.2214,0.133,modis,107.28,wb_foodindex,68.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,,mixed,Arid ASAL
+014,2019,2,Mandera,2019-02-01,1.45,31.86,chirps+openmeteo,0.1975,0.1184,modis,107.28,wb_foodindex,70.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+014,2019,3,Mandera,2019-03-01,4.74,32.31,chirps+openmeteo,0.1922,0.1139,modis,107.28,wb_foodindex,75.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,,mixed,Arid ASAL
+014,2019,4,Mandera,2019-04-01,52.77,31.5,chirps+openmeteo,0.1904,0.115,modis,107.28,wb_foodindex,74.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,,mixed,Arid ASAL
+014,2019,5,Mandera,2019-05-01,51.11,28.42,chirps+openmeteo,0.2389,0.1538,modis,107.28,wb_foodindex,75.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,,mixed,Arid ASAL
+014,2019,6,Mandera,2019-06-01,1.33,29.66,chirps+openmeteo,0.2203,0.1393,modis,107.28,wb_foodindex,75.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+014,2019,7,Mandera,2019-07-01,1.13,28.95,chirps+openmeteo,0.1963,0.1194,modis,107.28,wb_foodindex,76.0,fewsnet_prices,308319,0.8134,hdx_knbs,31.25,,mixed,Arid ASAL
+014,2019,8,Mandera,2019-08-01,0.74,29.49,chirps+openmeteo,0.192,0.1104,modis,107.28,wb_foodindex,80.0,fewsnet_prices,308319,0.8134,hdx_knbs,37.5,,mixed,Arid ASAL
+014,2019,9,Mandera,2019-09-01,1.8,30.08,chirps+openmeteo,0.1836,0.108,modis,107.28,wb_foodindex,81.0,fewsnet_prices,308319,0.8134,hdx_knbs,43.75,,mixed,Arid ASAL
+014,2019,10,Mandera,2019-10-01,160.8,26.5,chirps+openmeteo,0.2854,0.1831,modis,107.28,wb_foodindex,80.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+014,2019,11,Mandera,2019-11-01,115.36,25.92,chirps+openmeteo,0.4299,0.2864,modis,107.28,wb_foodindex,85.0,fewsnet_prices,308319,0.8134,hdx_knbs,43.75,,mixed,Arid ASAL
+014,2019,12,Mandera,2019-12-01,18.68,27.05,chirps+openmeteo,0.4138,0.2525,modis,107.28,wb_foodindex,80.0,fewsnet_prices,308319,0.8134,hdx_knbs,37.5,,mixed,Arid ASAL
+014,2020,1,Mandera,2020-01-01,0.98,30.31,chirps+openmeteo,0.2827,0.174,modis,125.82,wb_foodindex,80.0,fewsnet_prices,308319,0.8134,hdx_knbs,31.25,,mixed,Arid ASAL
+014,2020,2,Mandera,2020-02-01,1.24,31.82,chirps+openmeteo,0.2324,0.1416,modis,125.82,wb_foodindex,79.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+014,2020,3,Mandera,2020-03-01,31.92,32.04,chirps+openmeteo,0.2224,0.1297,modis,125.82,wb_foodindex,77.0,fewsnet_prices,308319,0.8134,hdx_knbs,31.25,,mixed,Arid ASAL
+014,2020,4,Mandera,2020-04-01,159.52,29.22,chirps+openmeteo,0.2968,0.1759,modis,125.82,wb_foodindex,81.0,fewsnet_prices,308319,0.8134,hdx_knbs,37.5,,mixed,Arid ASAL
+014,2020,5,Mandera,2020-05-01,18.11,29.49,chirps+openmeteo,0.3872,0.2366,modis,125.82,wb_foodindex,81.25,,308319,0.8134,hdx_knbs,43.75,,mixed,Arid ASAL
+014,2020,6,Mandera,2020-06-01,1.58,29.81,chirps+openmeteo,0.2861,0.1757,modis,125.82,wb_foodindex,81.5,,308319,0.8134,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+014,2020,7,Mandera,2020-07-01,0.9,28.84,chirps+openmeteo,0.2372,0.15,modis,125.82,wb_foodindex,81.75,,308319,0.8134,hdx_knbs,43.75,,mixed,Arid ASAL
+014,2020,8,Mandera,2020-08-01,0.74,28.81,chirps+openmeteo,0.2161,0.1367,modis,125.82,wb_foodindex,82.0,fewsnet_prices,308319,0.8134,hdx_knbs,37.5,,mixed,Arid ASAL
+014,2020,9,Mandera,2020-09-01,1.05,30.02,chirps+openmeteo,0.2083,0.1266,modis,125.82,wb_foodindex,84.0,fewsnet_prices,308319,0.8134,hdx_knbs,31.25,,mixed,Arid ASAL
+014,2020,10,Mandera,2020-10-01,35.24,29.88,chirps+openmeteo,0.2257,0.1412,modis,125.82,wb_foodindex,82.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+014,2020,11,Mandera,2020-11-01,14.42,27.42,chirps+openmeteo,0.2399,0.1492,modis,125.82,wb_foodindex,83.0,fewsnet_prices,308319,0.8134,hdx_knbs,31.25,,mixed,Arid ASAL
+014,2020,12,Mandera,2020-12-01,1.43,30.08,chirps+openmeteo,0.2143,0.1279,modis,125.82,wb_foodindex,82.0,fewsnet_prices,308319,0.8134,hdx_knbs,37.5,,mixed,Arid ASAL
+014,2021,1,Mandera,2021-01-01,1.2,30.55,chirps+openmeteo,0.2002,0.1187,modis,123.29,wb_foodindex,83.0,fewsnet_prices,308319,0.8134,hdx_knbs,43.75,,mixed,Arid ASAL
+014,2021,2,Mandera,2021-02-01,1.22,31.62,chirps+openmeteo,0.1938,0.1133,modis,123.29,wb_foodindex,82.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+014,2021,3,Mandera,2021-03-01,5.53,31.91,chirps+openmeteo,0.1925,0.1144,modis,123.29,wb_foodindex,82.0,fewsnet_prices,308319,0.8134,hdx_knbs,43.75,,mixed,Arid ASAL
+014,2021,4,Mandera,2021-04-01,97.88,29.54,chirps+openmeteo,0.1921,0.126,modis,123.29,wb_foodindex,84.0,fewsnet_prices,308319,0.8134,hdx_knbs,37.5,,mixed,Arid ASAL
+014,2021,5,Mandera,2021-05-01,44.35,28.57,chirps+openmeteo,0.2912,0.1925,modis,123.29,wb_foodindex,83.0,fewsnet_prices,308319,0.8134,hdx_knbs,31.25,,mixed,Arid ASAL
+014,2021,6,Mandera,2021-06-01,1.35,29.11,chirps+openmeteo,0.2403,0.1483,modis,123.29,wb_foodindex,83.0,fewsnet_prices,308319,0.8134,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+014,2021,7,Mandera,2021-07-01,0.61,28.25,chirps+openmeteo,0.2001,0.1258,modis,123.29,wb_foodindex,83.0,fewsnet_prices,308319,0.8134,hdx_knbs,31.25,,mixed,Arid ASAL
+014,2021,8,Mandera,2021-08-01,0.65,29.24,chirps+openmeteo,0.1943,0.1171,modis,123.29,wb_foodindex,82.0,fewsnet_prices,308319,0.8134,hdx_knbs,37.5,,mixed,Arid ASAL
+014,2021,9,Mandera,2021-09-01,1.06,30.03,chirps+openmeteo,0.1864,0.1142,modis,123.29,wb_foodindex,84.0,fewsnet_prices,308319,0.8134,hdx_knbs,43.75,,mixed,Arid ASAL
+014,2021,10,Mandera,2021-10-01,13.35,30.45,chirps+openmeteo,0.1959,0.116,modis,123.29,wb_foodindex,88.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+014,2021,11,Mandera,2021-11-01,19.35,30.11,chirps+openmeteo,0.2045,0.1221,modis,123.29,wb_foodindex,85.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2021,12,Mandera,2021-12-01,2.4,30.14,chirps+openmeteo,0.2276,0.1402,modis,123.29,wb_foodindex,85.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,1,Mandera,2022-01-01,1.14,30.88,chirps+openmeteo,0.2035,0.1226,modis,112.38,wb_foodindex,88.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,2,Mandera,2022-02-01,1.53,31.51,chirps+openmeteo,0.1857,0.11,modis,112.38,wb_foodindex,90.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+014,2022,3,Mandera,2022-03-01,8.32,32.03,chirps+openmeteo,0.182,0.1079,modis,112.38,wb_foodindex,91.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,4,Mandera,2022-04-01,52.46,31.35,chirps+openmeteo,0.184,0.1146,modis,112.38,wb_foodindex,92.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,5,Mandera,2022-05-01,20.48,29.69,chirps+openmeteo,0.2319,0.1455,modis,112.38,wb_foodindex,91.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,6,Mandera,2022-06-01,1.5,28.89,chirps+openmeteo,0.1967,0.1211,modis,112.38,wb_foodindex,93.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+014,2022,7,Mandera,2022-07-01,0.78,27.98,chirps+openmeteo,0.1859,0.1103,modis,112.38,wb_foodindex,94.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,8,Mandera,2022-08-01,0.73,28.64,chirps+openmeteo,0.1835,0.1093,modis,112.38,wb_foodindex,97.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,9,Mandera,2022-09-01,1.05,29.81,chirps+openmeteo,0.176,0.1081,modis,112.38,wb_foodindex,97.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,10,Mandera,2022-10-01,34.37,28.16,chirps+openmeteo,0.175,0.1112,modis,112.38,wb_foodindex,100.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+014,2022,11,Mandera,2022-11-01,6.46,29.24,chirps+openmeteo,0.195,0.1288,modis,112.38,wb_foodindex,100.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+014,2022,12,Mandera,2022-12-01,2.03,30.06,chirps+openmeteo,0.1865,0.1112,modis,112.38,wb_foodindex,103.0,fewsnet_prices,308319,0.8134,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2019,1,Marsabit,2019-01-01,14.88,22.48,chirps+openmeteo,0.2306,0.1204,modis,107.28,wb_foodindex,36.75,fewsnet_prices,1180583,0.6356,hdx_knbs,25.0,,mixed,Arid ASAL
+015,2019,2,Marsabit,2019-02-01,15.31,22.75,chirps+openmeteo,0.2025,0.1053,modis,107.28,wb_foodindex,38.25,fewsnet_prices,1180583,0.6356,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+015,2019,3,Marsabit,2019-03-01,22.73,23.19,chirps+openmeteo,0.2046,0.1039,modis,107.28,wb_foodindex,44.12,fewsnet_prices,1180583,0.6356,hdx_knbs,31.25,,mixed,Arid ASAL
+015,2019,4,Marsabit,2019-04-01,82.45,22.24,chirps+openmeteo,0.2029,0.107,modis,107.28,wb_foodindex,48.25,fewsnet_prices,1180583,0.6356,hdx_knbs,37.5,,mixed,Arid ASAL
+015,2019,5,Marsabit,2019-05-01,17.82,21.07,chirps+openmeteo,0.2496,0.1323,modis,107.28,wb_foodindex,48.0,fewsnet_prices,1180583,0.6356,hdx_knbs,43.75,,mixed,Arid ASAL
+015,2019,6,Marsabit,2019-06-01,1.02,20.99,chirps+openmeteo,0.217,0.1108,modis,107.28,wb_foodindex,47.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+015,2019,7,Marsabit,2019-07-01,2.66,20.29,chirps+openmeteo,0.1932,0.0995,modis,107.28,wb_foodindex,49.25,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2019,8,Marsabit,2019-08-01,1.54,20.51,chirps+openmeteo,0.1858,0.0929,modis,107.28,wb_foodindex,49.75,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2019,9,Marsabit,2019-09-01,1.75,20.99,chirps+openmeteo,0.1828,0.0923,modis,107.28,wb_foodindex,50.25,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2019,10,Marsabit,2019-10-01,163.32,19.43,chirps+openmeteo,0.245,0.1449,modis,107.28,wb_foodindex,52.5,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+015,2019,11,Marsabit,2019-11-01,122.57,19.43,chirps+openmeteo,0.5181,0.325,modis,107.28,wb_foodindex,49.0,fewsnet_prices,1180583,0.6356,hdx_knbs,43.75,,mixed,Arid ASAL
+015,2019,12,Marsabit,2019-12-01,75.49,20.16,chirps+openmeteo,0.569,0.3562,modis,107.28,wb_foodindex,45.0,fewsnet_prices,1180583,0.6356,hdx_knbs,37.5,,mixed,Arid ASAL
+015,2020,1,Marsabit,2020-01-01,39.53,20.83,chirps+openmeteo,0.4274,0.234,modis,125.82,wb_foodindex,45.0,fewsnet_prices,1180583,0.6356,hdx_knbs,31.25,,mixed,Arid ASAL
+015,2020,2,Marsabit,2020-02-01,9.44,21.9,chirps+openmeteo,0.3419,0.1898,modis,125.82,wb_foodindex,43.0,fewsnet_prices,1180583,0.6356,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+015,2020,3,Marsabit,2020-03-01,87.15,21.93,chirps+openmeteo,0.2802,0.1522,modis,125.82,wb_foodindex,43.0,fewsnet_prices,1180583,0.6356,hdx_knbs,25.0,,mixed,Arid ASAL
+015,2020,4,Marsabit,2020-04-01,261.76,20.64,chirps+openmeteo,0.3818,0.2345,modis,125.82,wb_foodindex,47.0,fewsnet_prices,1180583,0.6356,hdx_knbs,25.0,,mixed,Arid ASAL
+015,2020,5,Marsabit,2020-05-01,15.71,20.88,chirps+openmeteo,0.4689,0.2779,modis,125.82,wb_foodindex,46.5,,1180583,0.6356,hdx_knbs,25.0,,mixed,Arid ASAL
+015,2020,6,Marsabit,2020-06-01,2.26,20.5,chirps+openmeteo,0.316,0.1731,modis,125.82,wb_foodindex,46.0,,1180583,0.6356,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+015,2020,7,Marsabit,2020-07-01,4.31,20.13,chirps+openmeteo,0.2538,0.1354,modis,125.82,wb_foodindex,45.5,,1180583,0.6356,hdx_knbs,25.0,,mixed,Arid ASAL
+015,2020,8,Marsabit,2020-08-01,2.33,20.15,chirps+openmeteo,0.234,0.1293,modis,125.82,wb_foodindex,45.0,fewsnet_prices,1180583,0.6356,hdx_knbs,25.0,,mixed,Arid ASAL
+015,2020,9,Marsabit,2020-09-01,1.9,20.91,chirps+openmeteo,0.2229,0.1182,modis,125.82,wb_foodindex,45.0,fewsnet_prices,1180583,0.6356,hdx_knbs,25.0,,mixed,Arid ASAL
+015,2020,10,Marsabit,2020-10-01,67.17,21.67,chirps+openmeteo,0.221,0.1184,modis,125.82,wb_foodindex,44.0,fewsnet_prices,1180583,0.6356,hdx_knbs,25.0,fewsnet_ipc,mixed,Arid ASAL
+015,2020,11,Marsabit,2020-11-01,45.05,19.79,chirps+openmeteo,0.3011,0.1779,modis,125.82,wb_foodindex,44.0,fewsnet_prices,1180583,0.6356,hdx_knbs,31.25,,mixed,Arid ASAL
+015,2020,12,Marsabit,2020-12-01,40.64,21.38,chirps+openmeteo,0.316,0.1764,modis,125.82,wb_foodindex,47.0,fewsnet_prices,1180583,0.6356,hdx_knbs,37.5,,mixed,Arid ASAL
+015,2021,1,Marsabit,2021-01-01,9.43,22.11,chirps+openmeteo,0.2606,0.1367,modis,123.29,wb_foodindex,54.0,fewsnet_prices,1180583,0.6356,hdx_knbs,43.75,,mixed,Arid ASAL
+015,2021,2,Marsabit,2021-02-01,13.47,23.13,chirps+openmeteo,0.2209,0.114,modis,123.29,wb_foodindex,51.9,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+015,2021,3,Marsabit,2021-03-01,13.88,22.75,chirps+openmeteo,0.2152,0.1089,modis,123.29,wb_foodindex,50.75,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2021,4,Marsabit,2021-04-01,46.37,20.95,chirps+openmeteo,0.1811,0.1009,modis,123.29,wb_foodindex,50.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2021,5,Marsabit,2021-05-01,32.6,20.55,chirps+openmeteo,0.2691,0.1361,modis,123.29,wb_foodindex,51.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2021,6,Marsabit,2021-06-01,1.92,19.93,chirps+openmeteo,0.239,0.1229,modis,123.29,wb_foodindex,53.75,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+015,2021,7,Marsabit,2021-07-01,3.79,19.46,chirps+openmeteo,0.2125,0.1088,modis,123.29,wb_foodindex,51.1,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2021,8,Marsabit,2021-08-01,2.77,20.4,chirps+openmeteo,0.1968,0.1007,modis,123.29,wb_foodindex,50.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2021,9,Marsabit,2021-09-01,1.58,21.11,chirps+openmeteo,0.1907,0.0969,modis,123.29,wb_foodindex,53.5,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2021,10,Marsabit,2021-10-01,21.47,22.21,chirps+openmeteo,0.189,0.0973,modis,123.29,wb_foodindex,55.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+015,2021,11,Marsabit,2021-11-01,58.27,21.82,chirps+openmeteo,0.2092,0.1101,modis,123.29,wb_foodindex,55.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2021,12,Marsabit,2021-12-01,32.65,20.21,chirps+openmeteo,0.2423,0.1291,modis,123.29,wb_foodindex,55.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2022,1,Marsabit,2022-01-01,26.63,21.82,chirps+openmeteo,0.2286,0.1126,modis,112.38,wb_foodindex,55.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2022,2,Marsabit,2022-02-01,11.42,23.84,chirps+openmeteo,0.203,0.0997,modis,112.38,wb_foodindex,57.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+015,2022,3,Marsabit,2022-03-01,19.07,23.65,chirps+openmeteo,0.1939,0.0954,modis,112.38,wb_foodindex,58.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2022,4,Marsabit,2022-04-01,83.0,22.05,chirps+openmeteo,0.173,0.0905,modis,112.38,wb_foodindex,60.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2022,5,Marsabit,2022-05-01,27.17,21.36,chirps+openmeteo,0.2572,0.1301,modis,112.38,wb_foodindex,65.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,,mixed,Arid ASAL
+015,2022,6,Marsabit,2022-06-01,1.99,20.35,chirps+openmeteo,0.2113,0.1087,modis,112.38,wb_foodindex,66.0,fewsnet_prices,1180583,0.6356,hdx_knbs,50.0,fewsnet_ipc,mixed,Arid ASAL
+015,2022,7,Marsabit,2022-07-01,4.35,19.27,chirps+openmeteo,0.1845,0.0936,modis,112.38,wb_foodindex,70.0,fewsnet_prices,1180583,0.6356,hdx_knbs,56.25,,mixed,Arid ASAL
+015,2022,8,Marsabit,2022-08-01,2.81,19.8,chirps+openmeteo,0.1792,0.0907,modis,112.38,wb_foodindex,75.0,fewsnet_prices,1180583,0.6356,hdx_knbs,62.5,,mixed,Arid ASAL
+015,2022,9,Marsabit,2022-09-01,1.53,20.74,chirps+openmeteo,0.1744,0.0876,modis,112.38,wb_foodindex,88.0,fewsnet_prices,1180583,0.6356,hdx_knbs,68.75,,mixed,Arid ASAL
+015,2022,10,Marsabit,2022-10-01,25.6,20.92,chirps+openmeteo,0.1405,0.0815,modis,112.38,wb_foodindex,87.0,fewsnet_prices,1180583,0.6356,hdx_knbs,75.0,fewsnet_ipc,mixed,Arid ASAL
+015,2022,11,Marsabit,2022-11-01,38.23,20.45,chirps+openmeteo,0.1635,0.0866,modis,112.38,wb_foodindex,85.0,fewsnet_prices,1180583,0.6356,hdx_knbs,75.0,,mixed,Arid ASAL
+015,2022,12,Marsabit,2022-12-01,38.67,21.39,chirps+openmeteo,0.1762,0.0931,modis,112.38,wb_foodindex,80.0,fewsnet_prices,1180583,0.6356,hdx_knbs,75.0,,mixed,Arid ASAL
+016,2019,1,Garissa,2019-01-01,7.06,29.76,chirps+openmeteo,0.2324,0.1533,modis,107.28,wb_foodindex,62.5,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2019,2,Garissa,2019-02-01,7.78,30.2,chirps+openmeteo,0.2087,0.145,modis,107.28,wb_foodindex,62.5,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2019,3,Garissa,2019-03-01,9.67,31.05,chirps+openmeteo,0.2078,0.1416,modis,107.28,wb_foodindex,57.5,fewsnet_prices,974404,0.5525,hdx_knbs,31.25,,mixed,Semi-arid ASAL
+016,2019,4,Garissa,2019-04-01,39.67,30.56,chirps+openmeteo,0.2102,0.1418,modis,107.28,wb_foodindex,61.25,fewsnet_prices,974404,0.5525,hdx_knbs,37.5,,mixed,Semi-arid ASAL
+016,2019,5,Garissa,2019-05-01,1.03,28.15,chirps+openmeteo,0.2285,0.1599,modis,107.28,wb_foodindex,64.5,fewsnet_prices,974404,0.5525,hdx_knbs,43.75,,mixed,Semi-arid ASAL
+016,2019,6,Garissa,2019-06-01,0.18,27.77,chirps+openmeteo,0.2118,0.1437,modis,107.28,wb_foodindex,66.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2019,7,Garissa,2019-07-01,5.21,26.86,chirps+openmeteo,0.1988,0.1368,modis,107.28,wb_foodindex,59.56,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2019,8,Garissa,2019-08-01,1.31,26.76,chirps+openmeteo,0.1924,0.1307,modis,107.28,wb_foodindex,60.41,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2019,9,Garissa,2019-09-01,20.25,27.28,chirps+openmeteo,0.1991,0.1412,modis,107.28,wb_foodindex,58.34,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2019,10,Garissa,2019-10-01,72.89,27.3,chirps+openmeteo,0.2884,0.2062,modis,107.28,wb_foodindex,65.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2019,11,Garissa,2019-11-01,274.11,26.82,chirps+openmeteo,0.3972,0.2734,modis,107.28,wb_foodindex,65.0,fewsnet_prices,974404,0.5525,hdx_knbs,43.75,,mixed,Semi-arid ASAL
+016,2019,12,Garissa,2019-12-01,109.6,27.81,chirps+openmeteo,0.4479,0.315,modis,107.28,wb_foodindex,68.0,fewsnet_prices,974404,0.5525,hdx_knbs,37.5,,mixed,Semi-arid ASAL
+016,2020,1,Garissa,2020-01-01,37.4,28.69,chirps+openmeteo,0.3573,0.2418,modis,125.82,wb_foodindex,67.5,fewsnet_prices,974404,0.5525,hdx_knbs,31.25,,mixed,Semi-arid ASAL
+016,2020,2,Garissa,2020-02-01,7.6,30.12,chirps+openmeteo,0.3053,0.2078,modis,125.82,wb_foodindex,66.65,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2020,3,Garissa,2020-03-01,51.58,30.48,chirps+openmeteo,0.2683,0.173,modis,125.82,wb_foodindex,69.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2020,4,Garissa,2020-04-01,92.34,28.54,chirps+openmeteo,0.3467,0.2221,modis,125.82,wb_foodindex,66.5,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2020,5,Garissa,2020-05-01,1.48,27.95,chirps+openmeteo,0.3932,0.2588,modis,125.82,wb_foodindex,67.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2020,6,Garissa,2020-06-01,0.18,27.65,chirps+openmeteo,0.3077,0.2029,modis,125.82,wb_foodindex,72.75,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2020,7,Garissa,2020-07-01,9.75,26.65,chirps+openmeteo,0.2576,0.1702,modis,125.82,wb_foodindex,70.25,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2020,8,Garissa,2020-08-01,0.51,26.53,chirps+openmeteo,0.2433,0.1549,modis,125.82,wb_foodindex,69.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2020,9,Garissa,2020-09-01,5.69,27.14,chirps+openmeteo,0.2168,0.1512,modis,125.82,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2020,10,Garissa,2020-10-01,20.42,28.94,chirps+openmeteo,0.2123,0.1439,modis,125.82,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2020,11,Garissa,2020-11-01,50.58,27.73,chirps+openmeteo,0.345,0.2357,modis,125.82,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2020,12,Garissa,2020-12-01,48.95,28.73,chirps+openmeteo,0.3145,0.2229,modis,125.82,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2021,1,Garissa,2021-01-01,4.7,29.05,chirps+openmeteo,0.2647,0.1724,modis,123.29,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,,mixed,Semi-arid ASAL
+016,2021,2,Garissa,2021-02-01,3.08,30.28,chirps+openmeteo,0.2233,0.1489,modis,123.29,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2021,3,Garissa,2021-03-01,17.29,30.57,chirps+openmeteo,0.2123,0.1461,modis,123.29,wb_foodindex,72.0,fewsnet_prices,974404,0.5525,hdx_knbs,31.25,,mixed,Semi-arid ASAL
+016,2021,4,Garissa,2021-04-01,36.88,29.67,chirps+openmeteo,0.2436,0.1719,modis,123.29,wb_foodindex,72.0,fewsnet_prices,974404,0.5525,hdx_knbs,37.5,,mixed,Semi-arid ASAL
+016,2021,5,Garissa,2021-05-01,1.03,28.62,chirps+openmeteo,0.2529,0.1791,modis,123.29,wb_foodindex,72.5,fewsnet_prices,974404,0.5525,hdx_knbs,43.75,,mixed,Semi-arid ASAL
+016,2021,6,Garissa,2021-06-01,0.21,26.66,chirps+openmeteo,0.2193,0.1491,modis,123.29,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2021,7,Garissa,2021-07-01,2.53,26.12,chirps+openmeteo,0.2053,0.1405,modis,123.29,wb_foodindex,72.5,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2021,8,Garissa,2021-08-01,0.59,26.41,chirps+openmeteo,0.1934,0.1318,modis,123.29,wb_foodindex,75.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2021,9,Garissa,2021-09-01,5.55,27.19,chirps+openmeteo,0.2037,0.1373,modis,123.29,wb_foodindex,73.55,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2021,10,Garissa,2021-10-01,9.65,28.62,chirps+openmeteo,0.1946,0.1346,modis,123.29,wb_foodindex,76.65,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2021,11,Garissa,2021-11-01,53.68,29.32,chirps+openmeteo,0.1993,0.1412,modis,123.29,wb_foodindex,85.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2021,12,Garissa,2021-12-01,186.43,27.25,chirps+openmeteo,0.4107,0.3055,modis,123.29,wb_foodindex,85.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,1,Garissa,2022-01-01,7.59,29.33,chirps+openmeteo,0.4211,0.3032,modis,112.38,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,2,Garissa,2022-02-01,3.39,30.47,chirps+openmeteo,0.2701,0.1933,modis,112.38,wb_foodindex,70.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2022,3,Garissa,2022-03-01,15.52,30.52,chirps+openmeteo,0.2308,0.1642,modis,112.38,wb_foodindex,75.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,4,Garissa,2022-04-01,23.9,29.71,chirps+openmeteo,0.2241,0.1594,modis,112.38,wb_foodindex,75.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,5,Garissa,2022-05-01,2.41,28.44,chirps+openmeteo,0.2511,0.1772,modis,112.38,wb_foodindex,78.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,6,Garissa,2022-06-01,0.2,26.95,chirps+openmeteo,0.2198,0.1507,modis,112.38,wb_foodindex,85.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2022,7,Garissa,2022-07-01,2.61,25.64,chirps+openmeteo,0.213,0.1426,modis,112.38,wb_foodindex,85.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,8,Garissa,2022-08-01,0.5,25.97,chirps+openmeteo,0.2014,0.1371,modis,112.38,wb_foodindex,90.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,9,Garissa,2022-09-01,8.67,26.78,chirps+openmeteo,0.1939,0.139,modis,112.38,wb_foodindex,100.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,10,Garissa,2022-10-01,14.9,27.98,chirps+openmeteo,0.1781,0.1292,modis,112.38,wb_foodindex,105.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,fewsnet_ipc,mixed,Semi-arid ASAL
+016,2022,11,Garissa,2022-11-01,99.8,27.29,chirps+openmeteo,0.2809,0.2026,modis,112.38,wb_foodindex,105.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+016,2022,12,Garissa,2022-12-01,36.16,28.97,chirps+openmeteo,0.3311,0.2362,modis,112.38,wb_foodindex,100.0,fewsnet_prices,974404,0.5525,hdx_knbs,50.0,,mixed,Semi-arid ASAL
+017,2019,1,Taita Taveta,2019-01-01,24.21,18.79,chirps+openmeteo,0.4331,0.25,modis,107.28,wb_foodindex,29.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2019,2,Taita Taveta,2019-02-01,21.64,19.47,chirps+openmeteo,0.3378,0.1948,modis,107.28,wb_foodindex,29.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2019,3,Taita Taveta,2019-03-01,17.28,20.61,chirps+openmeteo,0.3192,0.175,modis,107.28,wb_foodindex,31.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2019,4,Taita Taveta,2019-04-01,119.99,19.41,chirps+openmeteo,0.3632,0.2143,modis,107.28,wb_foodindex,34.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2019,5,Taita Taveta,2019-05-01,68.08,16.75,chirps+openmeteo,0.4603,0.2679,modis,107.28,wb_foodindex,41.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2019,6,Taita Taveta,2019-06-01,15.52,15.92,chirps+openmeteo,0.4589,0.2796,modis,107.28,wb_foodindex,42.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2019,7,Taita Taveta,2019-07-01,14.8,15.74,chirps+openmeteo,0.3476,0.1977,modis,107.28,wb_foodindex,41.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2019,8,Taita Taveta,2019-08-01,26.75,15.66,chirps+openmeteo,0.2909,0.1602,modis,107.28,wb_foodindex,42.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2019,9,Taita Taveta,2019-09-01,30.51,16.49,chirps+openmeteo,0.2766,0.143,modis,107.28,wb_foodindex,44.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2019,10,Taita Taveta,2019-10-01,154.37,16.81,chirps+openmeteo,0.3839,0.2266,modis,107.28,wb_foodindex,46.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2019,11,Taita Taveta,2019-11-01,201.79,17.6,chirps+openmeteo,0.6324,0.4255,modis,107.28,wb_foodindex,46.0,fewsnet_prices,880597,0.1927,hdx_knbs,18.75,,mixed,Semi-arid
+017,2019,12,Taita Taveta,2019-12-01,249.79,18.15,chirps+openmeteo,0.693,0.4839,modis,107.28,wb_foodindex,46.0,fewsnet_prices,880597,0.1927,hdx_knbs,12.5,,mixed,Semi-arid
+017,2020,1,Taita Taveta,2020-01-01,114.57,18.71,chirps+openmeteo,0.6611,0.4571,modis,125.82,wb_foodindex,44.0,fewsnet_prices,880597,0.1927,hdx_knbs,6.25,,mixed,Semi-arid
+017,2020,2,Taita Taveta,2020-02-01,30.37,18.93,chirps+openmeteo,0.6813,0.4522,modis,125.82,wb_foodindex,43.0,fewsnet_prices,880597,0.1927,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+017,2020,3,Taita Taveta,2020-03-01,201.97,18.89,chirps+openmeteo,0.6584,0.4095,modis,125.82,wb_foodindex,39.0,fewsnet_prices,880597,0.1927,hdx_knbs,0.0,,mixed,Semi-arid
+017,2020,4,Taita Taveta,2020-04-01,160.95,17.73,chirps+openmeteo,0.6574,0.4223,modis,125.82,wb_foodindex,37.0,fewsnet_prices,880597,0.1927,hdx_knbs,0.0,,mixed,Semi-arid
+017,2020,5,Taita Taveta,2020-05-01,21.12,16.57,chirps+openmeteo,0.5983,0.3727,modis,125.82,wb_foodindex,36.75,,880597,0.1927,hdx_knbs,0.0,,mixed,Semi-arid
+017,2020,6,Taita Taveta,2020-06-01,15.08,15.77,chirps+openmeteo,0.4932,0.2826,modis,125.82,wb_foodindex,36.5,,880597,0.1927,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+017,2020,7,Taita Taveta,2020-07-01,13.45,15.13,chirps+openmeteo,0.3992,0.2119,modis,125.82,wb_foodindex,36.25,,880597,0.1927,hdx_knbs,6.25,,mixed,Semi-arid
+017,2020,8,Taita Taveta,2020-08-01,13.94,15.41,chirps+openmeteo,0.3446,0.1817,modis,125.82,wb_foodindex,36.0,fewsnet_prices,880597,0.1927,hdx_knbs,12.5,,mixed,Semi-arid
+017,2020,9,Taita Taveta,2020-09-01,24.94,16.15,chirps+openmeteo,0.3281,0.1771,modis,125.82,wb_foodindex,36.0,fewsnet_prices,880597,0.1927,hdx_knbs,18.75,,mixed,Semi-arid
+017,2020,10,Taita Taveta,2020-10-01,18.97,17.81,chirps+openmeteo,0.3065,0.1709,modis,125.82,wb_foodindex,36.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2020,11,Taita Taveta,2020-11-01,155.23,17.78,chirps+openmeteo,0.4319,0.2649,modis,125.82,wb_foodindex,38.0,fewsnet_prices,880597,0.1927,hdx_knbs,18.75,,mixed,Semi-arid
+017,2020,12,Taita Taveta,2020-12-01,104.54,18.28,chirps+openmeteo,0.5959,0.3668,modis,125.82,wb_foodindex,39.0,fewsnet_prices,880597,0.1927,hdx_knbs,12.5,,mixed,Semi-arid
+017,2021,1,Taita Taveta,2021-01-01,44.04,18.16,chirps+openmeteo,0.5571,0.3146,modis,123.29,wb_foodindex,38.25,fewsnet_prices,880597,0.1927,hdx_knbs,6.25,,mixed,Semi-arid
+017,2021,2,Taita Taveta,2021-02-01,33.34,18.8,chirps+openmeteo,0.4709,0.2737,modis,123.29,wb_foodindex,37.35,fewsnet_prices,880597,0.1927,hdx_knbs,0.0,fewsnet_ipc,mixed,Semi-arid
+017,2021,3,Taita Taveta,2021-03-01,20.2,19.39,chirps+openmeteo,0.4083,0.2194,modis,123.29,wb_foodindex,37.4,fewsnet_prices,880597,0.1927,hdx_knbs,6.25,,mixed,Semi-arid
+017,2021,4,Taita Taveta,2021-04-01,107.32,18.26,chirps+openmeteo,0.4926,0.2957,modis,123.29,wb_foodindex,35.0,fewsnet_prices,880597,0.1927,hdx_knbs,12.5,,mixed,Semi-arid
+017,2021,5,Taita Taveta,2021-05-01,45.87,16.86,chirps+openmeteo,0.4965,0.2922,modis,123.29,wb_foodindex,35.0,fewsnet_prices,880597,0.1927,hdx_knbs,18.75,,mixed,Semi-arid
+017,2021,6,Taita Taveta,2021-06-01,5.86,15.59,chirps+openmeteo,0.3756,0.2171,modis,123.29,wb_foodindex,36.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2021,7,Taita Taveta,2021-07-01,10.93,15.0,chirps+openmeteo,0.3271,0.1772,modis,123.29,wb_foodindex,37.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2021,8,Taita Taveta,2021-08-01,13.95,15.66,chirps+openmeteo,0.3017,0.161,modis,123.29,wb_foodindex,38.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2021,9,Taita Taveta,2021-09-01,11.35,16.2,chirps+openmeteo,0.2937,0.1595,modis,123.29,wb_foodindex,38.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2021,10,Taita Taveta,2021-10-01,19.6,17.68,chirps+openmeteo,0.2675,0.1595,modis,123.29,wb_foodindex,40.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2021,11,Taita Taveta,2021-11-01,70.38,19.1,chirps+openmeteo,0.2781,0.1561,modis,123.29,wb_foodindex,40.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2021,12,Taita Taveta,2021-12-01,175.12,17.95,chirps+openmeteo,0.483,0.2905,modis,123.29,wb_foodindex,41.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,1,Taita Taveta,2022-01-01,18.62,19.35,chirps+openmeteo,0.5299,0.331,modis,112.38,wb_foodindex,44.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,2,Taita Taveta,2022-02-01,34.52,20.04,chirps+openmeteo,0.4253,0.2337,modis,112.38,wb_foodindex,44.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2022,3,Taita Taveta,2022-03-01,29.92,20.23,chirps+openmeteo,0.3676,0.2028,modis,112.38,wb_foodindex,45.2,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,4,Taita Taveta,2022-04-01,95.84,18.62,chirps+openmeteo,0.3504,0.2049,modis,112.38,wb_foodindex,47.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,5,Taita Taveta,2022-05-01,25.1,17.46,chirps+openmeteo,0.3633,0.2139,modis,112.38,wb_foodindex,54.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,6,Taita Taveta,2022-06-01,12.67,15.98,chirps+openmeteo,0.3086,0.1668,modis,112.38,wb_foodindex,60.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2022,7,Taita Taveta,2022-07-01,8.78,14.72,chirps+openmeteo,0.2822,0.1507,modis,112.38,wb_foodindex,66.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,8,Taita Taveta,2022-08-01,10.44,14.75,chirps+openmeteo,0.2574,0.1342,modis,112.38,wb_foodindex,70.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,9,Taita Taveta,2022-09-01,11.17,15.7,chirps+openmeteo,0.2328,0.1316,modis,112.38,wb_foodindex,73.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,10,Taita Taveta,2022-10-01,14.25,17.3,chirps+openmeteo,0.2307,0.1388,modis,112.38,wb_foodindex,74.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+017,2022,11,Taita Taveta,2022-11-01,120.26,17.54,chirps+openmeteo,0.2762,0.1546,modis,112.38,wb_foodindex,77.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+017,2022,12,Taita Taveta,2022-12-01,72.95,18.59,chirps+openmeteo,0.4067,0.2575,modis,112.38,wb_foodindex,78.0,fewsnet_prices,880597,0.1927,hdx_knbs,25.0,,mixed,Semi-arid
+018,2019,1,Nakuru,2019-01-01,19.1,27.16,chirps+openmeteo,0.4979,0.2625,modis,107.28,wb_foodindex,27.78,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2019,2,Nakuru,2019-02-01,9.32,27.9,chirps+openmeteo,0.3961,0.2352,modis,107.28,wb_foodindex,27.78,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2019,3,Nakuru,2019-03-01,30.36,28.36,chirps+openmeteo,0.3699,0.1937,modis,107.28,wb_foodindex,34.72,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2019,4,Nakuru,2019-04-01,92.52,27.88,chirps+openmeteo,0.3526,0.1766,modis,107.28,wb_foodindex,38.89,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2019,5,Nakuru,2019-05-01,74.04,26.35,chirps+openmeteo,0.4035,0.2061,modis,107.28,wb_foodindex,47.22,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2019,6,Nakuru,2019-06-01,164.87,23.26,chirps+openmeteo,0.5401,0.2928,modis,107.28,wb_foodindex,48.33,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2019,7,Nakuru,2019-07-01,149.39,23.58,chirps+openmeteo,0.6878,0.4243,modis,107.28,wb_foodindex,45.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2019,8,Nakuru,2019-08-01,164.93,23.19,chirps+openmeteo,0.6935,0.4309,modis,107.28,wb_foodindex,35.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2019,9,Nakuru,2019-09-01,79.86,24.78,chirps+openmeteo,0.6598,0.394,modis,107.28,wb_foodindex,35.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2019,10,Nakuru,2019-10-01,139.48,23.51,chirps+openmeteo,0.5733,0.3806,modis,107.28,wb_foodindex,35.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2019,11,Nakuru,2019-11-01,135.4,23.61,chirps+openmeteo,0.6669,0.3782,modis,107.28,wb_foodindex,37.5,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2019,12,Nakuru,2019-12-01,133.16,23.11,chirps+openmeteo,0.6294,0.3876,modis,107.28,wb_foodindex,40.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,1,Nakuru,2020-01-01,50.95,24.59,chirps+openmeteo,0.6347,0.3838,modis,125.82,wb_foodindex,43.3,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,2,Nakuru,2020-02-01,32.13,25.12,chirps+openmeteo,0.6284,0.3679,modis,125.82,wb_foodindex,45.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2020,3,Nakuru,2020-03-01,157.04,25.87,chirps+openmeteo,0.5799,0.338,modis,125.82,wb_foodindex,45.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,4,Nakuru,2020-04-01,251.2,24.92,chirps+openmeteo,0.602,0.3489,modis,125.82,wb_foodindex,44.3,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,5,Nakuru,2020-05-01,153.82,24.2,chirps+openmeteo,0.6915,0.3846,modis,125.82,wb_foodindex,43.6,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,6,Nakuru,2020-06-01,173.39,23.33,chirps+openmeteo,0.6806,0.4052,modis,125.82,wb_foodindex,42.9,,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2020,7,Nakuru,2020-07-01,213.28,22.28,chirps+openmeteo,0.6941,0.4249,modis,125.82,wb_foodindex,42.2,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,8,Nakuru,2020-08-01,208.11,22.71,chirps+openmeteo,0.701,0.4032,modis,125.82,wb_foodindex,41.5,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,9,Nakuru,2020-09-01,101.36,23.53,chirps+openmeteo,0.6809,0.4045,modis,125.82,wb_foodindex,57.5,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,10,Nakuru,2020-10-01,107.66,23.93,chirps+openmeteo,0.6282,0.3667,modis,125.82,wb_foodindex,45.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2020,11,Nakuru,2020-11-01,101.81,24.22,chirps+openmeteo,0.646,0.3819,modis,125.82,wb_foodindex,43.3,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2020,12,Nakuru,2020-12-01,19.03,26.31,chirps+openmeteo,0.5826,0.3496,modis,125.82,wb_foodindex,40.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,1,Nakuru,2021-01-01,41.84,26.48,chirps+openmeteo,0.5216,0.2817,modis,123.29,wb_foodindex,52.5,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,2,Nakuru,2021-02-01,32.85,26.68,chirps+openmeteo,0.4649,0.2512,modis,123.29,wb_foodindex,45.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2021,3,Nakuru,2021-03-01,31.75,27.55,chirps+openmeteo,0.4367,0.2303,modis,123.29,wb_foodindex,45.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,4,Nakuru,2021-04-01,79.53,26.69,chirps+openmeteo,0.4654,0.2434,modis,123.29,wb_foodindex,45.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,5,Nakuru,2021-05-01,219.24,24.54,chirps+openmeteo,0.5457,0.3113,modis,123.29,wb_foodindex,53.75,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,6,Nakuru,2021-06-01,58.8,26.11,chirps+openmeteo,0.5927,0.3491,modis,123.29,wb_foodindex,62.5,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2021,7,Nakuru,2021-07-01,108.71,22.97,chirps+openmeteo,0.5886,0.3271,modis,123.29,wb_foodindex,52.5,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,8,Nakuru,2021-08-01,99.59,24.34,chirps+openmeteo,0.6368,0.3927,modis,123.29,wb_foodindex,48.3,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,9,Nakuru,2021-09-01,117.72,24.16,chirps+openmeteo,0.6329,0.3683,modis,123.29,wb_foodindex,50.0,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,10,Nakuru,2021-10-01,82.62,25.8,chirps+openmeteo,0.6141,0.3497,modis,123.29,wb_foodindex,47.9,fewsnet_prices,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2021,11,Nakuru,2021-11-01,38.15,27.09,chirps+openmeteo,0.5257,0.3082,modis,123.29,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2021,12,Nakuru,2021-12-01,35.88,26.16,chirps+openmeteo,0.4746,0.2508,modis,123.29,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,1,Nakuru,2022-01-01,37.18,26.03,chirps+openmeteo,0.4305,0.2237,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,2,Nakuru,2022-02-01,36.32,27.75,chirps+openmeteo,0.3941,0.2115,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2022,3,Nakuru,2022-03-01,36.35,28.23,chirps+openmeteo,0.3596,0.1842,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,4,Nakuru,2022-04-01,110.51,25.75,chirps+openmeteo,0.3832,0.1771,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,5,Nakuru,2022-05-01,98.26,24.75,chirps+openmeteo,0.5642,0.305,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,6,Nakuru,2022-06-01,60.7,23.8,chirps+openmeteo,0.5823,0.3462,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2022,7,Nakuru,2022-07-01,68.61,23.79,chirps+openmeteo,0.5861,0.3503,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,8,Nakuru,2022-08-01,156.81,22.6,chirps+openmeteo,0.5988,0.34,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,9,Nakuru,2022-09-01,115.15,24.19,chirps+openmeteo,0.6266,0.3719,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,10,Nakuru,2022-10-01,46.85,26.41,chirps+openmeteo,0.5465,0.3225,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Mixed
+018,2022,11,Nakuru,2022-11-01,126.43,25.55,chirps+openmeteo,0.5003,0.2759,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+018,2022,12,Nakuru,2022-12-01,44.82,25.57,chirps+openmeteo,0.4826,0.2536,modis,112.38,wb_foodindex,47.9,,423511,0.1773,hdx_knbs,0.0,,mixed,Rift Valley / Mixed
+019,2019,1,Narok,2019-01-01,24.05,19.2,chirps+openmeteo,0.5354,0.3076,modis,107.28,wb_foodindex,32.5,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2019,2,Narok,2019-02-01,23.78,20.65,chirps+openmeteo,0.443,0.2656,modis,107.28,wb_foodindex,30.25,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2019,3,Narok,2019-03-01,33.32,21.28,chirps+openmeteo,0.4113,0.2362,modis,107.28,wb_foodindex,30.16,fewsnet_prices,204768,0.4334,hdx_knbs,18.75,,mixed,Rift Valley / Pastoral
+019,2019,4,Narok,2019-04-01,139.54,20.23,chirps+openmeteo,0.384,0.2119,modis,107.28,wb_foodindex,39.0,fewsnet_prices,204768,0.4334,hdx_knbs,12.5,,mixed,Rift Valley / Pastoral
+019,2019,5,Narok,2019-05-01,75.17,17.65,chirps+openmeteo,0.5033,0.2922,modis,107.28,wb_foodindex,41.5,fewsnet_prices,204768,0.4334,hdx_knbs,6.25,,mixed,Rift Valley / Pastoral
+019,2019,6,Narok,2019-06-01,110.09,16.61,chirps+openmeteo,0.5442,0.3381,modis,107.28,wb_foodindex,44.2,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2019,7,Narok,2019-07-01,38.15,17.24,chirps+openmeteo,0.5747,0.3556,modis,107.28,wb_foodindex,51.0,fewsnet_prices,204768,0.4334,hdx_knbs,6.25,,mixed,Rift Valley / Pastoral
+019,2019,8,Narok,2019-08-01,71.09,17.97,chirps+openmeteo,0.5047,0.3113,modis,107.28,wb_foodindex,41.0,fewsnet_prices,204768,0.4334,hdx_knbs,12.5,,mixed,Rift Valley / Pastoral
+019,2019,9,Narok,2019-09-01,73.6,18.38,chirps+openmeteo,0.4658,0.2885,modis,107.28,wb_foodindex,38.0,fewsnet_prices,204768,0.4334,hdx_knbs,18.75,,mixed,Rift Valley / Pastoral
+019,2019,10,Narok,2019-10-01,120.21,17.52,chirps+openmeteo,0.4497,0.3002,modis,107.28,wb_foodindex,42.4,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2019,11,Narok,2019-11-01,168.78,17.74,chirps+openmeteo,0.5388,0.3314,modis,107.28,wb_foodindex,47.0,fewsnet_prices,204768,0.4334,hdx_knbs,18.75,,mixed,Rift Valley / Pastoral
+019,2019,12,Narok,2019-12-01,256.13,17.24,chirps+openmeteo,0.6615,0.4015,modis,107.28,wb_foodindex,50.0,fewsnet_prices,204768,0.4334,hdx_knbs,12.5,,mixed,Rift Valley / Pastoral
+019,2020,1,Narok,2020-01-01,138.15,17.56,chirps+openmeteo,0.6857,0.4497,modis,125.82,wb_foodindex,45.5,fewsnet_prices,204768,0.4334,hdx_knbs,6.25,,mixed,Rift Valley / Pastoral
+019,2020,2,Narok,2020-02-01,70.93,17.88,chirps+openmeteo,0.6847,0.4251,modis,125.82,wb_foodindex,41.5,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2020,3,Narok,2020-03-01,241.35,17.98,chirps+openmeteo,0.6781,0.4305,modis,125.82,wb_foodindex,40.0,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2020,4,Narok,2020-04-01,287.59,17.62,chirps+openmeteo,0.6291,0.4261,modis,125.82,wb_foodindex,50.0,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2020,5,Narok,2020-05-01,99.48,16.85,chirps+openmeteo,0.7011,0.4363,modis,125.82,wb_foodindex,51.0,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2020,6,Narok,2020-06-01,80.62,16.01,chirps+openmeteo,0.593,0.3847,modis,125.82,wb_foodindex,52.0,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2020,7,Narok,2020-07-01,35.71,15.86,chirps+openmeteo,0.6271,0.3819,modis,125.82,wb_foodindex,46.0,fewsnet_prices,204768,0.4334,hdx_knbs,6.25,,mixed,Rift Valley / Pastoral
+019,2020,8,Narok,2020-08-01,49.89,17.02,chirps+openmeteo,0.5558,0.3093,modis,125.82,wb_foodindex,48.0,fewsnet_prices,204768,0.4334,hdx_knbs,12.5,,mixed,Rift Valley / Pastoral
+019,2020,9,Narok,2020-09-01,72.13,17.72,chirps+openmeteo,0.5251,0.3204,modis,125.82,wb_foodindex,43.0,fewsnet_prices,204768,0.4334,hdx_knbs,18.75,,mixed,Rift Valley / Pastoral
+019,2020,10,Narok,2020-10-01,81.29,19.0,chirps+openmeteo,0.4866,0.2806,modis,125.82,wb_foodindex,38.25,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2020,11,Narok,2020-11-01,168.8,18.21,chirps+openmeteo,0.5116,0.3057,modis,125.82,wb_foodindex,31.5,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2020,12,Narok,2020-12-01,42.82,19.17,chirps+openmeteo,0.529,0.3367,modis,125.82,wb_foodindex,39.5,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2021,1,Narok,2021-01-01,68.35,17.87,chirps+openmeteo,0.564,0.3397,modis,123.29,wb_foodindex,36.0,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2021,2,Narok,2021-02-01,92.97,17.97,chirps+openmeteo,0.5753,0.3415,modis,123.29,wb_foodindex,35.47,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2021,3,Narok,2021-03-01,59.68,18.99,chirps+openmeteo,0.5492,0.3309,modis,123.29,wb_foodindex,37.5,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2021,4,Narok,2021-04-01,130.3,17.55,chirps+openmeteo,0.5952,0.365,modis,123.29,wb_foodindex,40.0,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2021,5,Narok,2021-05-01,164.37,16.83,chirps+openmeteo,0.5826,0.3652,modis,123.29,wb_foodindex,41.0,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2021,6,Narok,2021-06-01,39.44,16.26,chirps+openmeteo,0.6078,0.376,modis,123.29,wb_foodindex,40.5,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2021,7,Narok,2021-07-01,59.69,15.98,chirps+openmeteo,0.5392,0.3117,modis,123.29,wb_foodindex,40.85,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2021,8,Narok,2021-08-01,66.32,17.15,chirps+openmeteo,0.4724,0.2745,modis,123.29,wb_foodindex,38.5,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2021,9,Narok,2021-09-01,52.68,17.97,chirps+openmeteo,0.4547,0.2751,modis,123.29,wb_foodindex,35.55,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,,mixed,Rift Valley / Pastoral
+019,2021,10,Narok,2021-10-01,49.76,19.09,chirps+openmeteo,0.4422,0.2678,modis,123.29,wb_foodindex,36.45,fewsnet_prices,204768,0.4334,hdx_knbs,25.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2021,11,Narok,2021-11-01,64.0,19.0,chirps+openmeteo,0.4337,0.2589,modis,123.29,wb_foodindex,46.0,fewsnet_prices,204768,0.4334,hdx_knbs,18.75,,mixed,Rift Valley / Pastoral
+019,2021,12,Narok,2021-12-01,66.57,17.89,chirps+openmeteo,0.4411,0.2433,modis,123.29,wb_foodindex,48.0,fewsnet_prices,204768,0.4334,hdx_knbs,12.5,,mixed,Rift Valley / Pastoral
+019,2022,1,Narok,2022-01-01,86.88,18.25,chirps+openmeteo,0.446,0.2463,modis,112.38,wb_foodindex,40.3,fewsnet_prices,204768,0.4334,hdx_knbs,6.25,,mixed,Rift Valley / Pastoral
+019,2022,2,Narok,2022-02-01,156.02,17.21,chirps+openmeteo,0.5885,0.3656,modis,112.38,wb_foodindex,41.15,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2022,3,Narok,2022-03-01,54.62,18.72,chirps+openmeteo,0.5466,0.3444,modis,112.38,wb_foodindex,41.3,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2022,4,Narok,2022-04-01,149.69,18.21,chirps+openmeteo,0.5125,0.3017,modis,112.38,wb_foodindex,48.55,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2022,5,Narok,2022-05-01,114.12,16.94,chirps+openmeteo,0.6122,0.3628,modis,112.38,wb_foodindex,56.65,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2022,6,Narok,2022-06-01,40.01,16.08,chirps+openmeteo,0.5922,0.3517,modis,112.38,wb_foodindex,69.3,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2022,7,Narok,2022-07-01,31.11,15.83,chirps+openmeteo,0.4954,0.3078,modis,112.38,wb_foodindex,75.65,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2022,8,Narok,2022-08-01,57.54,16.34,chirps+openmeteo,0.4274,0.2454,modis,112.38,wb_foodindex,63.65,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2022,9,Narok,2022-09-01,63.16,17.61,chirps+openmeteo,0.4519,0.2644,modis,112.38,wb_foodindex,67.8,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2022,10,Narok,2022-10-01,43.72,19.22,chirps+openmeteo,0.4224,0.2579,modis,112.38,wb_foodindex,73.6,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,fewsnet_ipc,mixed,Rift Valley / Pastoral
+019,2022,11,Narok,2022-11-01,143.52,17.48,chirps+openmeteo,0.4359,0.2558,modis,112.38,wb_foodindex,74.2,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+019,2022,12,Narok,2022-12-01,81.75,17.45,chirps+openmeteo,0.5018,0.2766,modis,112.38,wb_foodindex,73.7,fewsnet_prices,204768,0.4334,hdx_knbs,0.0,,mixed,Rift Valley / Pastoral
+020,2019,1,Kajiado,2019-01-01,14.53,19.54,chirps+openmeteo,0.4631,0.2679,modis,107.28,wb_foodindex,43.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2019,2,Kajiado,2019-02-01,23.82,20.73,chirps+openmeteo,0.3357,0.2073,modis,107.28,wb_foodindex,47.09,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2019,3,Kajiado,2019-03-01,16.9,21.85,chirps+openmeteo,0.291,0.1702,modis,107.28,wb_foodindex,55.75,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2019,4,Kajiado,2019-04-01,113.47,19.84,chirps+openmeteo,0.2793,0.1621,modis,107.28,wb_foodindex,51.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2019,5,Kajiado,2019-05-01,30.62,18.09,chirps+openmeteo,0.4515,0.274,modis,107.28,wb_foodindex,56.16,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2019,6,Kajiado,2019-06-01,20.34,17.35,chirps+openmeteo,0.4513,0.27,modis,107.28,wb_foodindex,50.59,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2019,7,Kajiado,2019-07-01,7.0,17.6,chirps+openmeteo,0.3822,0.2108,modis,107.28,wb_foodindex,51.06,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2019,8,Kajiado,2019-08-01,7.62,17.61,chirps+openmeteo,0.3036,0.1609,modis,107.28,wb_foodindex,62.25,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2019,9,Kajiado,2019-09-01,10.62,18.73,chirps+openmeteo,0.2786,0.1603,modis,107.28,wb_foodindex,52.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2019,10,Kajiado,2019-10-01,146.15,18.22,chirps+openmeteo,0.299,0.177,modis,107.28,wb_foodindex,49.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2019,11,Kajiado,2019-11-01,209.44,18.41,chirps+openmeteo,0.5042,0.298,modis,107.28,wb_foodindex,45.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2019,12,Kajiado,2019-12-01,259.07,18.21,chirps+openmeteo,0.629,0.3931,modis,107.28,wb_foodindex,48.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,1,Kajiado,2020-01-01,128.86,18.63,chirps+openmeteo,0.6832,0.4655,modis,125.82,wb_foodindex,51.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,2,Kajiado,2020-02-01,65.31,19.29,chirps+openmeteo,0.6409,0.4441,modis,125.82,wb_foodindex,47.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2020,3,Kajiado,2020-03-01,185.88,19.08,chirps+openmeteo,0.6241,0.3885,modis,125.82,wb_foodindex,45.75,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,4,Kajiado,2020-04-01,250.87,18.48,chirps+openmeteo,0.5793,0.3914,modis,125.82,wb_foodindex,49.9,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,5,Kajiado,2020-05-01,42.14,17.86,chirps+openmeteo,0.6311,0.4219,modis,125.82,wb_foodindex,44.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,6,Kajiado,2020-06-01,13.49,17.25,chirps+openmeteo,0.5443,0.3413,modis,125.82,wb_foodindex,41.3,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2020,7,Kajiado,2020-07-01,5.3,16.4,chirps+openmeteo,0.5041,0.3092,modis,125.82,wb_foodindex,48.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,8,Kajiado,2020-08-01,4.12,17.25,chirps+openmeteo,0.3963,0.2297,modis,125.82,wb_foodindex,49.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,9,Kajiado,2020-09-01,9.32,17.88,chirps+openmeteo,0.3455,0.2028,modis,125.82,wb_foodindex,51.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,10,Kajiado,2020-10-01,22.79,19.62,chirps+openmeteo,0.3179,0.1892,modis,125.82,wb_foodindex,52.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2020,11,Kajiado,2020-11-01,111.09,18.74,chirps+openmeteo,0.406,0.2371,modis,125.82,wb_foodindex,52.15,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2020,12,Kajiado,2020-12-01,58.83,19.03,chirps+openmeteo,0.4321,0.2604,modis,125.82,wb_foodindex,51.9,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,1,Kajiado,2021-01-01,44.46,19.12,chirps+openmeteo,0.4537,0.2526,modis,123.29,wb_foodindex,52.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,2,Kajiado,2021-02-01,58.88,19.19,chirps+openmeteo,0.5386,0.3121,modis,123.29,wb_foodindex,50.6,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2021,3,Kajiado,2021-03-01,44.73,19.99,chirps+openmeteo,0.4749,0.2956,modis,123.29,wb_foodindex,46.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,4,Kajiado,2021-04-01,114.28,18.92,chirps+openmeteo,0.5036,0.3121,modis,123.29,wb_foodindex,47.95,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,5,Kajiado,2021-05-01,125.43,17.92,chirps+openmeteo,0.5236,0.3236,modis,123.29,wb_foodindex,50.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,6,Kajiado,2021-06-01,4.7,16.72,chirps+openmeteo,0.5196,0.3295,modis,123.29,wb_foodindex,51.25,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2021,7,Kajiado,2021-07-01,7.09,16.3,chirps+openmeteo,0.3915,0.2293,modis,123.29,wb_foodindex,52.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,8,Kajiado,2021-08-01,5.73,17.1,chirps+openmeteo,0.3281,0.1772,modis,123.29,wb_foodindex,52.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,9,Kajiado,2021-09-01,3.49,18.13,chirps+openmeteo,0.3023,0.1829,modis,123.29,wb_foodindex,53.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,10,Kajiado,2021-10-01,23.65,19.71,chirps+openmeteo,0.2805,0.1595,modis,123.29,wb_foodindex,54.5,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2021,11,Kajiado,2021-11-01,106.72,19.73,chirps+openmeteo,0.2835,0.1678,modis,123.29,wb_foodindex,53.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2021,12,Kajiado,2021-12-01,87.76,18.51,chirps+openmeteo,0.4488,0.2594,modis,123.29,wb_foodindex,51.4,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,1,Kajiado,2022-01-01,34.87,19.28,chirps+openmeteo,0.4462,0.2672,modis,112.38,wb_foodindex,50.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,2,Kajiado,2022-02-01,59.56,19.81,chirps+openmeteo,0.4255,0.2477,modis,112.38,wb_foodindex,50.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2022,3,Kajiado,2022-03-01,34.14,20.56,chirps+openmeteo,0.3852,0.221,modis,112.38,wb_foodindex,48.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,4,Kajiado,2022-04-01,105.32,19.49,chirps+openmeteo,0.3731,0.217,modis,112.38,wb_foodindex,57.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,5,Kajiado,2022-05-01,32.04,18.79,chirps+openmeteo,0.4355,0.2578,modis,112.38,wb_foodindex,60.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,6,Kajiado,2022-06-01,4.52,17.15,chirps+openmeteo,0.3767,0.202,modis,112.38,wb_foodindex,68.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2022,7,Kajiado,2022-07-01,2.59,16.14,chirps+openmeteo,0.2945,0.1605,modis,112.38,wb_foodindex,75.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,8,Kajiado,2022-08-01,3.03,16.41,chirps+openmeteo,0.2476,0.1304,modis,112.38,wb_foodindex,82.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,9,Kajiado,2022-09-01,4.3,17.88,chirps+openmeteo,0.2485,0.1385,modis,112.38,wb_foodindex,89.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,10,Kajiado,2022-10-01,23.15,19.41,chirps+openmeteo,0.2405,0.1473,modis,112.38,wb_foodindex,93.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,fewsnet_ipc,mixed,Semi-arid
+020,2022,11,Kajiado,2022-11-01,118.85,18.27,chirps+openmeteo,0.2748,0.1552,modis,112.38,wb_foodindex,93.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+020,2022,12,Kajiado,2022-12-01,51.74,18.49,chirps+openmeteo,0.3547,0.2049,modis,112.38,wb_foodindex,92.0,fewsnet_prices,124349,0.2251,hdx_knbs,25.0,,mixed,Semi-arid
+021,2019,1,Kiambu,2019-01-01,20.25,18.92,chirps+openmeteo,0.5702,0.3374,modis,107.28,wb_foodindex,43.18,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2019,2,Kiambu,2019-02-01,25.51,19.81,chirps+openmeteo,0.4628,0.2985,modis,107.28,wb_foodindex,40.56,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2019,3,Kiambu,2019-03-01,23.82,20.9,chirps+openmeteo,0.4146,0.2397,modis,107.28,wb_foodindex,36.41,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2019,4,Kiambu,2019-04-01,158.77,19.71,chirps+openmeteo,0.4113,0.2278,modis,107.28,wb_foodindex,48.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2019,5,Kiambu,2019-05-01,77.58,18.04,chirps+openmeteo,0.4459,0.2677,modis,107.28,wb_foodindex,51.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2019,6,Kiambu,2019-06-01,57.18,17.16,chirps+openmeteo,0.4996,0.313,modis,107.28,wb_foodindex,53.0,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2019,7,Kiambu,2019-07-01,30.35,17.03,chirps+openmeteo,0.5183,0.3119,modis,107.28,wb_foodindex,55.2,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2019,8,Kiambu,2019-08-01,31.83,17.06,chirps+openmeteo,0.4581,0.2578,modis,107.28,wb_foodindex,49.0,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2019,9,Kiambu,2019-09-01,33.6,17.63,chirps+openmeteo,0.4432,0.2513,modis,107.28,wb_foodindex,44.71,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2019,10,Kiambu,2019-10-01,259.47,17.48,chirps+openmeteo,0.4292,0.274,modis,107.28,wb_foodindex,56.01,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2019,11,Kiambu,2019-11-01,263.89,17.74,chirps+openmeteo,0.6124,0.3715,modis,107.28,wb_foodindex,49.75,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2019,12,Kiambu,2019-12-01,265.74,17.89,chirps+openmeteo,0.6443,0.4061,modis,107.28,wb_foodindex,49.58,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,1,Kiambu,2020-01-01,138.84,18.33,chirps+openmeteo,0.6731,0.4307,modis,125.82,wb_foodindex,46.12,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,2,Kiambu,2020-02-01,68.27,18.9,chirps+openmeteo,0.6501,0.4268,modis,125.82,wb_foodindex,45.5,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2020,3,Kiambu,2020-03-01,202.54,19.03,chirps+openmeteo,0.6474,0.3934,modis,125.82,wb_foodindex,47.43,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,4,Kiambu,2020-04-01,402.3,18.44,chirps+openmeteo,0.6034,0.3945,modis,125.82,wb_foodindex,48.0,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,5,Kiambu,2020-05-01,124.39,17.98,chirps+openmeteo,0.6853,0.4402,modis,125.82,wb_foodindex,47.556666666666665,,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,6,Kiambu,2020-06-01,55.68,17.23,chirps+openmeteo,0.576,0.3607,modis,125.82,wb_foodindex,47.11333333333334,,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2020,7,Kiambu,2020-07-01,16.42,16.63,chirps+openmeteo,0.5903,0.3643,modis,125.82,wb_foodindex,46.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,8,Kiambu,2020-08-01,18.11,16.94,chirps+openmeteo,0.4689,0.2616,modis,125.82,wb_foodindex,44.7,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,9,Kiambu,2020-09-01,29.56,17.33,chirps+openmeteo,0.4912,0.28,modis,125.82,wb_foodindex,41.75,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,10,Kiambu,2020-10-01,62.72,18.42,chirps+openmeteo,0.4357,0.2476,modis,125.82,wb_foodindex,43.33,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2020,11,Kiambu,2020-11-01,139.79,18.0,chirps+openmeteo,0.5335,0.3222,modis,125.82,wb_foodindex,45.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2020,12,Kiambu,2020-12-01,54.07,18.43,chirps+openmeteo,0.5548,0.3473,modis,125.82,wb_foodindex,45.17,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,1,Kiambu,2021-01-01,57.62,18.5,chirps+openmeteo,0.5486,0.3232,modis,123.29,wb_foodindex,46.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,2,Kiambu,2021-02-01,68.54,19.04,chirps+openmeteo,0.5709,0.3203,modis,123.29,wb_foodindex,45.2,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2021,3,Kiambu,2021-03-01,55.02,19.34,chirps+openmeteo,0.5431,0.3283,modis,123.29,wb_foodindex,43.7,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,4,Kiambu,2021-04-01,134.36,18.29,chirps+openmeteo,0.5227,0.3243,modis,123.29,wb_foodindex,43.95,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,5,Kiambu,2021-05-01,201.99,17.6,chirps+openmeteo,0.5376,0.3556,modis,123.29,wb_foodindex,47.33,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,6,Kiambu,2021-06-01,11.33,16.32,chirps+openmeteo,0.5602,0.37,modis,123.29,wb_foodindex,46.12,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2021,7,Kiambu,2021-07-01,34.02,15.94,chirps+openmeteo,0.4928,0.291,modis,123.29,wb_foodindex,46.5,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,8,Kiambu,2021-08-01,20.43,16.46,chirps+openmeteo,0.4482,0.2371,modis,123.29,wb_foodindex,46.2,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,9,Kiambu,2021-09-01,11.74,17.59,chirps+openmeteo,0.4467,0.2691,modis,123.29,wb_foodindex,46.5,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,10,Kiambu,2021-10-01,52.27,18.83,chirps+openmeteo,0.4464,0.2454,modis,123.29,wb_foodindex,42.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2021,11,Kiambu,2021-11-01,124.92,18.74,chirps+openmeteo,0.4605,0.2886,modis,123.29,wb_foodindex,49.0,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2021,12,Kiambu,2021-12-01,98.07,17.72,chirps+openmeteo,0.5664,0.3306,modis,123.29,wb_foodindex,49.0,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,1,Kiambu,2022-01-01,45.5,18.54,chirps+openmeteo,0.5516,0.3256,modis,112.38,wb_foodindex,46.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,2,Kiambu,2022-02-01,48.07,19.59,chirps+openmeteo,0.5163,0.3064,modis,112.38,wb_foodindex,47.27,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2022,3,Kiambu,2022-03-01,46.97,20.03,chirps+openmeteo,0.486,0.2749,modis,112.38,wb_foodindex,46.33,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,4,Kiambu,2022-04-01,156.45,18.62,chirps+openmeteo,0.4808,0.2781,modis,112.38,wb_foodindex,50.87,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,5,Kiambu,2022-05-01,66.41,18.03,chirps+openmeteo,0.5936,0.3343,modis,112.38,wb_foodindex,56.87,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,6,Kiambu,2022-06-01,12.63,16.74,chirps+openmeteo,0.5271,0.3134,modis,112.38,wb_foodindex,77.83,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2022,7,Kiambu,2022-07-01,12.17,15.69,chirps+openmeteo,0.4186,0.2587,modis,112.38,wb_foodindex,75.0,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,8,Kiambu,2022-08-01,13.71,15.82,chirps+openmeteo,0.3191,0.1757,modis,112.38,wb_foodindex,72.17,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,9,Kiambu,2022-09-01,16.68,16.95,chirps+openmeteo,0.3754,0.2133,modis,112.38,wb_foodindex,82.0,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,10,Kiambu,2022-10-01,33.11,18.7,chirps+openmeteo,0.3924,0.2401,modis,112.38,wb_foodindex,84.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,fewsnet_ipc,mixed,Medium Highland
+021,2022,11,Kiambu,2022-11-01,191.96,17.48,chirps+openmeteo,0.4037,0.2354,modis,112.38,wb_foodindex,82.67,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland
+021,2022,12,Kiambu,2022-12-01,35.69,17.9,chirps+openmeteo,0.5062,0.3134,modis,112.38,wb_foodindex,83.33,fewsnet_prices,192130,0.0588,hdx_knbs,0.0,,mixed,Medium Highland

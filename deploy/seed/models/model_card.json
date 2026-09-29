@@ -1,0 +1,134 @@
+{
+  "name": "ridge",
+  "feature_names": [
+    "precipitation_mm",
+    "temp_mean_c",
+    "ndvi",
+    "evi",
+    "prod_index",
+    "maize_price_kes_kg",
+    "rural_pop",
+    "poverty_rate",
+    "month_sin",
+    "month_cos",
+    "precip_anom",
+    "precip_roll3",
+    "precip_roll6",
+    "precip_lag1",
+    "precip_lag3",
+    "temp_anom",
+    "temp_roll3",
+    "temp_roll6",
+    "temp_lag1",
+    "temp_lag3",
+    "ndvi_anom",
+    "ndvi_roll3",
+    "ndvi_roll6",
+    "ndvi_lag1",
+    "ndvi_lag3",
+    "evi_anom",
+    "evi_roll3",
+    "evi_roll6",
+    "evi_lag1",
+    "evi_lag3",
+    "price_anom",
+    "price_roll3",
+    "price_roll6",
+    "price_lag1",
+    "price_lag3",
+    "price_pct3"
+  ],
+  "metrics": {
+    "rmse": 17.671924259518114,
+    "mae": 14.20695031654007,
+    "r2": 0.3535513003749855,
+    "n_train": 490,
+    "n_cal": 123,
+    "n_test": 204,
+    "n_features": 36,
+    "picp": 0.7058823529411765,
+    "pinaw": 40.53821544688669,
+    "interval_level": 0.9
+  },
+  "trained_at": "2026-09-29T11:55:56.064647+00:00",
+  "data_note": "All datasets are real feeds.",
+  "interval_level": 0.9,
+  "interval_halfwidth": 20.26910772344334,
+  "calibration_error": 4.571474944059561,
+  "reliability": [
+    {
+      "bin": 0,
+      "n": 41,
+      "mean_pred": 15.589627620016948,
+      "mean_obs": 14.024390243902438
+    },
+    {
+      "bin": 1,
+      "n": 41,
+      "mean_pred": 22.627916477060005,
+      "mean_obs": 28.50609756097561
+    },
+    {
+      "bin": 2,
+      "n": 40,
+      "mean_pred": 28.902686099616307,
+      "mean_obs": 34.21875
+    },
+    {
+      "bin": 3,
+      "n": 41,
+      "mean_pred": 36.686344512362616,
+      "mean_obs": 37.80487804878049
+    },
+    {
+      "bin": 4,
+      "n": 41,
+      "mean_pred": 47.72795824970461,
+      "mean_obs": 56.707317073170735
+    }
+  ],
+  "horizon_metrics": [
+    {
+      "horizon": 1.0,
+      "rmse": 17.600177822683975,
+      "mae": 14.133156413086056,
+      "r2": 0.3667970505061846,
+      "n_train": 494.0,
+      "n_test": 190.0,
+      "skipped": 0.0
+    },
+    {
+      "horizon": 3.0,
+      "rmse": 19.037999409842012,
+      "mae": 15.522785903956914,
+      "r2": 0.28808169870271116,
+      "n_train": 494.0,
+      "n_test": 152.0,
+      "skipped": 0.0
+    }
+  ],
+  "comparison": [
+    {
+      "name": "ridge",
+      "rmse": 17.671924259518114,
+      "mae": 14.20695031654007,
+      "r2": 0.3535513003749855,
+      "picp": 0.7058823529411765,
+      "pinaw": 40.53821544688669,
+      "interval_halfwidth": 20.26910772344334,
+      "n_features": 36
+    },
+    {
+      "name": "gbm",
+      "rmse": 13.246383499480473,
+      "mae": 10.403863866089354,
+      "r2": 0.6367872948676743,
+      "picp": 0.6617647058823529,
+      "pinaw": 23.1886231700079,
+      "interval_halfwidth": 11.594311585003954,
+      "n_features": 36
+    }
+  ],
+  "split": "chronological train/calibration/test (no shuffling)",
+  "interval_note": "Conformal 90% intervals from calibration-block residuals; under a temporal split the exchangeability assumption is an approximation - treat coverage as indicative, not a guarantee."
+}

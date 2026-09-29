@@ -57,6 +57,12 @@ Honest limitations that remain:
   its provenance (`data_is_synthetic`, `dataset_sources`) and a missing
   artefact is a 503 with a hint, never a fabricated number (see
   [Serve the API](#3--serve-the-api-m4)).
+- **M5 containers:** the Docker image ships only the serving artefacts
+  (`deploy/seed/`, ~1.7 MB, committed to the repo) - so the deployed
+  container shows the *same* real-feed panels as the local run, with the same
+  provenance flags. No secrets, no 19 GB granule cache, and no silent
+  re-ingestion ever enter the image (see
+  [Containerise & deploy](#4--containerise--deploy-m5)).
 
 ### Real data feeds
 
@@ -250,7 +256,10 @@ AgriRisk/
 ├─ logs/                     # rotating log files                      (git-ignored)
 ├─ scripts/
 │  ├─ smoke_dashboard.py     # headless artefact + chart sanity check
-│  └─ schedule_pipeline.ps1  # Windows Task Scheduler registration (M4)
+│  ├─ schedule_pipeline.ps1  # Windows Task Scheduler registration (M4)
+│  └─ export_deploy_bundle.py # serving-only artefact bundle (M5)
+├─ deploy/
+│  └─ seed/                  # committed bundle the Docker image serves from (~1.7 MB)
 ├─ src/agrik/
 │  ├─ settings.py            # pydantic-settings config
 │  ├─ logging.py             # dictConfig logging + get_logger
@@ -265,6 +274,8 @@ AgriRisk/
 │  ├─ api/                   # FastAPI serving layer (read-only over artefacts)
 │  └─ dashboard/             # loaders + Plotly charts + Streamlit app
 ├─ tests/                    # pytest unit + integration tests
+├─ Dockerfile                # serving image (API + dashboard) over deploy/seed
+├─ docker-compose.yml        # api :8000 + dashboard :8502, healthchecked
 ├─ pyproject.toml            # packaging, deps, pytest & ruff config
 └─ README.md
 ```
@@ -418,10 +429,41 @@ Windows daily task (default 06:00, `StartWhenAvailable`; `-AtHour`, `-Remove`,
 `-WhatIf` supported); the cron equivalent is
 `0 6 * * * cd /path/AgriRisk && .venv/bin/python -m agrik`.
 
-### 4 · Run tests & sanity checks
+### 4 · Containerise & deploy (M5)
+
+The serving layer is read-only, so a deployment needs only the artefacts -
+not credentials, not the 19 GB granule cache. The current real-feed bundle is
+committed under `deploy/seed/`, so a plain clone can build and run:
 
 ```bash
-pytest -q                       # 97 unit + integration tests (offline, no network)
+docker compose up --build     # API :8000 + dashboard :8502, both healthchecked
+```
+
+To refresh the data the container serves (after re-running the pipeline on the
+host, where the Earthdata cache lives):
+
+```bash
+python -m agrik                          # rebuild artefacts from real feeds
+python scripts/export_deploy_bundle.py   # rewrite deploy/seed/ (~1.7 MB)
+```
+
+The export script refuses to run without artefacts, prints the provenance it
+bundled, and warns loudly if anything is synthetic - the honest-labelling rule
+survives the container boundary. The image runs as a non-root user, installs
+only `.[api]` runtime deps, and excludes `.env`/`data/`/`models/` via
+`.dockerignore`. Cloud hosts (Render/Railway/Fly.io) can build straight from
+the repo: Dockerfile, default role API on `$PORT` via `AGRIK_API_PORT`; the
+dashboard needs the Streamlit command override from `docker-compose.yml`.
+
+> Container-equivalence is verified offline in `tests/test_deploy_bundle.py`:
+> the API serves *from the bundle alone*, with matching model-card metrics and
+> the synthetic flag intact. (The image build itself was not executed on this
+> machine - no Docker runtime here; CI runs the bundle-serving tests instead.)
+
+### 5 · Run tests & sanity checks
+
+```bash
+pytest -q                       # 100 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 
@@ -449,7 +491,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 | **M2 · Markets & stats** | ✅ Done: **FEWS NET maize prices + IPC outcome live**; **HDX poverty/rural-pop socioeconomic live**; **World Bank food-index agriculture live** (national grain); remaining: county-grain production feed, `ipc_crisis_households`, backfill full 001–047 registry |
 | **M3 · Modelling** | ✅ Done: **GBM vs Ridge on the identical chronological split** (R² 0.64 vs 0.35 on the real IPC target); **conformal uncertainty intervals + coverage reporting**; **regression reliability/calibration table**; **1- and 3-month forecast-horizon evaluation**; remaining: probability calibration for IPC-phase classification, spatial (county-adjacency) features |
 | **M4 · Serving** | ✅ Done: **FastAPI service** (`[api]` extra) exposing the risk panel + provenance + M3 model artefacts; **scheduled pipeline runs** (Windows task script / cron one-liner); remaining: auth + rate limiting for public deployment |
-| **M5 · Platform** | PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards, alerting |
+| **M5 · Platform** | ✅ Partial: **Docker image + compose** (API + dashboard, non-root, healthchecked) serving the committed `deploy/seed` artefact bundle; remaining: PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards, alerting |
 
 ### How to add a real data source
 1. Write a connector in `src/agrik/ingestion/` that returns a DataFrame conforming to

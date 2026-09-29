@@ -1,0 +1,50 @@
+# Local staging for AgriRisk Kenya: one image, two serving roles.
+# Prerequisite: python scripts/export_deploy_bundle.py   (creates deploy/seed/)
+# then: docker compose up --build
+#
+# - api       FastAPI read-only service over the baked artefacts  -> :8000
+# - dashboard Streamlit decision-support UI                        -> :8502
+#
+# Data refresh is deliberately NOT a container job: ingestion needs the
+# Earthdata credentials and ~19 GB of granule cache that live on the host.
+# Re-run `python -m agrik` + the bundle export on the host, then rebuild.
+
+services:
+  api:
+    build: .
+    image: agrik:local
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request as u; u.urlopen("http://127.0.0.1:8000/health", timeout=3)
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  dashboard:
+    image: agrik:local
+    command:
+      - streamlit
+      - run
+      - src/agrik/dashboard/app.py
+      - --server.address=0.0.0.0
+      - --server.port=8502
+      - --server.headless=true
+      - --browser.gatherUsageStats=false
+    ports:
+      - "8502:8502"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request as u; u.urlopen("http://127.0.0.1:8502/_stcore/health", timeout=3)
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

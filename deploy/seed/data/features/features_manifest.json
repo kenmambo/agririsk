@@ -1,0 +1,17 @@
+{
+  "pipeline_version": "0.2.0",
+  "feature_version": "1.0.0",
+  "rows": 1008,
+  "n_features_engineered": 50,
+  "data_source": "['mixed']",
+  "dataset_sources": {
+    "climate": "chirps+openmeteo",
+    "vegetation": "modis",
+    "agriculture": "wb_foodindex",
+    "market": "fewsnet_prices",
+    "socioeconomic": "hdx_knbs",
+    "outcome": "fewsnet_ipc"
+  },
+  "note": "All datasets are real feeds.",
+  "generated_at": "2026-09-29T11:55:55.089518+00:00"
+}
