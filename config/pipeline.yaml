@@ -102,6 +102,7 @@ external:
     version: "061"
     # Kenya mainland bounding box [west, south, east, north] for granule search.
     bbox: [33.9, -4.9, 41.9, 5.5]
-    # Volume guard: MODIS granules are ~50 MB each; cap per run. Raise this
-    # (or narrow the panel window) for denser coverage when disk allows.
-    max_granule_downloads: 16
+    # Volume guard: MODIS granules are ~50 MB each; cap per run. 372 = every
+    # granule covering the 2019-2024 window (4 tiles x 93 composites, ~19 GB
+    # cached) so all counties get full monthly coverage - no even-sampling gap.
+    max_granule_downloads: 372
