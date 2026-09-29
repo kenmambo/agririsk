@@ -27,6 +27,7 @@ class ModelCard:
         "Trained on SYNTHETIC sample data - metrics describe the synthetic "
         "generative process only and carry no real-world meaning."
     )
+    extra: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -35,6 +36,7 @@ class ModelCard:
             "metrics": self.metrics,
             "trained_at": self.trained_at,
             "data_note": self.data_note,
+            **self.extra,
         }
 
 

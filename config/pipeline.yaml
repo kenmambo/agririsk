@@ -77,11 +77,35 @@ feature_engineering:
 
 model:
   target: food_security_risk_index
+  # Chronological three-way split: train -> calibration (uncertainty only)
+  # -> test. Never shuffled; the test block is strictly the most recent months.
   test_size: 0.25
+  cal_size: 0.15
   random_state: 42
+  # Primary model = baseline.type; every name in `compare` is re-fitted on the
+  # identical train block and reported side-by-side (models/comparison.json).
   baseline:
     type: ridge
     alpha: 1.0
+  compare: [ridge, gbm]
+  gbm:
+    # HistGradientBoostingRegressor - captures saturating non-linearities the
+    # linear baseline cannot; NaN-robust, so absent months stay absent.
+    type: gbm
+    max_iter: 300
+    learning_rate: 0.06
+    max_depth: 4
+    min_samples_leaf: 20
+    l2_regularization: 1.0
+    random_state: 42
+  uncertainty:
+    # Split-conformal prediction intervals (level = coverage target), calibrated
+    # on the held-out calibration block. Indicative under temporal drift, not a
+    # guarantee - stated so in the model card.
+    enabled: true
+    level: 0.90
+  # Lead-time (months ahead) evaluation of the primary model type.
+  horizons: [1, 3]
 
 # --- M1: real external feeds ---------------------------------------------------
 # Provider connectors live in src/agrik/ingestion/ (chirps.py, modis.py) and are

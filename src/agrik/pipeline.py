@@ -23,7 +23,15 @@ from .config import get_pipeline_config
 from .features import build_features, make_xy
 from .ingestion import ingest_datasets, read_csv, write_csv
 from .logging import get_logger, setup_logging
-from .models import build_model, temporal_train_test_split
+from .models import (
+    add_intervals,
+    build_model,
+    conformal_quantile,
+    interval_metrics,
+    reliability_table,
+    temporal_three_way_split,
+)
+from .models.horizon import horizon_report
 from .processing import clean_dataset, impute_panel, merge_datasets, validate_panel
 from .settings import get_settings
 
@@ -192,30 +200,118 @@ def _feature_version() -> str:
 
 
 def step_train(engineered: pd.DataFrame):
-    """Split, fit the baseline model, evaluate, and persist artefacts."""
+    """Fit primary + comparison models on a chronological split, calibrate
+    conformal intervals, evaluate forecast horizons, persist artefacts.
+
+    Artefacts written under ``models/``:
+    - ``baseline_<name>.joblib``  : the primary model (and one per compared model)
+    - ``model_card.json``         : primary metrics + uncertainty/calibration/horizon
+    - ``comparison.json``         : side-by-side metrics on the identical split
+    - ``test_predictions.csv``    : held-out predictions with 90% conformal band
+    """
     config = get_pipeline_config()
-    test_size = float(config["model"].get("test_size", 0.25))
+    model_cfg = config["model"]
+    test_size = float(model_cfg.get("test_size", 0.25))
+    cal_size = float(model_cfg.get("cal_size", 0.15))
+    unc_cfg = model_cfg.get("uncertainty", {})
+    level = float(unc_cfg.get("level", 0.9))
+    uncertainty_on = bool(unc_cfg.get("enabled", True))
 
     X, y, feats = make_xy(engineered, config)
     time_index = engineered.loc[X.index, schemas.DATE_COLUMN].to_numpy()
-    X_tr, X_te, y_tr, y_te = temporal_train_test_split(X, y, time_index, test_size=test_size)
+    X_tr, X_cal, X_te, y_tr, y_cal, y_te = temporal_three_way_split(
+        X, y, time_index, test_size=test_size, cal_size=cal_size
+    )
 
-    model = build_model(config=config)
-    model.fit(X_tr, y_tr)
-    metrics = model.evaluate(X_te, y_te)
+    primary = build_model(config=config)
+    primary.fit(X_tr, y_tr)
+    metrics = primary.evaluate(X_te, y_te)
     metrics["n_train"] = int(len(X_tr))
+    metrics["n_cal"] = int(len(X_cal))
     metrics["n_test"] = int(len(X_te))
     metrics["n_features"] = len(feats)
 
-    model_path = model.save(get_settings().models_dir / "baseline_ridge.joblib")
-    card = model.model_card(metrics)
+    extra: dict = {}
+    preds_te = primary.predict(X_te)
+    if uncertainty_on:
+        # Conformal half-width from residuals the model never trained on.
+        halfwidth = conformal_quantile(y_cal.to_numpy() - primary.predict(X_cal), level)
+        metrics.update(interval_metrics(y_te.to_numpy(), preds_te, halfwidth))
+        metrics["interval_level"] = level
+        extra["interval_level"] = level
+        extra["interval_halfwidth"] = halfwidth
+
+    rel = reliability_table(y_te.to_numpy(), preds_te)
+    extra["calibration_error"] = float(rel.attrs["calibration_error"])
+    extra["reliability"] = rel.to_dict("records")
+
+    # --- forecast-horizon degradation (dedicated refits per lead time) ------
+    dates_tr = pd.to_datetime(engineered.loc[X_tr.index, schemas.DATE_COLUMN])
+    dates_te = pd.to_datetime(engineered.loc[X_te.index, schemas.DATE_COLUMN])
+    if model_cfg.get("horizons"):
+        extra["horizon_metrics"] = horizon_report(
+            engineered, config,
+            model_factory=lambda: build_model(config=config),
+            train_end=dates_tr.max(), test_start=dates_te.min(),
+        )
+
+    # --- side-by-side comparison on the identical split ---------------------
+    compare_names = [str(n) for n in model_cfg.get("compare", [primary.name])]
+    if primary.name not in compare_names:
+        compare_names.insert(0, primary.name)
+    comparison = []
     prov = _master_provenance(engineered)
-    if prov:
-        card.data_note = _sources_note(prov)
+    note = _sources_note(prov) if prov else schemas.SYNTHETIC_NOTE
+    for name in compare_names:
+        model = primary if name == primary.name else build_model(name, config=config)
+        if model is not primary:
+            model.fit(X_tr, y_tr)
+        row = {"name": model.name, **model.evaluate(X_te, y_te)}
+        if uncertainty_on:
+            hw = conformal_quantile(
+                y_cal.to_numpy() - model.predict(X_cal), level
+            )
+            row.update(interval_metrics(y_te.to_numpy(), model.predict(X_te), hw))
+            row["interval_halfwidth"] = hw
+        row["n_features"] = len(feats)
+        comparison.append(row)
+        path = model.save(get_settings().models_dir / f"baseline_{model.name}.joblib")
+        LOGGER.info("Model '%s' saved to %s; test metrics=%s", model.name, path, row)
+
+    # --- held-out predictions (+ interval) for the dashboard ----------------
+    pred_frame = engineered.loc[X_te.index, [
+        "county_code", schemas.COUNTY_NAME_COLUMN, schemas.DATE_COLUMN,
+    ]].copy()
+    lo, hi = (add_intervals(preds_te, extra.get("interval_halfwidth", 0.0))
+              if uncertainty_on else (preds_te, preds_te))
+    pred_frame["y_true"] = y_te.to_numpy()
+    pred_frame["y_pred"] = preds_te
+    pred_frame["y_lo"] = lo
+    pred_frame["y_hi"] = hi
+    pred_frame = pred_frame.sort_values(schemas.DATE_COLUMN)
+    write_csv(pred_frame, get_settings().models_dir / "test_predictions.csv")
+
+    card = primary.model_card(metrics)
+    card.data_note = note
+    extra["comparison"] = comparison
+    extra["split"] = "chronological train/calibration/test (no shuffling)"
+    if uncertainty_on:
+        extra["interval_note"] = (
+            f"Conformal {int(level * 100)}% intervals from calibration-block "
+            "residuals; under a temporal split the exchangeability assumption "
+            "is an approximation - treat coverage as indicative, not a "
+            "guarantee."
+        )
+    card.extra = extra
     card_path = get_settings().models_dir / "model_card.json"
     card_path.write_text(json.dumps(card.to_dict(), indent=2), encoding="utf-8")
-    LOGGER.info("Baseline model saved to %s; metrics=%s", model_path, metrics)
-    return model, metrics, card
+    (get_settings().models_dir / "comparison.json").write_text(
+        json.dumps({"primary": primary.name, "data_note": note, "rows": comparison},
+                   indent=2),
+        encoding="utf-8",
+    )
+    LOGGER.info("Primary model '%s'; metrics=%s", primary.name, metrics)
+    return primary, metrics, card
 
 
 def run_pipeline(

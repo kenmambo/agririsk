@@ -44,6 +44,13 @@ Honest limitations that remain:
   food-security phases — but the target's stepwise {0,25,50,75,100} structure and
   the national-grain agriculture feed cap how far per-county conclusions can be
   pushed.
+- **M3 modelling results** (identical chronological split, real target, 36
+  features): gradient boosting RMSE **13.25** / R² **0.64** vs the Ridge floor
+  RMSE 17.67 / R² 0.35; conformal 90% intervals are reported as *indicative*
+  (empirical coverage ~0.66–0.71 — the calibration window under-represents
+  drift in the test window, which is exactly what the uncertainty disclosure is
+  for); forecast skill decays honestly with lead time (1-month-ahead R² 0.37 →
+  3-month-ahead R² 0.29). See `models/comparison.json` and the model tab.
 - The model card, dashboard banner and code comments all repeat this warning.
 
 ### Real data feeds
@@ -132,7 +139,9 @@ well-tested, production-quality architecture rather than a notebook.
 
 ### Non-goals (for now)
 
-- Production accuracy of risk estimates (feeds are real; accuracy work is M3).
+- Production accuracy of risk estimates (feeds are real; M3 established the
+  comparison + uncertainty baseline — operational accuracy needs county-grain
+  production data and a longer history).
 - Sub-county / parcel geometry, nowcasting, or an operational API.
 - Causal inference or policy claims.
 
@@ -185,6 +194,8 @@ flowchart TD
     subgraph Models["models/"]
       BASE["RiskModel interface"]
       RIDGE["RidgeRiskModel baseline"]
+      GBM["GradientBoostingRiskModel"]
+      UNC["conformal intervals · reliability · horizons"]
     end
     ART[(models/)]
     subgraph UI["dashboard/  (thin consumer)"]
@@ -196,6 +207,8 @@ flowchart TD
     RAW --> VAL --> PRE --> PROC
     PROC --> FE --> STORE
     STORE --> BASE --> RIDGE --> ART
+    BASE --> GBM --> ART
+    BASE --> UNC --> ART
     STORE --> APP
     ART --> APP
     classDef syn fill:#ffe6cc,stroke:#d9730d;
@@ -295,16 +308,35 @@ A stable interface, [`RiskModel`](src/agrik/models/base.py)
 (`fit` / `predict` / `evaluate` / `save` / `load` + a `ModelCard`), lets the
 pipeline and UI stay algorithm-agnostic.
 
-- **Baseline:** `RidgeRiskModel` — `StandardScaler → Ridge` in a scikit-learn
-  `Pipeline`, selected via `config/pipeline.yaml` and a small registry.
-- **Honest evaluation:** a **temporal** train/test split (train on earlier months,
-  test on later months) mirrors the real forecasting task and avoids shuffle leakage.
-- Metrics (`RMSE`, `MAE`, `R²`), row counts and the synthetic data note are persisted
-  to `models/model_card.json`.
+- **Baseline floor:** `RidgeRiskModel` — `StandardScaler → Ridge`.
+- **Gradient boosting:** `GradientBoostingRiskModel` — sklearn's
+  `HistGradientBoostingRegressor` (saturating non-linearities; NaN-robust, so
+  genuinely absent months stay absent). Both share the interface and are
+  selected/hyper-parameterised entirely in `config/pipeline.yaml`.
+- **Honest evaluation:** a **chronological three-way split** (train →
+  calibration → test, no shuffling) mirrors the real forecasting task; every
+  model in `model.compare` is re-fitted on the identical train block and
+  reported side-by-side in `models/comparison.json`.
+- **Uncertainty (calibration):** split-**conformal** prediction intervals
+  (`models/uncertainty.py`) calibrated on the held-out calibration block —
+  coverage (PICP) and width (PINAW) are reported, and the model card states
+  plainly that exchangeability is only approximate under temporal drift, so
+  coverage is indicative, not a guarantee. A regression **reliability table**
+  (mean predicted vs mean observed per prediction bin) quantifies calibration
+  error in target units.
+- **Forecast horizon:** `models/horizon.py` re-labels targets `h` months ahead
+  *within each county* (leakage-safe) and re-fits per lead time, so
+  early-warning skill decay (`model.horizons: [1, 3]`) is measured honestly —
+  `n_test` shrinks with the horizon because the last months have no future
+  target yet.
+- Artefacts: `model_card.json` (metrics + intervals + reliability + horizon +
+  comparison + provenance note), `comparison.json`, `test_predictions.csv`
+  (held-out predictions with interval band, rendered by the dashboard model
+  tab).
 
-> The baseline's reported accuracy describes how well it reproduces the
-> **synthetic** generative process. It carries **no real-world meaning** until real
-> data is integrated.
+> Metrics on the real IPC-derived target describe **observed** phases; the
+> stepwise target and national-grain agriculture feed cap interpretability, as
+> the model card states.
 
 ---
 
@@ -351,7 +383,7 @@ coefficients, and a provenance-aware data table — all guarded by a prominent
 ### 3 · Run tests & sanity checks
 
 ```bash
-pytest -q                       # 43 unit + integration tests (offline, no network)
+pytest -q                       # 84 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 
@@ -377,7 +409,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 |---|---|
 | **M1 · Real data (climate & veg)** | ✅ Done: **CHIRPS rainfall live**; **MODIS NDVI/EVI live** (Earthdata token, full-window granule coverage); **ERA5 temperature via Open-Meteo live**; remaining: county boundary GeoPackage (`[geo]` extra) to replace centroid disks |
 | **M2 · Markets & stats** | ✅ Done: **FEWS NET maize prices + IPC outcome live**; **HDX poverty/rural-pop socioeconomic live**; **World Bank food-index agriculture live** (national grain); remaining: county-grain production feed, `ipc_crisis_households`, backfill full 001–047 registry |
-| **M3 · Modelling** | Gradient-boosting baseline, calibration, uncertainty, forecasting horizon; compare against Ridge via the shared interface |
+| **M3 · Modelling** | ✅ Done: **GBM vs Ridge on the identical chronological split** (R² 0.64 vs 0.35 on the real IPC target); **conformal uncertainty intervals + coverage reporting**; **regression reliability/calibration table**; **1- and 3-month forecast-horizon evaluation**; remaining: probability calibration for IPC-phase classification, spatial (county-adjacency) features |
 | **M4 · Serving** | FastAPI service (`[api]`) exposing the risk panel + model card; scheduled pipeline runs |
 | **M5 · Platform** | PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards, alerting |
 
@@ -412,6 +444,7 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-*AgriRisk Kenya is an incremental portfolio project. The current build is an
-architecture and workflow validated on synthetic sample data, ready to be plugged
-into real climate, vegetation, market and socioeconomic feeds.*
+*AgriRisk Kenya is an incremental portfolio project. The current build runs the
+full pipeline on live observed feeds with a leakage-aware feature store and a
+compared, uncertainty-disclosed modelling layer - ready for serving (M4) and
+broader county coverage.*

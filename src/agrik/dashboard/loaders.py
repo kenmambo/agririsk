@@ -38,6 +38,26 @@ def load_model_card() -> dict:
 
 
 @st.cache_data(show_spinner=False)
+def load_comparison() -> dict:
+    """Load the side-by-side model comparison (models/comparison.json)."""
+    path = get_settings().models_dir / "comparison.json"
+    if not path.exists():
+        return {}
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+@st.cache_data(show_spinner=False)
+def load_test_predictions() -> pd.DataFrame:
+    """Held-out predictions with conformal intervals (models artifact)."""
+    path = get_settings().models_dir / "test_predictions.csv"
+    if not path.exists():
+        return pd.DataFrame()
+    df = pd.read_csv(path, dtype={"county_code": str})
+    df["county_code"] = df["county_code"].str.zfill(3)
+    return df
+
+
+@st.cache_data(show_spinner=False)
 def load_feature_manifest() -> dict:
     """Load the feature-store manifest (provenance / versions)."""
     path = get_settings().features_dir / "features_manifest.json"
@@ -88,16 +108,23 @@ def data_is_synthetic(df: pd.DataFrame) -> bool:
 
 @st.cache_resource(show_spinner=False)
 def load_baseline_model():
-    """Load the trained baseline model (artefact) for coefficient inspection.
+    """Load the trained primary model artefact for importance inspection.
 
     This only *reads* a saved artefact - the dashboard never fits a model.
+    Prefers ``baseline_<primary name>.joblib`` (from the model card) and falls
+    back to the legacy ridge file so older runs still render.
     """
     from ..models import RiskModel
 
-    path = get_settings().models_dir / "baseline_ridge.joblib"
-    if not path.exists():
-        return None
-    try:
-        return RiskModel.load(path)
-    except Exception:  # noqa: BLE001 - UI must degrade gracefully
-        return None
+    s = get_settings()
+    card = load_model_card()
+    name = str(card.get("name", "ridge")).lower()
+    candidates = [s.models_dir / f"baseline_{name}.joblib",
+                  s.models_dir / "baseline_ridge.joblib"]
+    for path in candidates:
+        if path.exists():
+            try:
+                return RiskModel.load(path)
+            except Exception:  # noqa: BLE001 - UI must degrade gracefully
+                continue
+    return None

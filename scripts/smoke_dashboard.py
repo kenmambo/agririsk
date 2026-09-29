@@ -35,8 +35,22 @@ def main() -> None:
     assert charts.risk_trend(ts) is not None
 
     card = json.loads((s.models_dir / "model_card.json").read_text(encoding="utf-8"))
-    print("model metrics:", card["metrics"])
+    print("model card  :", card.get("name"), card["metrics"])
     print("data note   :", card["data_note"])
+
+    # M3 artefacts: comparison, held-out predictions with conformal band.
+    preds = pd.read_csv(s.models_dir / "test_predictions.csv")
+    agg = preds.groupby("date", as_index=False)[
+        ["y_true", "y_pred", "y_lo", "y_hi"]].mean()
+    assert charts.prediction_band(agg) is not None
+    if card.get("reliability"):
+        assert charts.reliability_chart(
+            card["reliability"], card.get("calibration_error")
+        ) is not None
+    if card.get("horizon_metrics"):
+        assert charts.horizon_degradation(card["horizon_metrics"]) is not None
+    comparison = json.loads((s.models_dir / "comparison.json").read_text(encoding="utf-8"))
+    print("comparison  :", {r["name"]: round(r["rmse"], 2) for r in comparison["rows"]})
     print("SMOKE OK")
 
 

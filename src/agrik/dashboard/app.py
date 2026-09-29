@@ -126,17 +126,65 @@ def main() -> None:
             st.info("Select at least one county.")
 
     with tab_model:
-        st.subheader("Baseline model card")
-        st.json(card)
-        st.caption(
-            card.get(
-                "data_note",
-                "Metrics describe how well the baseline reproduces the target.",
+        st.subheader(f"Primary model: {card.get('name', 'ridge')}")
+        m = card.get("metrics", {})
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Test RMSE", f"{m.get('rmse', float('nan')):.2f}")
+        c2.metric("Test R²", f"{m.get('r2', float('nan')):.3f}")
+        c3.metric(f"Conformal coverage (target {int(card.get('interval_level', 0.9) * 100)}%)",
+                  f"{m.get('picp', float('nan')):.2f}")
+        c4.metric("Calibration error",
+                  f"{card.get('calibration_error', float('nan')):.1f}")
+        st.caption(card.get(
+            "data_note",
+            "Metrics describe how well the baseline reproduces the target.",
+        ))
+
+        comparison = loaders.load_comparison()
+        if comparison.get("rows"):
+            st.subheader("Model comparison - identical chronological split")
+            st.dataframe(pd.DataFrame(comparison["rows"]), use_container_width=True)
+
+        preds = loaders.load_test_predictions()
+        if not preds.empty:
+            agg = (
+                preds.groupby("date", as_index=False)[
+                    ["y_true", "y_pred", "y_lo", "y_hi"]].mean()
             )
-        )
+            level_pct = int(card.get("interval_level", 0.9) * 100)
+            st.plotly_chart(
+                charts.prediction_band(agg, level_pct=level_pct),
+                use_container_width=True,
+            )
+            st.caption(
+                "Held-out (test-block) months, averaged across counties. "
+                + card.get("interval_note", "")
+            )
+        if card.get("reliability"):
+            st.plotly_chart(
+                charts.reliability_chart(card["reliability"],
+                                         card.get("calibration_error")),
+                use_container_width=True,
+            )
+        if card.get("horizon_metrics"):
+            st.plotly_chart(
+                charts.horizon_degradation(card["horizon_metrics"]),
+                use_container_width=True,
+            )
+            st.caption(
+                "Each lead time re-fits the model on the train block only and "
+                "tests on later months whose t+h target exists (n_test shrinks "
+                "with the horizon - honest, not extrapolated)."
+            )
+
         model = loaders.load_baseline_model()
         if model is not None and hasattr(model, "coefficients"):
-            st.plotly_chart(charts.driver_coefficients(model.coefficients()),
+            imp_title = (
+                "Top drivers - permutation importances (predictive, not causal)"
+                if getattr(model, "name", "") == "gbm" else ""
+            )
+            st.plotly_chart(charts.driver_coefficients(model.coefficients(),
+                                                       title=imp_title),
                             use_container_width=True)
 
     with tab_data:

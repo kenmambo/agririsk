@@ -45,3 +45,34 @@ def temporal_train_test_split(
     n_test = max(1, int(round(n * test_size)))
     test_rows, train_rows = order[-n_test:], order[:-n_test]
     return X.iloc[train_rows], X.iloc[test_rows], y.iloc[train_rows], y.iloc[test_rows]
+
+
+def temporal_three_way_split(
+    X: pd.DataFrame,
+    y: pd.Series,
+    time_index: pd.Series | np.ndarray,
+    test_size: float = 0.25,
+    cal_size: float = 0.15,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.Series, pd.Series, pd.Series]:
+    """Chronological train / calibration / test split (all disjoint in time).
+
+    The calibration block sits between train and test: it is used *only* for
+    post-hoc uncertainty calibration (conformal residual quantiles), never for
+    fitting. Returns ``(X_tr, X_cal, X_te, y_tr, y_cal, y_te)``.
+    """
+    order = np.asarray(time_index).argsort(kind="stable")
+    n = len(order)
+    n_test = max(1, int(round(n * test_size)))
+    n_cal = max(1, int(round(n * cal_size)))
+    if n_cal + n_test >= n:
+        raise ValueError(
+            f"cal_size+test_size leave no training rows (n={n}, "
+            f"n_cal={n_cal}, n_test={n_test})."
+        )
+    test_rows = order[-n_test:]
+    cal_rows = order[-(n_cal + n_test):-n_test]
+    train_rows = order[:-(n_cal + n_test)]
+    return (
+        X.iloc[train_rows], X.iloc[cal_rows], X.iloc[test_rows],
+        y.iloc[train_rows], y.iloc[cal_rows], y.iloc[test_rows],
+    )

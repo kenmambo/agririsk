@@ -61,8 +61,13 @@ def risk_bars(summary: pd.DataFrame, title: str = "") -> go.Figure:
     return fig
 
 
-def driver_coefficients(coefficients: pd.Series, top_n: int = 12) -> go.Figure:
-    """Horizontal bar of the baseline model's largest standardised coefficients."""
+def driver_coefficients(coefficients: pd.Series, top_n: int = 12,
+                        title: str = "") -> go.Figure:
+    """Horizontal bar of the primary model's largest drivers.
+
+    For Ridge these are standardised coefficients; for tree models the
+    pipeline passes permutation importances (pass an explicit ``title``).
+    """
     top = coefficients.reindex(coefficients.abs().sort_values(ascending=False).index)[:top_n]
     fig = go.Figure(
         go.Bar(
@@ -73,8 +78,75 @@ def driver_coefficients(coefficients: pd.Series, top_n: int = 12) -> go.Figure:
         )
     )
     fig.update_layout(
-        title=f"Top {top_n} baseline model coefficients (standardised)",
-        xaxis_title="Coefficient (effect on risk index, synthetic)",
+        title=title or f"Top {top_n} baseline model coefficients (standardised)",
+        xaxis_title="Value on risk index - predictive, not causal",
         margin={"l": 10, "t": 40},
+    )
+    return fig
+
+
+def prediction_band(agg: pd.DataFrame, level_pct: int = 90,
+                    title: str = "Held-out predictions vs observed") -> go.Figure:
+    """Observed vs predicted risk over the test block with a conformal band.
+
+    ``agg`` has columns date, y_true, y_pred, y_lo, y_hi (already aggregated
+    per month across counties - county-level bands would be unreadable)."""
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=agg["date"], y=agg["y_hi"], mode="lines",
+        line=dict(color="rgba(255,165,0,0.25)", width=0), showlegend=False,
+        hoverinfo="skip",
+    ))
+    fig.add_trace(go.Scatter(
+        x=agg["date"], y=agg["y_lo"], mode="lines",
+        line=dict(color="rgba(255,165,0,0.25)", width=0),
+        fill="tonexty", name=f"{level_pct}% interval",
+    ))
+    fig.add_trace(go.Scatter(
+        x=agg["date"], y=agg["y_true"], mode="lines+markers", name="observed",
+        line=dict(color="#2c3e50"),
+    ))
+    fig.add_trace(go.Scatter(
+        x=agg["date"], y=agg["y_pred"], mode="lines", name="predicted",
+        line=dict(color="#e67e22", dash="dot"),
+    ))
+    fig.update_layout(
+        title=title, yaxis_title="Mean risk index (0-100)", xaxis_title="",
+        margin={"l": 40, "t": 40},
+    )
+    return fig
+
+
+def reliability_chart(bins: list[dict], cal_err: float | None = None) -> go.Figure:
+    """Mean predicted vs mean observed risk per prediction bin (regression
+    calibration diagnostic - equal bars per bin means well calibrated)."""
+    df = pd.DataFrame(bins)
+    fig = go.Figure()
+    fig.add_trace(go.Bar(x=df["mean_pred"], y=df["bin"], orientation="h",
+                         name="mean predicted", marker_color="#3498db"))
+    fig.add_trace(go.Bar(x=df["mean_obs"], y=df["bin"], orientation="h",
+                         name="mean observed", marker_color="#e74c3c"))
+    fig.update_layout(
+        barmode="group",
+        title=("Calibration reliability (predicted vs observed by bin)"
+               + (f" - mean gap {cal_err:.1f}" if cal_err is not None else "")),
+        xaxis_title="Mean risk index", yaxis_title="Prediction bin (low -> high)",
+        margin={"l": 10, "t": 40},
+    )
+    return fig
+
+
+def horizon_degradation(rows: list[dict], metric: str = "rmse") -> go.Figure:
+    """Test metric vs forecast lead time (months ahead) - honesty chart:
+    early-warning value decays with the horizon."""
+    df = pd.DataFrame([r for r in rows if not r.get("skipped")])
+    fig = go.Figure(go.Scatter(
+        x=df["horizon"], y=df[metric], mode="lines+markers",
+        line=dict(color="#8e44ad"), marker=dict(size=10),
+    ))
+    fig.update_layout(
+        title=f"Forecast quality by lead time ({metric})",
+        xaxis_title="Lead time (months ahead)", yaxis_title=metric.upper(),
+        margin={"l": 40, "t": 40},
     )
     return fig
