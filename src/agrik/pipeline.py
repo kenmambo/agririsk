@@ -48,6 +48,31 @@ def _apply_source_overrides(overrides: list[str]) -> None:
         LOGGER.info("Config override: datasets.%s.source = %s", name, provider)
 
 
+def _apply_set_overrides(overrides: list[str]) -> None:
+    """Apply ``a.b.c=value`` dotted-path overrides onto the cached config."""
+    cfg = get_pipeline_config()
+    for item in overrides:
+        if "=" not in item or "." not in item.split("=", 1)[0]:
+            raise ValueError(f"--set expects dotted.key=value, got {item!r}")
+        path, raw = item.split("=", 1)
+        keys = path.split(".")
+        node: dict = cfg
+        for k in keys[:-1]:
+            if not isinstance(node.get(k), dict):
+                node[k] = {}
+            node = node[k]
+        value: object = raw
+        if raw.lower() in ("true", "false"):
+            value = raw.lower() == "true"
+        else:
+            try:
+                value = int(raw)
+            except ValueError:
+                pass
+        node[keys[-1]] = value
+        LOGGER.info("Config override: %s = %s", path, value)
+
+
 def _dataset_provenance(frames: dict[str, pd.DataFrame]) -> dict[str, str]:
     return {
         name: str(df[schemas.PROVENANCE_COLUMN].astype(str).unique().tolist())
@@ -197,11 +222,14 @@ def run_pipeline(
     force_raw: bool = False,
     seed: int = 42,
     source_overrides: list[str] | None = None,
+    set_overrides: list[str] | None = None,
 ) -> dict:
     """Run the full pipeline and return a summary dict."""
     setup_logging()
     if source_overrides:
         _apply_source_overrides(source_overrides)
+    if set_overrides:
+        _apply_set_overrides(set_overrides)
     settings = get_settings()
     settings.ensure_dirs()
     LOGGER.info("=== AgriRisk pipeline v%s starting (env=%s) ===",
@@ -232,9 +260,13 @@ def main(argv: list[str] | None = None) -> int:
                         metavar="DATASET=PROVIDER",
                         help="Override a dataset source for this run, e.g. "
                              "--source climate=chirps (repeatable).")
+    parser.add_argument("--set", dest="set_overrides", action="append", default=[],
+                        metavar="DOTTED.KEY=VALUE",
+                        help="Override any config path for this run, e.g. "
+                             "--set external.openmeteo.enabled=true (repeatable).")
     args = parser.parse_args(argv)
     run_pipeline(force_raw=args.force_raw, seed=args.seed,
-                 source_overrides=args.source)
+                 source_overrides=args.source, set_overrides=args.set_overrides)
     return 0
 
 

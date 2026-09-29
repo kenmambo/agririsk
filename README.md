@@ -14,8 +14,9 @@
 
 ## ⚠️ Data status — read this first
 
-**All six datasets run on real feeds (M2).** `climate` = CHIRPS v2.0 rainfall,
-`vegetation` = MODIS NDVI/EVI, `market` = FEWS NET county maize retail prices,
+**All six datasets run on real feeds (M2 + ERA5 temperature).** `climate` =
+CHIRPS v2.0 rainfall + ERA5 temperature (Open-Meteo), `vegetation` = MODIS
+NDVI/EVI, `market` = FEWS NET county maize retail prices,
 `outcome` = FEWS NET county IPC phases, `socioeconomic` = HDX county MPI
 headcount (KDHS 2022) + WorldPop rural population, `agriculture` = World Bank
 national food production index (see [Real data feeds](#real-data-feeds)).
@@ -51,6 +52,7 @@ Honest limitations that remain:
 |---|---|---|---|
 | **CHIRPS v2.0** monthly rainfall (0.05°, Africa) ✅ live | `climate.precipitation_mm` | none | `python -m agrik --force-raw --source climate=chirps` |
 | **MODIS MOD13A1 v6.1** NDVI/EVI (16-day, 500 m) ✅ live | `vegetation.ndvi/evi` | free [NASA Earthdata Login](https://urs.earthdata.nasa.gov) | set `AGRIK_EARTHDATA_TOKEN` (Profile → Applications → *Generate Token*; user/pass Basic auth also supported), then `--source vegetation=modis` |
+| **Open-Meteo ERA5** daily 2 m temperature → monthly mean ✅ live | `climate.temp_mean_c` | none | `--set external.openmeteo.enabled=true` (joins into the climate frame; rows become `chirps+openmeteo`) |
 | **FEWS NET** county maize retail prices (KES/kg) ✅ live | `market.maize_price_kes_kg` | none | `--source market=fewsnet_prices` |
 | **FEWS NET** county IPC phases → risk target ✅ live | `outcome.food_security_risk_index` | none | `--source outcome=fewsnet_ipc` |
 | **HDX** county MPI headcount + WorldPop rural pop ✅ live | `socioeconomic.poverty_rate/rural_pop` | none | `--source socioeconomic=hdx_knbs` |
@@ -70,8 +72,10 @@ python -m agrik --force-raw --source climate=chirps
 python -m agrik --force-raw --source climate=chirps --source vegetation=modis
 
 # the full real-feed pipeline (M2: FEWS NET prices + IPC, HDX socioeconomic,
-# World Bank agriculture - all no-auth CSV/JSON APIs, cached after first run):
-python -m agrik --force-raw --source climate=chirps --source vegetation=modis \
+# World Bank agriculture - all no-auth CSV/JSON APIs, cached after first run;
+# plus the Open-Meteo ERA5 temperature enrichment):
+python -m agrik --force-raw --set external.openmeteo.enabled=true \
+  --source climate=chirps --source vegetation=modis \
   --source market=fewsnet_prices --source outcome=fewsnet_ipc \
   --source socioeconomic=hdx_knbs --source agriculture=wb_foodindex
 
@@ -84,7 +88,8 @@ python scripts/check_earthdata.py
 - A feed that fails never silently blends in: the run **falls back to the labelled
   synthetic slice with a loud ERROR log**, visible in the `{dataset}_source` column
   (disable via `external.allow_synthetic_fallback: false`).
-- `temp_mean_c` is *omitted* (not faked) when the provider has no temperature —
+- `temp_mean_c` is *omitted* (not faked) when a provider has no temperature
+  and the Open-Meteo enrichment is off (e.g. offline/synthetic runs) —
   feature engineering adapts to the columns that exist.
 
 ---
@@ -370,7 +375,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 
 | Milestone | Work |
 |---|---|
-| **M1 · Real data (climate & veg)** | ✅ Done: **CHIRPS rainfall live**; **MODIS NDVI/EVI live** (Earthdata token, full-window granule coverage); remaining: ERA5/Open-Meteo temperature; county boundary GeoPackage (`[geo]` extra) to replace centroid disks |
+| **M1 · Real data (climate & veg)** | ✅ Done: **CHIRPS rainfall live**; **MODIS NDVI/EVI live** (Earthdata token, full-window granule coverage); **ERA5 temperature via Open-Meteo live**; remaining: county boundary GeoPackage (`[geo]` extra) to replace centroid disks |
 | **M2 · Markets & stats** | ✅ Done: **FEWS NET maize prices + IPC outcome live**; **HDX poverty/rural-pop socioeconomic live**; **World Bank food-index agriculture live** (national grain); remaining: county-grain production feed, `ipc_crisis_households`, backfill full 001–047 registry |
 | **M3 · Modelling** | Gradient-boosting baseline, calibration, uncertainty, forecasting horizon; compare against Ridge via the shared interface |
 | **M4 · Serving** | FastAPI service (`[api]`) exposing the risk panel + model card; scheduled pipeline runs |

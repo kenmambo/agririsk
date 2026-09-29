@@ -7,7 +7,8 @@ Dataset produced: ``climate`` (county-monthly), variables:
 
 ``temp_mean_c`` is **not** provided by this feed and is deliberately omitted
 rather than faked - downstream feature engineering adapts to the columns that
-exist. A temperature feed (e.g. ERA5 via Open-Meteo) is a future connector.
+exist. Enable the Open-Meteo ERA5 enrichment (``openmeteo.py``) with
+``--set external.openmeteo.enabled=true`` to add it to this frame.
 
 Provenance: every row is stamped ``data_source = "chirps"``.
 

@@ -22,7 +22,7 @@ from .. import schemas
 from ..config import get_pipeline_config
 from ..logging import get_logger
 from ..settings import Settings, get_settings
-from . import chirps, fewsnet, hdx, modis, worldbank
+from . import chirps, fewsnet, hdx, modis, openmeteo, worldbank
 from .synthetic import build_synthetic_datasets
 
 LOGGER = get_logger("ingestion.providers")
@@ -107,4 +107,19 @@ def ingest_datasets(
                 source, name, exc, name,
             )
             frames[name] = _synth_slice(name)
+
+    # Optional climate enrichment: ERA5 temperature via Open-Meteo joined
+    # into the climate frame (the schema's temp_mean_c, which CHIRPS lacks).
+    # Non-fatal by design: a temperature outage must never degrade a real
+    # CHIRPS rainfall frame down to synthetic - rows keep temp_mean_c NULL.
+    om = config.get("external", {}).get("openmeteo", {})
+    if om.get("enabled") and "climate" in frames:
+        try:
+            temps = openmeteo.build_temperature_panel(config=config, settings=settings)
+            frames["climate"] = openmeteo.merge_temperature(frames["climate"], temps)
+        except Exception as exc:  # noqa: BLE001 - enrichment is best-effort
+            LOGGER.error(
+                "Open-Meteo temperature enrichment failed (%s); climate frame "
+                "stays CHIRPS-only with temp_mean_c absent - NOT faked.", exc,
+            )
     return frames

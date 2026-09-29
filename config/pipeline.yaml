@@ -25,7 +25,7 @@ datasets:
   climate:
     source: synthetic          # real option: chirps (CHIRPS v2.0 monthly, no auth)
     file: climate_monthly.csv
-    description: "Rainfall and temperature (CHIRPS integrated; temperature feed pending)."
+    description: "Rainfall (CHIRPS) + temperature (ERA5 via Open-Meteo when enrichment enabled)."
   vegetation:
     source: synthetic          # real option: modis (MOD13A1 v6.1, needs Earthdata Login)
     file: vegetation_monthly.csv
@@ -106,6 +106,14 @@ external:
     # granule covering the 2019-2024 window (4 tiles x 93 composites, ~19 GB
     # cached) so all counties get full monthly coverage - no even-sampling gap.
     max_granule_downloads: 372
+  # --- M1/M2+: optional climate temperature enrichment ----------------------
+  openmeteo:
+    # ERA5 daily mean 2m temperature (Open-Meteo Archive API, no auth),
+    # averaged to months per county and merged into the climate frame as
+    # temp_mean_c. Opt-in per run: --set external.openmeteo.enabled=true
+    # (default false so committed runs stay offline/deterministic).
+    base_url: "https://archive-api.open-meteo.com/v1/archive"
+    enabled: false
   # --- M2: socioeconomic / market / outcome / agriculture feeds ---------------
   fewsnet:
     # USDA FEWS NET Data Warehouse public REST API (no auth, CSV extracts).
