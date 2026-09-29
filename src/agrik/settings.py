@@ -47,6 +47,12 @@ class Settings(BaseSettings):
     earthdata_password: str | None = None
     http_timeout_s: int = Field(default=180, description="Timeout for HTTP downloads")
 
+    # --- Serving (M4) --------------------------------------------------------
+    # Bind address/port for `agrik-serve` (FastAPI + uvicorn, [api] extra).
+    # Default loopback only: expose deliberately behind a reverse proxy.
+    api_host: str = "127.0.0.1"
+    api_port: int = 8000
+
     # --- Derived paths -----------------------------------------------------
     @property
     def raw_dir(self) -> Path:

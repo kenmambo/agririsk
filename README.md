@@ -52,6 +52,11 @@ Honest limitations that remain:
   for); forecast skill decays honestly with lead time (1-month-ahead R² 0.37 →
   3-month-ahead R² 0.29). See `models/comparison.json` and the model tab.
 - The model card, dashboard banner and code comments all repeat this warning.
+- **M4 serving:** the FastAPI service (`agrik-serve`) and the scheduled-run
+  script expose/refresh exactly these artefacts - every data response echoes
+  its provenance (`data_is_synthetic`, `dataset_sources`) and a missing
+  artefact is a 503 with a hint, never a fabricated number (see
+  [Serve the API](#3--serve-the-api-m4)).
 
 ### Real data feeds
 
@@ -154,9 +159,9 @@ well-tested, production-quality architecture rather than a notebook.
 | Language | Python 3.10+ |
 | Data wrangling | Pandas, NumPy |
 | Geospatial | GeoPandas *(optional `[geo]` extra — see below)* |
-| Modelling | Scikit-learn (Ridge baseline) |
+| Modelling | Scikit-learn (Ridge baseline + HistGradientBoosting, conformal uncertainty) |
 | Storage | SQLite / CSV feature store now → PostgreSQL later |
-| API *(planned)* | FastAPI (`[api]` extra) |
+| API | **FastAPI + uvicorn** (`[api]` extra) — live read-only service (M4) |
 | UI | Streamlit + Plotly |
 | Config | `pydantic-settings` (env/`.env`) + declarative `config/pipeline.yaml` |
 | Logging | `logging` `dictConfig` (`config/logging.yaml`) |
@@ -244,7 +249,8 @@ AgriRisk/
 ├─ models/                   # baseline_ridge.joblib + model_card.json  (git-ignored)
 ├─ logs/                     # rotating log files                      (git-ignored)
 ├─ scripts/
-│  └─ smoke_dashboard.py     # headless artefact + chart sanity check
+│  ├─ smoke_dashboard.py     # headless artefact + chart sanity check
+│  └─ schedule_pipeline.ps1  # Windows Task Scheduler registration (M4)
 ├─ src/agrik/
 │  ├─ settings.py            # pydantic-settings config
 │  ├─ logging.py             # dictConfig logging + get_logger
@@ -255,7 +261,8 @@ AgriRisk/
 │  ├─ ingestion/             # base IO + synthetic generator
 │  ├─ processing/            # validation + preprocessing
 │  ├─ features/              # feature engineering
-│  ├─ models/                # RiskModel interface + Ridge baseline + registry
+│  ├─ models/                # RiskModel interface + Ridge/GBM + registry
+│  ├─ api/                   # FastAPI serving layer (read-only over artefacts)
 │  └─ dashboard/             # loaders + Plotly charts + Streamlit app
 ├─ tests/                    # pytest unit + integration tests
 ├─ pyproject.toml            # packaging, deps, pytest & ruff config
@@ -380,10 +387,41 @@ Map of county risk, time-series trends, a baseline **model card**, standardised
 coefficients, and a provenance-aware data table — all guarded by a prominent
 **SYNTHETIC DATA** banner.
 
-### 3 · Run tests & sanity checks
+### 3 · Serve the API (M4)
 
 ```bash
-pytest -q                       # 84 unit + integration tests (offline, no network)
+pip install -e ".[api]"
+agrik-serve                # or: python -m agrik.api  (127.0.0.1:8000 by default)
+```
+
+Interactive docs at `http://127.0.0.1:8000/docs`. The service is a **read-only
+view over the artefacts** `python -m agrik` wrote (same decoupling rule as the
+dashboard - it never ingests or fits), and every data response carries
+provenance (`data_is_synthetic`, `dataset_sources`).
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /health` | artefact presence + pipeline version |
+| `GET /data/status` | rows/counties/period + per-dataset provenance |
+| `GET /panel` | county-month rows; filters `county_code`, `year_from/to`, `agro_zone`, `limit/offset`, `all_columns` |
+| `GET /risk/summary` | per-county risk + display band for a month (`?date=YYYY-MM`, default latest) |
+| `GET /counties` | county registry reference (codes, centroids, zones) |
+| `GET /model/card` · `/model/comparison` | M3 metrics, uncertainty, horizons |
+| `GET /model/predictions` | held-out predictions with conformal intervals |
+
+Missing artefacts return a **503 with a "run `python -m agrik` first" hint** -
+the API never fabricates. Bind address/port via `AGRIK_API_HOST` /
+`AGRIK_API_PORT` (loopback by default; widen only behind a reverse proxy).
+
+**Scheduled pipeline runs:** `pwsh scripts/schedule_pipeline.ps1` registers a
+Windows daily task (default 06:00, `StartWhenAvailable`; `-AtHour`, `-Remove`,
+`-WhatIf` supported); the cron equivalent is
+`0 6 * * * cd /path/AgriRisk && .venv/bin/python -m agrik`.
+
+### 4 · Run tests & sanity checks
+
+```bash
+pytest -q                       # 97 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 
@@ -410,7 +448,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 | **M1 · Real data (climate & veg)** | ✅ Done: **CHIRPS rainfall live**; **MODIS NDVI/EVI live** (Earthdata token, full-window granule coverage); **ERA5 temperature via Open-Meteo live**; remaining: county boundary GeoPackage (`[geo]` extra) to replace centroid disks |
 | **M2 · Markets & stats** | ✅ Done: **FEWS NET maize prices + IPC outcome live**; **HDX poverty/rural-pop socioeconomic live**; **World Bank food-index agriculture live** (national grain); remaining: county-grain production feed, `ipc_crisis_households`, backfill full 001–047 registry |
 | **M3 · Modelling** | ✅ Done: **GBM vs Ridge on the identical chronological split** (R² 0.64 vs 0.35 on the real IPC target); **conformal uncertainty intervals + coverage reporting**; **regression reliability/calibration table**; **1- and 3-month forecast-horizon evaluation**; remaining: probability calibration for IPC-phase classification, spatial (county-adjacency) features |
-| **M4 · Serving** | FastAPI service (`[api]`) exposing the risk panel + model card; scheduled pipeline runs |
+| **M4 · Serving** | ✅ Done: **FastAPI service** (`[api]` extra) exposing the risk panel + provenance + M3 model artefacts; **scheduled pipeline runs** (Windows task script / cron one-liner); remaining: auth + rate limiting for public deployment |
 | **M5 · Platform** | PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards, alerting |
 
 ### How to add a real data source

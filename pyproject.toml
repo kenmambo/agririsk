@@ -35,6 +35,7 @@ rs = ["rasterio>=1.3", "shapely>=2.0", "pyproj>=3.6", "requests>=2.32", "pyhdf>=
 
 [project.scripts]
 agrik-build-data = "agrik.pipeline:main"
+agrik-serve = "agrik.api.__main__:main"
 
 [tool.setuptools]
 package-dir = { "" = "src" }
