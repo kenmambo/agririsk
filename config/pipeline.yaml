@@ -31,21 +31,21 @@ datasets:
     file: vegetation_monthly.csv
     description: "NDVI / EVI (MODIS connector ready; enable with credentials)."
   agriculture:
-    source: synthetic
+    source: synthetic          # real option: wb_foodindex (World Bank food production index)
     file: agriculture_monthly.csv
-    description: "Production and area index (placeholder for county ag stats)."
+    description: "Production index (real feed: national FAO food production index - no county-grain source exists free)."
   market:
-    source: synthetic
+    source: synthetic          # real option: fewsnet_prices (FEWS NET county retail prices)
     file: market_monthly.csv
-    description: "Urban maize retail price (placeholder for FEWSNET / KMD)."
+    description: "Urban maize retail price (real feed: FEWS NET marketpricefacts, county x month)."
   socioeconomic:
-    source: synthetic
+    source: synthetic          # real option: hdx_knbs (Global MPI subnational + WorldPop rural)
     file: socioeconomic_monthly.csv
-    description: "Rural population, poverty, coping capacity (placeholder for KNBS)."
+    description: "Rural population, poverty (real feed: HDX MPI headcount KDHS-2022 + WorldPop ADM2)."
   outcome:
-    source: synthetic
+    source: synthetic          # real option: fewsnet_ipc (FEWS NET IPC phases)
     file: outcome_monthly.csv
-    description: "Food-security risk index target (placeholder for IPC analysis)."
+    description: "Food-security risk index target (real feed: IPC Current Situation phases, county zones)."
 
 # Column-level validation rules. Range checks are advisory (flagged, not fatal)
 # unless a column is also listed in required_columns.
@@ -106,3 +106,19 @@ external:
     # granule covering the 2019-2024 window (4 tiles x 93 composites, ~19 GB
     # cached) so all counties get full monthly coverage - no even-sampling gap.
     max_granule_downloads: 372
+  # --- M2: socioeconomic / market / outcome / agriculture feeds ---------------
+  fewsnet:
+    # USDA FEWS NET Data Warehouse public REST API (no auth, CSV extracts).
+    base_url: "https://fdw.fews.net/api"
+    iso3: "KE"
+    product: "maize"           # matched case-insensitively; white maize grain preferred
+    price_type: "Retail"       # urban market retail prices, KES/kg
+  hdx:
+    # UNDP/OPHI global MPI subnational for Kenya (KDHS 2022), county rows.
+    mpi_url: "https://data.humdata.org/dataset/f27114d0-4094-4117-8eb7-19b815358f1c/resource/700e28f8-99e1-4a68-a78f-d4d2d6b6c04e/download/ken_mpi.csv"
+    # WorldPop ADM2 rural population (HeiGIT mirror of the HDX risk-assessment inputs).
+    rural_population_url: "https://hot.storage.heigit.org/heigit-hdx-public/risk_assessment_inputs/ken/KEN_ADM2_rural_population.csv"
+  worldbank:
+    # FAO-based national food production index (2014-16=100), annual, Kenya.
+    api_url: "https://api.worldbank.org/v2/country/KEN/indicator/AG.PRD.FOOD.XD"
+    indicator: "AG.PRD.FOOD.XD"

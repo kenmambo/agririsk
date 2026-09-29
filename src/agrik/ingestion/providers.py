@@ -22,7 +22,7 @@ from .. import schemas
 from ..config import get_pipeline_config
 from ..logging import get_logger
 from ..settings import Settings, get_settings
-from . import chirps, modis
+from . import chirps, fewsnet, hdx, modis, worldbank
 from .synthetic import build_synthetic_datasets
 
 LOGGER = get_logger("ingestion.providers")
@@ -32,6 +32,10 @@ LOGGER = get_logger("ingestion.providers")
 _REGISTRY: dict[str, tuple[str, Callable[..., pd.DataFrame]]] = {
     "chirps": ("climate", lambda **kw: chirps.build_climate_panel(**kw)),
     "modis": ("vegetation", lambda **kw: modis.build_vegetation_panel(**kw)),
+    "fewsnet_prices": ("market", lambda **kw: fewsnet.build_market_panel(**kw)),
+    "fewsnet_ipc": ("outcome", lambda **kw: fewsnet.build_outcome_panel(**kw)),
+    "hdx_knbs": ("socioeconomic", lambda **kw: hdx.build_socioeconomic_panel(**kw)),
+    "wb_foodindex": ("agriculture", lambda **kw: worldbank.build_agriculture_panel(**kw)),
 }
 
 

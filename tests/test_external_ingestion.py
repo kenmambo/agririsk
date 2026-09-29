@@ -143,7 +143,9 @@ def test_chirps_all_months_failed_raises(tmp_path, monkeypatch):
 # provider registry & fallback policy
 # ---------------------------------------------------------------------------
 def test_registry_lists_real_sources():
-    assert providers.available_sources() == ["chirps", "modis"]
+    assert providers.available_sources() == [
+        "chirps", "fewsnet_ipc", "fewsnet_prices", "hdx_knbs", "modis", "wb_foodindex",
+    ]
 
 
 def test_unknown_source_rejected():

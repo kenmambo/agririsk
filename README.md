@@ -14,30 +14,47 @@
 
 ## ⚠️ Data status — read this first
 
-**Partially real (M1 in progress).** The `climate` dataset is built from
-**real CHIRPS v2.0 satellite-rainfall observations** and `vegetation` from
-**real MODIS NDVI/EVI** (see [Real data feeds](#real-data-feeds-m1)); the
-remaining datasets (`agriculture`, `market`, `socioeconomic`, `outcome`) are
-still **clearly-labelled synthetic sample data**.
+**All six datasets run on real feeds (M2).** `climate` = CHIRPS v2.0 rainfall,
+`vegetation` = MODIS NDVI/EVI, `market` = FEWS NET county maize retail prices,
+`outcome` = FEWS NET county IPC phases, `socioeconomic` = HDX county MPI
+headcount (KDHS 2022) + WorldPop rural population, `agriculture` = World Bank
+national food production index (see [Real data feeds](#real-data-feeds)).
+Honest limitations that remain:
+
+- the risk *target* is a **documented derivation** of IPC phases
+  (`risk = (phase − 1) × 25`, worst zone per county-month), not a continuous
+  published index;
+- `agriculture` is **national-annual** data broadcast to county-months — no
+  free county×month crop-production series exists for Kenya;
+- county gaps stay **absent, never faked** (e.g. districts FEWS NET does not
+  analyse, price-free months); imputation fills them and is logged.
 
 - Every observation carries provenance: a `data_source` column per raw dataset
   and per-dataset `{dataset}_source` columns in the merged panel
-  (`synthetic`, `chirps`, `modis`, …). The overall status is `mixed` when real
-  and synthetic feeds coexist.
+  (`synthetic`, `chirps`, `modis`, `fewsnet_prices`, …). The overall status is
+  `mixed` when real and synthetic feeds coexist.
+- The synthetic generator remains the offline default (and CI fixture) — a
+  fresh clone or `source: synthetic` config still produces labelled sample
+  data, and the dashboard banner reports which state the loaded panel is in.
 - The synthetic generator uses a *documented* causal chain (rainfall → vegetation →
   production → price → risk) so the pipeline and baseline model have genuine signal
   to learn from — **it is scaffolding, not evidence.**
-- ⚠️ While the risk *target* is synthetic, model metrics describe how well the
-  baseline reproduces **that synthetic target** — even when some features are real.
-  No per-county analytical conclusions are valid yet.
+- ⚠️ With the real IPC-derived target, model metrics describe fit on **observed**
+  food-security phases — but the target's stepwise {0,25,50,75,100} structure and
+  the national-grain agriculture feed cap how far per-county conclusions can be
+  pushed.
 - The model card, dashboard banner and code comments all repeat this warning.
 
-### Real data feeds (M1)
+### Real data feeds
 
 | Feed | Dataset | Auth | Enable |
 |---|---|---|---|
 | **CHIRPS v2.0** monthly rainfall (0.05°, Africa) ✅ live | `climate.precipitation_mm` | none | `python -m agrik --force-raw --source climate=chirps` |
 | **MODIS MOD13A1 v6.1** NDVI/EVI (16-day, 500 m) ✅ live | `vegetation.ndvi/evi` | free [NASA Earthdata Login](https://urs.earthdata.nasa.gov) | set `AGRIK_EARTHDATA_TOKEN` (Profile → Applications → *Generate Token*; user/pass Basic auth also supported), then `--source vegetation=modis` |
+| **FEWS NET** county maize retail prices (KES/kg) ✅ live | `market.maize_price_kes_kg` | none | `--source market=fewsnet_prices` |
+| **FEWS NET** county IPC phases → risk target ✅ live | `outcome.food_security_risk_index` | none | `--source outcome=fewsnet_ipc` |
+| **HDX** county MPI headcount + WorldPop rural pop ✅ live | `socioeconomic.poverty_rate/rural_pop` | none | `--source socioeconomic=hdx_knbs` |
+| **World Bank** national food production index ✅ live | `agriculture.prod_index` | none | `--source agriculture=wb_foodindex` |
 
 Details:
 
@@ -51,6 +68,12 @@ python -m agrik --force-raw --source climate=chirps
 # live MODIS vegetation (needs Earthdata token; granule volume guard in
 # config/pipeline.yaml caps downloads per run, coverage stays honest):
 python -m agrik --force-raw --source climate=chirps --source vegetation=modis
+
+# the full real-feed pipeline (M2: FEWS NET prices + IPC, HDX socioeconomic,
+# World Bank agriculture - all no-auth CSV/JSON APIs, cached after first run):
+python -m agrik --force-raw --source climate=chirps --source vegetation=modis \
+  --source market=fewsnet_prices --source outcome=fewsnet_ipc \
+  --source socioeconomic=hdx_knbs --source agriculture=wb_foodindex
 
 # verify your Earthdata credentials before a run (prints no secrets):
 python scripts/check_earthdata.py
@@ -104,7 +127,7 @@ well-tested, production-quality architecture rather than a notebook.
 
 ### Non-goals (for now)
 
-- Production accuracy of risk estimates (data is synthetic).
+- Production accuracy of risk estimates (feeds are real; accuracy work is M3).
 - Sub-county / parcel geometry, nowcasting, or an operational API.
 - Causal inference or policy claims.
 
@@ -347,8 +370,8 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 
 | Milestone | Work |
 |---|---|
-| **M1 · Real data (climate & veg)** | 🚧 In progress: **CHIRPS rainfall connector done & live**; **MODIS NDVI/EVI connector done & live** (Earthdata token, volume-guarded granule sampling); ERA5/Open-Meteo temperature; county boundary GeoPackage (`[geo]` extra) replaces centroid disks |
-| **M2 · Markets & stats** | FEWSNET/KMD maize prices; KNBS production & socioeconomic; backfill full 001–047 registry |
+| **M1 · Real data (climate & veg)** | ✅ Done: **CHIRPS rainfall live**; **MODIS NDVI/EVI live** (Earthdata token, full-window granule coverage); remaining: ERA5/Open-Meteo temperature; county boundary GeoPackage (`[geo]` extra) to replace centroid disks |
+| **M2 · Markets & stats** | ✅ Done: **FEWS NET maize prices + IPC outcome live**; **HDX poverty/rural-pop socioeconomic live**; **World Bank food-index agriculture live** (national grain); remaining: county-grain production feed, `ipc_crisis_households`, backfill full 001–047 registry |
 | **M3 · Modelling** | Gradient-boosting baseline, calibration, uncertainty, forecasting horizon; compare against Ridge via the shared interface |
 | **M4 · Serving** | FastAPI service (`[api]`) exposing the risk panel + model card; scheduled pipeline runs |
 | **M5 · Platform** | PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards, alerting |
