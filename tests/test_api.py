@@ -77,6 +77,52 @@ def test_missing_artefacts_return_503_with_hint(client_empty):
 
 
 # ---------------------------------------------------------------------------
+# alerts (early warning)
+# ---------------------------------------------------------------------------
+def test_alerts_default_shape_and_rule(client_ready):
+    body = client_ready.get("/alerts").json()
+    assert body["as_of"]  # latest month in the panel
+    assert body["baseline_window"]["months"] == 3
+    assert body["count"] == len(body["alerts"])
+    for row in body["alerts"]:
+        # every flagged county satisfies at least one branch of the rule
+        assert row["delta"] >= 10.0 or row["band_escalated"], row
+        assert abs(row["delta"] - (row["risk_current"] - row["risk_baseline"])) < 0.02
+    assert isinstance(body["skipped_no_baseline"], int)
+    assert "display thresholds" in body["bands_are"]
+
+
+def test_alerts_extreme_delta_only_returns_band_escalations(client_ready):
+    body = client_ready.get("/alerts", params={"min_delta": 100.0}).json()
+    for row in body["alerts"]:
+        assert row["band_escalated"] is True or row["delta"] >= 100.0, row
+
+
+def test_alerts_unknown_month_404(client_ready):
+    r = client_ready.get("/alerts", params={"date": "2035-01"})
+    assert r.status_code == 404
+    assert "2035-01" in r.json()["detail"]
+
+
+def test_alerts_county_filter(client_ready):
+    body = client_ready.get("/alerts", params={"county_code": "5"}).json()
+    assert all(row["county_code"] == "005" for row in body["alerts"])
+    assert client_ready.get("/alerts", params={"county_code": "999"}).status_code == 404
+
+
+def test_alerts_first_month_has_no_baseline_and_is_honest(client_ready):
+    # Earliest panel month: no prior rows exist, so nothing is evaluated and
+    # nothing is flagged - a valid empty answer, never a fabricated alert.
+    status = client_ready.get("/data/status").json()
+    first = status["period"]["from"][:7]
+    body = client_ready.get("/alerts", params={"date": first}).json()
+    assert body["counties_evaluated"] == 0
+    assert body["skipped_no_baseline"] > 0
+    assert body["alerts"] == []
+    assert body["count"] == 0
+
+
+# ---------------------------------------------------------------------------
 # honesty: provenance is surfaced, never hidden
 # ---------------------------------------------------------------------------
 def test_data_status_declares_synthetic(client_ready):

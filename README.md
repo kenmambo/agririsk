@@ -417,6 +417,7 @@ provenance (`data_is_synthetic`, `dataset_sources`).
 | `GET /data/status` | rows/counties/period + per-dataset provenance |
 | `GET /panel` | county-month rows; filters `county_code`, `year_from/to`, `agro_zone`, `limit/offset`, `all_columns` |
 | `GET /risk/summary` | per-county risk + display band for a month (`?date=YYYY-MM`, default latest) |
+| `GET /alerts` | early warning: counties whose risk escalated vs a trailing baseline window (`date`, `baseline_months`, `min_delta`, `county_code`) |
 | `GET /counties` | county registry reference (codes, centroids, zones) |
 | `GET /model/card` · `/model/comparison` | M3 metrics, uncertainty, horizons |
 | `GET /model/predictions` | held-out predictions with conformal intervals |
@@ -469,7 +470,7 @@ dashboard needs the Streamlit command override from `docker-compose.yml`.
 ### 5 · Run tests & sanity checks
 
 ```bash
-pytest -q                       # 102 unit + integration tests (offline, no network)
+pytest -q                       # 107 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 
@@ -497,7 +498,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 | **M2 · Markets & stats** | ✅ Done: **FEWS NET maize prices + IPC outcome live**; **HDX poverty/rural-pop socioeconomic live**; **World Bank food-index agriculture live** (national grain); remaining: county-grain production feed, `ipc_crisis_households`, backfill full 001–047 registry |
 | **M3 · Modelling** | ✅ Done: **GBM vs Ridge on the identical chronological split** (R² 0.64 vs 0.35 on the real IPC target); **conformal uncertainty intervals + coverage reporting**; **regression reliability/calibration table**; **1- and 3-month forecast-horizon evaluation**; remaining: probability calibration for IPC-phase classification, spatial (county-adjacency) features |
 | **M4 · Serving** | ✅ Done: **FastAPI service** (`[api]` extra) exposing the risk panel + provenance + M3 model artefacts; **scheduled pipeline runs** (Windows task script / cron one-liner); remaining: auth + rate limiting for public deployment |
-| **M5 · Platform** | ✅ Partial: **Docker image + compose** (API + dashboard, non-root, healthchecked) serving the committed `deploy/seed` artefact bundle; remaining: PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards, alerting |
+| **M5 · Platform** | ✅ Partial: **Docker image + compose** (API + dashboard, non-root, healthchecked) serving the committed `deploy/seed` artefact bundle; **`/alerts` early-warning endpoint** (band-escalation vs trailing baseline, live-verified: Marsabit Crisis→Above Crisis at 2022-12); remaining: PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards |
 
 ### How to add a real data source
 1. Write a connector in `src/agrik/ingestion/` that returns a DataFrame conforming to
