@@ -6,7 +6,9 @@ Run with:
 
 This is a thin view over artefacts written by ``python -m agrik``. It performs
 no ingestion, validation or model training - keeping the UI fully decoupled
-from the data-science layers.
+from the data-science layers. The early-warning rule itself lives in the
+shared ``agrik.alerting`` module (same code path the API ``/alerts`` route
+uses), so this view only renders - never re-implements - it.
 """
 
 from __future__ import annotations
@@ -22,7 +24,7 @@ if _SRC not in sys.path:
 import pandas as pd  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from agrik import schemas  # noqa: E402
+from agrik import alerting, schemas  # noqa: E402
 from agrik.dashboard import charts, loaders  # noqa: E402
 
 st.set_page_config(page_title="AgriRisk Kenya", page_icon="🌾", layout="wide")
@@ -100,9 +102,68 @@ def main() -> None:
     k4.metric("Baseline RMSE", f"{card.get('metrics', {}).get('rmse', float('nan')):.2f}")
     k5.metric("Baseline R²", f"{card.get('metrics', {}).get('r2', float('nan')):.2f}")
 
-    tab_map, tab_trend, tab_model, tab_data = st.tabs(
-        ["Overview map", "Trends", "Baseline model", "Data & provenance"]
+    tab_alerts, tab_map, tab_trend, tab_model, tab_data = st.tabs(
+        ["⚠ Early warning", "Overview map", "Trends", "Baseline model",
+         "Data & provenance"]
     )
+
+    with tab_alerts:
+        st.subheader("Month-over-month risk escalation")
+        months = sorted(df[schemas.DATE_COLUMN].astype(str).str.slice(0, 7).unique())
+        as_of = st.selectbox(
+            "Evaluate month (YYYY-MM)", months, index=len(months) - 1,
+        )
+        b1, b2 = st.columns(2)
+        baseline_months = b1.slider("Baseline window (trailing months)", 1, 12, 3)
+        min_delta = b2.slider("Alert threshold (risk points)", 0.0, 40.0, 10.0, step=0.5)
+        try:
+            report = alerting.evaluate_alerts(
+                df, as_of=as_of, baseline_months=baseline_months,
+                min_delta=min_delta,
+            )
+        except ValueError as exc:
+            st.warning(f"Cannot evaluate {as_of}: {exc}")
+            report = None
+
+        if report is not None:
+            m1, m2, m3, m4 = st.columns(4)
+            m1.metric("Alerts raised", report["count"])
+            m2.metric("Counties evaluated", report["counties_evaluated"])
+            m3.metric("Skipped (no baseline)", report["skipped_no_baseline"])
+            m4.metric("Baseline window", report["baseline_window"]["from_month"]
+                      + " → " + report["baseline_window"]["to_month"])
+
+            alerts_df = pd.DataFrame(report["alerts"])
+            if alerts_df.empty:
+                st.success(
+                    f"No county escalated vs its {baseline_months}-month baseline "
+                    f"in {as_of} (rule: Δ ≥ {min_delta} or band jump). Zero alerts "
+                    "is a valid early-warning answer, not missing data."
+                )
+            else:
+                st.dataframe(
+                    alerts_df[[
+                        "county_code", schemas.COUNTY_NAME_COLUMN, "risk_baseline",
+                        "risk_current", "delta", "band_baseline", "band_current",
+                        "band_escalated",
+                    ]],
+                    use_container_width=True, hide_index=True,
+                )
+                ref = loaders.county_reference()
+                mapped = alerts_df.merge(ref[["county_code", "lat", "lon", "agro_zone"]],
+                                         on="county_code", how="left")
+                mapped = mapped.dropna(subset=["lat", "lon"])
+                c1, c2 = st.columns([1, 1])
+                c1.plotly_chart(charts.alert_escalation(
+                    mapped, title=f"Escalating counties — {as_of}"),
+                    use_container_width=True)
+                if not mapped.empty:
+                    c2.plotly_chart(charts.alert_map(
+                        mapped, title="Where the alerts are"), use_container_width=True)
+            st.caption(
+                f"Rule: {report['rule']}. {report['bands_are']}. "
+                "Counties without baseline coverage are counted, never imputed."
+            )
 
     with tab_map:
         c1, c2 = st.columns([2, 1])

@@ -11,11 +11,10 @@ from __future__ import annotations
 
 from typing import Any
 
-import pandas as pd
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
 
-from .. import schemas
+from .. import alerting, schemas
 from ..logging import get_logger
 from ..settings import get_settings
 from . import artifacts
@@ -268,77 +267,30 @@ def create_app() -> FastAPI:
     ) -> dict:
         """Early warning: counties whose risk escalated vs the baseline window.
 
-        A county is flagged when its mean risk index for the evaluated month
-        is >= ``min_delta`` points above its baseline mean OR its display band
+        Delegates the rule to :func:`agrik.alerting.evaluate_alerts` — the
+        same module the dashboard uses, so the two can never drift. A county
+        is flagged when its mean risk index for the evaluated month is
+        >= ``min_delta`` points above its baseline mean OR its display band
         escalated. Counties without baseline coverage are counted, not faked.
         Zero alerts is a valid answer (HTTP 200 with an empty list).
         """
-        df = _artifact_or_503(artifacts.features_panel)
+        full = _artifact_or_503(artifacts.features_panel)
+        df = full
         if county_code is not None:
             code = county_code.zfill(3)
             known = set(artifacts.county_reference()["county_code"])
             if code not in known:
                 raise HTTPException(404, detail=f"Unknown county_code {code!r}.")
             df = df[df["county_code"] == code]
-        months = df[schemas.DATE_COLUMN].astype(str).str.slice(0, 7)
-        as_of = (date or str(months.max()))[:7]
-        if not (months == as_of).any():
-            raise HTTPException(404, detail=f"No panel rows for month {as_of!r}.")
-        band_order = {label: i for i, (_, label) in enumerate(schemas.RISK_BANDS)}
-        cur = (
-            df[months == as_of]
-            .groupby(["county_code", schemas.COUNTY_NAME_COLUMN], as_index=False)
-            [schemas.TARGET].mean()
-            .rename(columns={schemas.TARGET: "risk_current"})
-        )
-        period = pd.Period(as_of, freq="M")
-        start = str(period - int(baseline_months))
-        base = (
-            df[(months >= start) & (months < as_of)]
-            .groupby("county_code", as_index=False)[schemas.TARGET].mean()
-            .rename(columns={schemas.TARGET: "risk_baseline"})
-        )
-        merged = cur.merge(base, on="county_code", how="left")
-        n_no_baseline = int(merged["risk_baseline"].isna().sum())
-        merged = merged.dropna(subset=["risk_baseline"])
-        merged["delta"] = merged["risk_current"] - merged["risk_baseline"]
-        merged["band_current"] = merged["risk_current"].round(1).map(schemas.risk_band)
-        merged["band_baseline"] = merged["risk_baseline"].round(1).map(schemas.risk_band)
-        merged["band_escalated"] = [
-            band_order[c] > band_order[b]
-            for c, b in zip(merged["band_current"], merged["band_baseline"], strict=True)
-        ]
-        flagged = merged[
-            (merged["delta"] >= min_delta) | merged["band_escalated"]
-        ].copy()
-        for col in ("risk_current", "risk_baseline", "delta"):
-            flagged[col] = flagged[col].round(2)
-        flagged = flagged.sort_values("delta", ascending=False)
-        out_cols = [
-            "county_code", schemas.COUNTY_NAME_COLUMN, "risk_current",
-            "risk_baseline", "delta", "band_baseline", "band_current",
-            "band_escalated",
-        ]
-        return {
-            "as_of": as_of,
-            "baseline_window": {
-                "from_month": start,
-                "to_month": str(period - 1),
-                "months": int(baseline_months),
-            },
-            "rule": (
-                f"flagged if risk_current - risk_baseline >= {min_delta} "
-                "OR display band escalated vs baseline"
-            ),
-            "bands_are": "documented display thresholds, not model output",
-            "counties_evaluated": int(len(merged)),
-            "skipped_no_baseline": n_no_baseline,
-            "count": int(len(flagged)),
-            "data_is_synthetic": artifacts.data_is_synthetic(
-                _artifact_or_503(artifacts.features_panel)
-            ),
-            "alerts": artifacts.records(flagged[out_cols]),
-        }
+        try:
+            report = alerting.evaluate_alerts(
+                df, as_of=date, baseline_months=baseline_months,
+                min_delta=min_delta,
+            )
+        except ValueError as exc:
+            raise HTTPException(404, detail=f"{exc}.") from exc
+        report["data_is_synthetic"] = artifacts.data_is_synthetic(full)
+        return report
 
     @app.get("/model/card", tags=["model"])
     def model_card() -> dict:

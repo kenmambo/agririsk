@@ -150,3 +150,50 @@ def horizon_degradation(rows: list[dict], metric: str = "rmse") -> go.Figure:
         margin={"l": 40, "t": 40},
     )
     return fig
+
+
+def alert_escalation(alerts: pd.DataFrame, title: str = "") -> go.Figure:
+    """Baseline vs current mean risk per flagged county (grouped bars).
+
+    ``alerts`` has county_name, risk_baseline, risk_current (already sorted
+    by delta, descending, by the caller). Makes the month-over-month jump -
+    the whole point of early warning - legible at a glance."""
+    fig = go.Figure()
+    fig.add_trace(go.Bar(
+        x=alerts["county_name"], y=alerts["risk_baseline"],
+        name="baseline mean", marker_color="#95a5a6",
+    ))
+    fig.add_trace(go.Bar(
+        x=alerts["county_name"], y=alerts["risk_current"],
+        name="current mean", marker_color="#c0392b",
+    ))
+    fig.update_layout(
+        barmode="group", title=title,
+        xaxis_title="", yaxis_title="Risk index (0-100)",
+        xaxis=dict(categoryorder="trace"),
+        margin={"l": 40, "t": 40, "b": 0},
+    )
+    return fig
+
+
+def alert_map(alerts: pd.DataFrame, title: str = "") -> go.Figure:
+    """Bubble map of flagged counties, sized/colored by the risk delta.
+
+    ``alerts`` must carry lat/lon (merged from the county registry),
+    county_name, delta and the band columns for the hover card."""
+    fig = px.scatter_map(
+        alerts,
+        lat="lat",
+        lon="lon",
+        color="delta",
+        size="delta",
+        hover_name="county_name",
+        hover_data=["band_baseline", "band_current", "delta"],
+        color_continuous_scale="YlOrRd",
+        map_style="open-street-map",
+        zoom=5,
+        center={"lat": alerts["lat"].mean(), "lon": alerts["lon"].mean()},
+        title=title,
+    )
+    fig.update_layout(margin={"l": 0, "r": 0, "t": 40, "b": 0})
+    return fig

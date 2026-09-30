@@ -10,7 +10,7 @@ import json
 
 import pandas as pd
 
-from agrik import counties, schemas
+from agrik import alerting, counties, schemas
 from agrik.dashboard import charts
 from agrik.settings import get_settings
 
@@ -51,6 +51,24 @@ def main() -> None:
         assert charts.horizon_degradation(card["horizon_metrics"]) is not None
     comparison = json.loads((s.models_dir / "comparison.json").read_text(encoding="utf-8"))
     print("comparison  :", {r["name"]: round(r["rmse"], 2) for r in comparison["rows"]})
+
+    # Early-warning path: shared rule + its two figures (may be zero alerts).
+    report = alerting.evaluate_alerts(df)
+    alerts_df = pd.DataFrame(report["alerts"])
+    print(
+        f"alerts {report['as_of']}:", report["count"],
+        "evaluated", report["counties_evaluated"],
+        "skipped", report["skipped_no_baseline"],
+    )
+    if not alerts_df.empty:
+        mapped = alerts_df.merge(
+            counties.counties_frame()[["county_code", "lat", "lon"]],
+            on="county_code", how="left",
+        ).dropna(subset=["lat", "lon"])
+        assert charts.alert_escalation(mapped) is not None
+        if not mapped.empty:
+            assert charts.alert_map(mapped) is not None
+
     print("SMOKE OK")
 
 

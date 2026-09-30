@@ -271,6 +271,7 @@ AgriRisk/
 │  ├─ logging.py             # dictConfig logging + get_logger
 │  ├─ counties.py            # county reference registry (subset, documented)
 │  ├─ schemas.py             # column contracts, dataset specs, risk bands
+│  ├─ alerting.py            # shared early-warning rule (API + dashboard)
 │  ├─ pipeline.py            # orchestration (the ONLY module touching all layers)
 │  ├─ config/                # YAML loader
 │  ├─ ingestion/             # base IO + synthetic generator
@@ -401,9 +402,12 @@ This runs: **ingestion → validation → preprocessing → features → trainin
 streamlit run src/agrik/dashboard/app.py
 ```
 
-Map of county risk, time-series trends, a baseline **model card**, standardised
-coefficients, and a provenance-aware data table — all guarded by a prominent
-**SYNTHETIC DATA** banner.
+An **Early-warning tab** (flagged counties vs their trailing baseline, with an
+escalation bar chart + alert map), a map of county risk, time-series trends, a
+baseline **model card**, standardised coefficients, and a provenance-aware data
+table — all guarded by a prominent **SYNTHETIC DATA** banner. The alert rule
+lives in the shared `agrik.alerting` module, so the tab and the API `/alerts`
+endpoint can never disagree.
 
 ### 3 · Serve the API (M4)
 
@@ -497,7 +501,7 @@ but require a payment method; skip them unless you outgrow Render's free plan.
 ### 6 · Run tests & sanity checks
 
 ```bash
-pytest -q                       # 108 unit + integration tests (offline, no network)
+pytest -q                       # 114 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 
@@ -525,7 +529,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 | **M2 · Markets & stats** | ✅ Done: **FEWS NET maize prices + IPC outcome live**; **HDX poverty/rural-pop socioeconomic live**; **World Bank food-index agriculture live** (national grain); remaining: county-grain production feed, `ipc_crisis_households`, backfill full 001–047 registry |
 | **M3 · Modelling** | ✅ Done: **GBM vs Ridge on the identical chronological split** (R² 0.64 vs 0.35 on the real IPC target); **conformal uncertainty intervals + coverage reporting**; **regression reliability/calibration table**; **1- and 3-month forecast-horizon evaluation**; remaining: probability calibration for IPC-phase classification, spatial (county-adjacency) features |
 | **M4 · Serving** | ✅ Done: **FastAPI service** (`[api]` extra) exposing the risk panel + provenance + M3 model artefacts; **scheduled pipeline runs** (Windows task script / cron one-liner); remaining: auth + rate limiting for public deployment |
-| **M5 · Platform** | ✅ Partial: **Docker image + compose** (API + dashboard, non-root, healthchecked) serving the committed `deploy/seed` artefact bundle; **`/alerts` early-warning endpoint** (band-escalation vs trailing baseline, live-verified: Marsabit Crisis→Above Crisis at 2022-12); remaining: PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards |
+| **M5 · Platform** | ✅ Partial: **Docker image + compose** (API + dashboard, non-root, healthchecked) serving the committed `deploy/seed` artefact bundle; **`/alerts` early-warning endpoint** + an **interactive dashboard Early-warning tab** (both driven by one shared `agrik.alerting` rule — band-escalation vs trailing baseline, live-verified: Marsabit Crisis→Above Crisis at 2022-12); **public free-tier deploy on Render** (auto-redeploys on push to `main`); remaining: PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards |
 
 ### How to add a real data source
 1. Write a connector in `src/agrik/ingestion/` that returns a DataFrame conforming to
