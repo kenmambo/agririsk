@@ -225,3 +225,24 @@ def test_model_predictions_interval_ordering(client_ready):
         "/model/predictions", params={"county_code": "15"}
     ).json()
     assert all(r["county_code"] == "015" for r in mars["rows"])
+
+
+# ---------------------------------------------------------------------------
+# PaaS port resolution (Render/Fly inject PORT)
+# ---------------------------------------------------------------------------
+def test_resolve_port_priority_and_validation():
+    from agrik.api.__main__ import resolve_port
+    from agrik.settings import Settings
+
+    s = Settings()  # default api_port 8000 (no AGRIK_* env in test process)
+    assert s.api_port == 8000
+    assert resolve_port(s, {}) == 8000
+    assert resolve_port(s, {"PORT": "10482"}) == 10482
+    # An explicit AGRIK_API_PORT (handled by pydantic-settings) outranks PORT.
+    explicit = Settings(api_port=9000)
+    env = {"AGRIK_API_PORT": "9000", "PORT": "10482"}
+    assert resolve_port(explicit, env) == 9000
+    # Junk or out-of-range PORT values fall back to the settings default.
+    assert resolve_port(s, {"PORT": "http"}) == 8000
+    assert resolve_port(s, {"PORT": "99999999"}) == 8000
+    assert resolve_port(s, {"PORT": "0"}) == 8000

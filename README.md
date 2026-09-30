@@ -467,10 +467,31 @@ dashboard needs the Streamlit command override from `docker-compose.yml`.
 > (Docker Desktop, WSL2 backend): both containers report healthy and serve
 > the real-feed bundle end to end.
 
-### 5 · Run tests & sanity checks
+### 5 · Publish on the cloud (free tier)
+
+`render.yaml` is a one-click blueprint for [render.com](https://render.com)
+(no credit card for free instances):
+
+1. Push this repo to GitHub (done).
+2. On `dashboard.render.com` → **New → Blueprint** → connect
+   `kenmambo/agririsk` — Render reads `render.yaml` and offers both free
+   Docker services (`agrik-api`, `agrik-dashboard`). Approve.
+3. First deploy takes ~5-8 min (Docker build). Then open
+   `https://agrik-api.onrender.com` (landing page) and
+   `https://agrik-dashboard.onrender.com`.
+
+The services honor Render's injected `PORT` (see
+`agrik.api.__main__.resolve_port`), health-check `/health` and
+`/_stcore/health`, and serve the committed artefact bundle - credentials and
+raw feeds never leave your machine. Honest free-tier caveats: instances spin
+down after ~15 idle minutes (~60 s cold start on the next request), and
+free bandwidth is ~5 GB/month. Fly.io/Railway work with the same Dockerfile
+but require a payment method; skip them unless you outgrow Render's free plan.
+
+### 6 · Run tests & sanity checks
 
 ```bash
-pytest -q                       # 107 unit + integration tests (offline, no network)
+pytest -q                       # 108 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 

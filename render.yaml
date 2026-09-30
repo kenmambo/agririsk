@@ -1,0 +1,40 @@
+# Render blueprint - free public deployment for the AgriRisk portfolio MVP.
+#
+# Flow: push this repo to GitHub -> dashboard.render.com -> New -> Blueprint ->
+# connect the repo -> Render reads this file and creates both services.
+#
+# Both services build the SAME Dockerfile; the image serves from the committed
+# deploy/seed artefact bundle, so no credentials or big data are needed at
+# deploy time. Render injects PORT; the API launcher honours it, and the
+# dashboard command passes $PORT to Streamlit.
+#
+# Free-tier realities (documented honestly):
+#  * instances spin down after ~15 min without traffic; first request costs a
+#    ~60 s cold start;
+#  * 512 MB RAM / 0.1 CPU - enough here because serving only reads ~2 MB of
+#    artefacts (no ingestion, no training in the container);
+#  * filesystem is ephemeral - fine: the containers are strictly read-only.
+
+services:
+  - type: web
+    name: agrik-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: AGRIK_API_HOST
+        value: 0.0.0.0
+    # CMD from the Dockerfile (python -m agrik.api) is kept; PORT is injected
+    # by Render and resolved by agrik.api.__main__.resolve_port.
+
+  - type: web
+    name: agrik-dashboard
+    runtime: docker
+    plan: free
+    command: >-
+      streamlit run src/agrik/dashboard/app.py
+      --server.address=0.0.0.0
+      --server.port=$PORT
+      --server.headless=true
+      --browser.gatherUsageStats=false
+    healthCheckPath: /_stcore/health
