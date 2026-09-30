@@ -10,6 +10,12 @@
 [![tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
 [![license](https://img.shields.io/badge/license-MIT-green)]()
 
+**🚀 Live (free Render tier — first visit may take ~60 s to spin up):**
+dashboard · <https://agrik-dashboard.onrender.com> — API docs ·
+<https://agrik-api.onrender.com/docs> — alerts ·
+<https://agrik-api.onrender.com/alerts?date=2022-12>
+(serving the committed real-feed artefact bundle, provenance intact).
+
 ---
 
 ## ⚠️ Data status — read this first
