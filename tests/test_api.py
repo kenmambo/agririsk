@@ -52,6 +52,23 @@ def test_root_lists_endpoints(client_ready):
     assert "/risk/summary" in body["endpoints"]
 
 
+def test_root_serves_html_to_browsers_with_honest_badge(client_ready):
+    # Content negotiation: browsers (Accept: text/html) get the landing page,
+    # and its provenance badge must tell the truth about synthetic feeds.
+    r = client_ready.get("/", headers={"accept": "text/html"})
+    assert r.status_code == 200
+    assert r.headers["content-type"].startswith("text/html")
+    assert "AgriRisk Kenya" in r.text
+    assert "SYNTHETIC DATA" in r.text  # test pipeline ran on synthetic data
+    assert "/risk/summary" in r.text
+
+
+def test_root_html_without_artefacts_is_honest(client_empty):
+    r = client_empty.get("/", headers={"accept": "text/html"})
+    assert r.status_code == 200
+    assert "no artefacts yet" in r.text
+
+
 def test_missing_artefacts_return_503_with_hint(client_empty):
     for path in ("/panel", "/data/status", "/model/card"):
         r = client_empty.get(path)

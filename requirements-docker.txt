@@ -1,0 +1,14 @@
+# Runtime dependencies for the serving Docker image (API + dashboard).
+# Mirrors pyproject core deps + the [api] extra so this layer caches
+# independently of code changes (see Dockerfile build order).
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+joblib>=1.3
+pydantic>=2.4
+pydantic-settings>=2.1
+PyYAML>=6.0
+streamlit>=1.30
+plotly>=6.0
+fastapi>=0.110
+uvicorn>=0.27

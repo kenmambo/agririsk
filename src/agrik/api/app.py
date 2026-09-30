@@ -11,7 +11,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.responses import HTMLResponse
 
 from .. import schemas
 from ..logging import get_logger
@@ -37,6 +38,82 @@ def _artifact_or_503(loader: Any) -> Any:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
 
 
+# Human-readable landing page, served to browsers (Accept: text/html); JSON
+# clients keep getting the machine-readable index. Provenance is fetched live
+# so the page can never claim "real feeds" from a stale bundle.
+_ENDPOINTS = [
+    ("/health", "artefact presence + pipeline version"),
+    ("/data/status", "rows / counties / period + per-dataset provenance"),
+    ("/counties", "county registry reference (codes, centroids, zones)"),
+    ("/panel", "county-month rows (filters: county_code, year_from/to, agro_zone)"),
+    ("/risk/summary?date=YYYY-MM", "per-county risk + display band for a month"),
+    ("/model/card", "metrics, uncertainty, calibration, horizons"),
+    ("/model/comparison", "ridge vs gbm on the identical chronological split"),
+    ("/model/predictions", "held-out predictions with conformal intervals"),
+]
+
+
+def _landing_html() -> HTMLResponse:
+    try:
+        df = artifacts.features_panel()
+        rows, counties = len(df), df["county_code"].nunique()
+        if artifacts.data_is_synthetic(df):
+            badge = '<span class="badge warn">SYNTHETIC DATA</span>'
+        else:
+            badge = '<span class="badge ok">real observed feeds</span>'
+    except artifacts.ArtifactMissing:
+        rows = counties = None
+        badge = '<span class="badge warn">no artefacts yet</span>'
+    links = "\n".join(
+        f'      <li><a href="{path}"><code>{path}</code></a> — {desc}</li>'
+        for path, desc in _ENDPOINTS
+    )
+    stats = (
+        f"<p>{rows:,} county-month rows &middot; {counties} counties &middot; "
+        "read-only view over artefacts written by <code>python -m agrik</code> "
+        "on the host.</p>"
+        if rows
+        else "<p>Run the pipeline to generate artefacts.</p>"
+    )
+    html = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgriRisk Kenya API</title>
+<style>
+  body {{ font-family: system-ui, sans-serif; max-width: 720px; margin: 3rem auto;
+         padding: 0 1rem; color: #1e2a22; line-height: 1.55; }}
+  h1 {{ font-size: 1.6rem; }}
+  .badge {{ padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.8rem;
+            vertical-align: middle; }}
+  .badge.ok {{ background: #e3f4e6; color: #1b5e20; }}
+  .badge.warn {{ background: #fdecea; color: #b71c1c; }}
+  ul {{ padding-left: 0; list-style: none; }}
+  li {{ margin: 0.45rem 0; }}
+  code {{ background: #f2f4f1; padding: 0.1rem 0.35rem; border-radius: 4px; }}
+  a {{ color: #1b6e3c; text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  .note {{ color: #5c6b60; font-size: 0.9rem; }}
+</style>
+</head>
+<body>
+  <h1>AgriRisk Kenya &middot; API {badge}</h1>
+  {stats}
+  <p>Interactive docs: <a href="/docs"><code>/docs</code></a> (Try-it UI).
+     The decision-support dashboard runs separately on port 8502.</p>
+  <h2>Endpoints</h2>
+  <ul>
+{links}
+  </ul>
+  <p class="note">Risk bands are documented display thresholds, not model
+  output. Every data response echoes its provenance; missing artefacts return
+  503 with a hint, never a fabricated number.</p>
+</body>
+</html>"""
+    return HTMLResponse(html)
+
+
 def create_app() -> FastAPI:
     """Build the AgriRisk API app (fresh instance per server process)."""
     app = FastAPI(
@@ -49,7 +126,10 @@ def create_app() -> FastAPI:
     )
 
     @app.get("/", tags=["meta"])
-    def root() -> dict:
+    def root(request: Request) -> Any:
+        # Browsers get the readable landing page; API clients get JSON.
+        if "text/html" in request.headers.get("accept", ""):
+            return _landing_html()
         return {
             "service": "AgriRisk Kenya API",
             "docs": "/docs",

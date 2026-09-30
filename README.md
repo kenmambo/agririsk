@@ -276,6 +276,7 @@ AgriRisk/
 ├─ tests/                    # pytest unit + integration tests
 ├─ Dockerfile                # serving image (API + dashboard) over deploy/seed
 ├─ docker-compose.yml        # api :8000 + dashboard :8502, healthchecked
+├─ requirements-docker.txt   # image deps (cached layer, mirrors pyproject + [api])
 ├─ pyproject.toml            # packaging, deps, pytest & ruff config
 └─ README.md
 ```
@@ -423,6 +424,9 @@ provenance (`data_is_synthetic`, `dataset_sources`).
 Missing artefacts return a **503 with a "run `python -m agrik` first" hint** -
 the API never fabricates. Bind address/port via `AGRIK_API_HOST` /
 `AGRIK_API_PORT` (loopback by default; widen only behind a reverse proxy).
+Browsers hitting `/` get a human-readable landing page (endpoint list + live
+provenance badge); API clients keep receiving JSON (content negotiation on
+the `Accept` header).
 
 **Scheduled pipeline runs:** `pwsh scripts/schedule_pipeline.ps1` registers a
 Windows daily task (default 06:00, `StartWhenAvailable`; `-AtHour`, `-Remove`,
@@ -450,20 +454,22 @@ python scripts/export_deploy_bundle.py   # rewrite deploy/seed/ (~1.7 MB)
 The export script refuses to run without artefacts, prints the provenance it
 bundled, and warns loudly if anything is synthetic - the honest-labelling rule
 survives the container boundary. The image runs as a non-root user, installs
-only `.[api]` runtime deps, and excludes `.env`/`data/`/`models/` via
-`.dockerignore`. Cloud hosts (Render/Railway/Fly.io) can build straight from
-the repo: Dockerfile, default role API on `$PORT` via `AGRIK_API_PORT`; the
+its dependencies from `requirements-docker.txt` as a cached layer before the
+code copy (fast incremental rebuilds), and excludes `.env`/`data/`/`models/`
+via `.dockerignore`. Cloud hosts (Render/Railway/Fly.io) can build straight
+from the repo: Dockerfile, default role API on `$PORT` via `AGRIK_API_PORT`; the
 dashboard needs the Streamlit command override from `docker-compose.yml`.
 
 > Container-equivalence is verified offline in `tests/test_deploy_bundle.py`:
 > the API serves *from the bundle alone*, with matching model-card metrics and
-> the synthetic flag intact. (The image build itself was not executed on this
-> machine - no Docker runtime here; CI runs the bundle-serving tests instead.)
+> the synthetic flag intact. The image has also been built and run locally
+> (Docker Desktop, WSL2 backend): both containers report healthy and serve
+> the real-feed bundle end to end.
 
 ### 5 · Run tests & sanity checks
 
 ```bash
-pytest -q                       # 100 unit + integration tests (offline, no network)
+pytest -q                       # 102 unit + integration tests (offline, no network)
 python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 ```
 

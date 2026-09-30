@@ -19,11 +19,14 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Package metadata, code, config; install core deps + the [api] serving extra.
+# Dependencies first (cached layer), then code - so rebuilding after a code
+# change does not re-download streamlit/scikit-learn every time.
+COPY requirements-docker.txt ./
+RUN pip install --no-cache-dir -r requirements-docker.txt
 COPY pyproject.toml README.md ./
 COPY src ./src
 COPY config ./config
-RUN pip install --no-cache-dir ".[api]"
+RUN pip install --no-cache-dir --no-deps .
 
 # Precomputed artefacts only - api/dashboard never re-ingest or retrain.
 COPY deploy/seed/data ./data
