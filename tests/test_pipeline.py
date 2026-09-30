@@ -17,7 +17,8 @@ def test_full_pipeline_produces_artefacts(isolated_env):
     assert (s.processed_dir / "master_panel.csv").exists()
     assert (s.features_dir / "features_panel.csv").exists()
     assert (s.features_dir / "features_manifest.json").exists()
-    assert (s.models_dir / "baseline_ridge.joblib").exists()
+    assert (s.models_dir / "baseline_gbm.joblib").exists()  # primary
+    assert (s.models_dir / "baseline_ridge.joblib").exists()  # kept in compare
     assert (s.models_dir / "model_card.json").exists()
 
     # The whole 21-county registry is exercised at county-monthly grain.

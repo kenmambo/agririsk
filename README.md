@@ -51,12 +51,16 @@ Honest limitations that remain:
   the national-grain agriculture feed cap how far per-county conclusions can be
   pushed.
 - **M3 modelling results** (identical chronological split, real target, 36
-  features): gradient boosting RMSE **13.25** / R² **0.64** vs the Ridge floor
-  RMSE 17.67 / R² 0.35; conformal 90% intervals are reported as *indicative*
-  (empirical coverage ~0.66–0.71 — the calibration window under-represents
-  drift in the test window, which is exactly what the uncertainty disclosure is
-  for); forecast skill decays honestly with lead time (1-month-ahead R² 0.37 →
-  3-month-ahead R² 0.29). See `models/comparison.json` and the model tab.
+  features): **gradient boosting is the serving primary** — RMSE **13.25** / R²
+  **0.64** — with the Ridge floor (RMSE 17.67 / R² 0.35) kept in the comparison
+  as the interpretable reference. Conformal 90% intervals are reported as
+  *indicative* (empirical coverage ~0.66 for GBM / ~0.71 for Ridge — the
+  calibration window under-represents drift in the test window, which is exactly
+  what the uncertainty disclosure is for; note GBM's sharper point forecast comes
+  with slightly *lower* coverage and *tighter* intervals, not a free win);
+  forecast skill decays honestly with lead time (primary GBM: 1-month-ahead R²
+  **0.65** → 3-month-ahead R² **0.58**). See `models/comparison.json` and the
+  model tab.
 - The model card, dashboard banner and code comments all repeat this warning.
 - **M4 serving:** the FastAPI service (`agrik-serve`) and the scheduled-run
   script expose/refresh exactly these artefacts - every data response echoes
@@ -527,7 +531,7 @@ python scripts/smoke_dashboard.py   # artefacts load + all Plotly figures build
 |---|---|
 | **M1 · Real data (climate & veg)** | ✅ Done: **CHIRPS rainfall live**; **MODIS NDVI/EVI live** (Earthdata token, full-window granule coverage); **ERA5 temperature via Open-Meteo live**; remaining: county boundary GeoPackage (`[geo]` extra) to replace centroid disks |
 | **M2 · Markets & stats** | ✅ Done: **FEWS NET maize prices + IPC outcome live**; **HDX poverty/rural-pop socioeconomic live**; **World Bank food-index agriculture live** (national grain); remaining: county-grain production feed, `ipc_crisis_households`, backfill full 001–047 registry |
-| **M3 · Modelling** | ✅ Done: **GBM vs Ridge on the identical chronological split** (R² 0.64 vs 0.35 on the real IPC target); **conformal uncertainty intervals + coverage reporting**; **regression reliability/calibration table**; **1- and 3-month forecast-horizon evaluation**; remaining: probability calibration for IPC-phase classification, spatial (county-adjacency) features |
+| **M3 · Modelling** | ✅ Done: **GBM promoted to serving primary** (R² 0.64 vs Ridge 0.35 on the identical chronological split, real IPC target; Ridge kept as the interpretable comparison floor); **conformal uncertainty intervals + coverage reporting** (GBM's sharper point forecast trades slightly lower coverage — disclosed); **regression reliability/calibration table**; **1- and 3-month forecast-horizon evaluation**; remaining: probability calibration for IPC-phase classification, spatial (county-adjacency) features |
 | **M4 · Serving** | ✅ Done: **FastAPI service** (`[api]` extra) exposing the risk panel + provenance + M3 model artefacts; **scheduled pipeline runs** (Windows task script / cron one-liner); remaining: auth + rate limiting for public deployment |
 | **M5 · Platform** | ✅ Partial: **Docker image + compose** (API + dashboard, non-root, healthchecked) serving the committed `deploy/seed` artefact bundle; **`/alerts` early-warning endpoint** + an **interactive dashboard Early-warning tab** (both driven by one shared `agrik.alerting` rule — band-escalation vs trailing baseline, live-verified: Marsabit Crisis→Above Crisis at 2022-12); **public free-tier deploy on Render** (auto-redeploys on push to `main`); remaining: PostgreSQL + PostGIS, Airflow/Prefect orchestration, data-quality dashboards |
 

@@ -47,7 +47,8 @@ def test_export_bundle_layout_and_honest_flag(isolated_env, monkeypatch):
     assert (out / "data" / "processed" / "master_panel.csv").exists()
     assert (out / "data" / "features" / "features_panel.csv").exists()
     assert (out / "models" / "model_card.json").exists()
-    assert (out / "models" / "baseline_ridge.joblib").exists()
+    assert (out / "models" / "baseline_gbm.joblib").exists()  # primary
+    assert (out / "models" / "baseline_ridge.joblib").exists()  # compare floor
     assert not (out / "data" / "raw" / "external").exists()
     assert summary["files"] > 0 and summary["bytes"] > 0
     # Synthetic test-feed data must be labelled synthetic, never hidden.

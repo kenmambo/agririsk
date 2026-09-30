@@ -54,4 +54,10 @@ def test_compute_metrics_perfect():
 
 def test_registry_builds_configured_model():
     model = build_model()  # reads model.baseline.type from pipeline.yaml
-    assert isinstance(model, RidgeRiskModel)
+    # The registry must honour the committed primary (currently gbm) rather
+    # than a hard-coded default - so the test tracks the config, not a guess.
+    from agrik.config import get_pipeline_config
+
+    configured = str(get_pipeline_config()["model"]["baseline"]["type"]).lower()
+    assert model.name == configured
+    assert configured in {"ridge", "gbm"}

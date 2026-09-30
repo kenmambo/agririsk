@@ -1,5 +1,5 @@
 {
-  "primary": "ridge",
+  "primary": "gbm",
   "data_note": "All datasets are real feeds.",
   "rows": [
     {
